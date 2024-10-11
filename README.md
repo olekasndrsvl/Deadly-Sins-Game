@@ -1,4 +1,5 @@
-![image](https://github.com/user-attachments/assets/c5a6b65d-226e-42fa-93d9-ffbf966dc8c3)
+
+![Рисунок2](https://github.com/user-attachments/assets/ae5ad90b-0c88-4836-894a-ef73d8a5bb4e)
 
 Seven Deathly Sins Game
  
