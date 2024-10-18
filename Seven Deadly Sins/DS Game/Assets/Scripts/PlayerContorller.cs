@@ -23,12 +23,14 @@ public class PlayerContorller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        MortAnim = GetComponent<Animator>();
         Rigidbody = GetComponent<Rigidbody2D>();
     }
 
     public void OnLeftButtonDown()
     {
         Vectoring = -1;
+        MortAnim.SetBool("IsWalking", true);
         if (FacingRight && Vectoring < 0)
         {
             Flip();
@@ -37,6 +39,7 @@ public class PlayerContorller : MonoBehaviour
     public void OnRightButtonDown() 
     {
         Vectoring = 1;
+        MortAnim.SetBool("IsWalking", true);
         if (!FacingRight && Vectoring > 0)
         {
             Flip();
@@ -46,6 +49,7 @@ public class PlayerContorller : MonoBehaviour
     {
         if (IsGrounded)
         {
+            MortAnim.SetBool("IsJumped", true);
             Rigidbody.velocity = Vector2.up * JumpForce;
         }
     }
@@ -53,6 +57,7 @@ public class PlayerContorller : MonoBehaviour
 
     public void OnControllerButtonUp()
     {
+        MortAnim.SetBool("IsWalking", false);
         Vectoring = 0;
     }
 
@@ -60,7 +65,10 @@ public class PlayerContorller : MonoBehaviour
     {
         //Vectoring = Input.GetAxis("Horizontal");
         Rigidbody.velocity = new Vector2(Vectoring * PlayerSpeed, Rigidbody.velocity.y);
-        
+        if(IsGrounded)
+        {
+            MortAnim.SetBool("IsJumped", false);
+        }
         
       
    
