@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Jobs.LowLevel.Unsafe;
 using UnityEngine;
 
 public class PlayerContorller : MonoBehaviour
@@ -11,7 +12,14 @@ public class PlayerContorller : MonoBehaviour
     bool FacingRight = true;
     private Rigidbody2D Rigidbody;
     public Animator MortAnim;
-  
+
+    bool IsGrounded;
+    public Transform feetPos;
+    public Transform PlayerBody;
+    public float CheckRadius;
+    public LayerMask whatIsGround;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +42,14 @@ public class PlayerContorller : MonoBehaviour
             Flip();
         }
     }
+    public void OnUpButtonDown()
+    {
+        if (IsGrounded)
+        {
+            Rigidbody.velocity = Vector2.up * JumpForce;
+        }
+    }
+
 
     public void OnControllerButtonUp()
     {
@@ -53,10 +69,14 @@ public class PlayerContorller : MonoBehaviour
     void Flip()
     {
         FacingRight= !FacingRight;
-        Vector3 scale = transform.localScale;
-        scale.x *= -1;
+        PlayerBody.localScale = new Vector3(PlayerBody.localScale.x * -1, PlayerBody.localScale.y, PlayerBody.localScale.z);
+    }
+
+    private void Update()
+    {
+        IsGrounded = Physics2D.OverlapCircle(feetPos.position, CheckRadius, whatIsGround);
+        
     }
 
 
-   
 }
