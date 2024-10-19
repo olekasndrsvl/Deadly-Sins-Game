@@ -5,13 +5,14 @@ using UnityEngine;
 
 public class PlayerContorller : MonoBehaviour
 {
-
+   
     public float PlayerSpeed;
     public float JumpForce;
     public float Vectoring;
     bool FacingRight = true;
     private Rigidbody2D Rigidbody;
     public Animator MortAnim;
+
 
     bool IsGrounded;
     public Transform feetPos;
@@ -63,6 +64,7 @@ public class PlayerContorller : MonoBehaviour
 
     private void FixedUpdate()
     {
+        
         //Vectoring = Input.GetAxis("Horizontal");
         Rigidbody.velocity = new Vector2(Vectoring * PlayerSpeed, Rigidbody.velocity.y);
         if(IsGrounded)
