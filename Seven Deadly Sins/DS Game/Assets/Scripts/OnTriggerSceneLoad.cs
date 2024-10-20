@@ -5,10 +5,36 @@ using UnityEngine.SceneManagement;
 
 public class OnTriggerSceneLoad : MonoBehaviour
 {
+    public int NumberOfLoadingScene;
 
     public void OnTriggerEnter2D(Collider2D other)
     {
-        SceneManager.LoadScene("DespondencyScene", LoadSceneMode.Single);
+        switch (NumberOfLoadingScene)
+        {
+            case 3:
+                SceneManager.LoadScene("DespondencyScene", LoadSceneMode.Single);
+                break;
+            case 4:
+                
+                break;
+            case 5:
+
+                break;
+            case 6:
+
+                break;
+            case 7:
+
+                break;
+            case 8:
+
+                break;
+            default:
+                SceneManager.LoadScene("OutroScene",LoadSceneMode.Single);
+                break;
+        }
+
+        
     }
 
 
