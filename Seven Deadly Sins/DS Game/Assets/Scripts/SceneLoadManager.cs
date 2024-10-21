@@ -18,12 +18,12 @@ public class SceneLoadManager : MonoBehaviour
         {
             director.Pause();
             Logo.SetActive(true);
-            //SceneManager.LoadScene("StartScene", LoadSceneMode.Single);
+          
         }
         else
         {
             PlayerPrefs.SetInt("IsFirstlyLoaded", 0);
-            
+            PlayerPrefs.Save();
         }
 
     }
