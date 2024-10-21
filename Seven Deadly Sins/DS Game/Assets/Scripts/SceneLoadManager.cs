@@ -9,16 +9,16 @@ public class SceneLoadManager : MonoBehaviour
 {
     public PlayableDirector director;
     public GameObject Logo;
-
+    
     // Start is called before the first frame update
     void Start()
     {
-        PlayerPrefs.DeleteAll();
+        
         if (PlayerPrefs.HasKey("IsFirstlyLoaded"))
         {
             director.Pause();
             Logo.SetActive(true);
-          
+        
         }
         else
         {
