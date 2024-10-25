@@ -1,20 +1,33 @@
+using Newtonsoft.Json;
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
+using System.Text.RegularExpressions;
 using TMPro;
+
 using UnityEngine;
 
+[Serializable]
 public class DialogData // класс диалога рекурсивно определенный
 {
     public string Question { get; set; }
     public string Answer1 { get; set; }
     public string Answer2 { get; set; }
-
     public DialogData ReactToAnswer1 { get; set; }
     public DialogData ReactToAnswer2 { get; set; }
-    
+    public DialogData(string question, string answer1, string answer2, DialogData reactToAnswer1, DialogData reactToAnswer2) : this(question, answer1, answer2)
+    {
+        Question = question;
+        Answer1 = answer1;
+        Answer2 = answer2;
+        ReactToAnswer1 = reactToAnswer1;
+        ReactToAnswer2 = reactToAnswer2;
+    }
+
     public DialogData(string question,string answer1, string answer2)
     {
         Question = question;
@@ -26,6 +39,10 @@ public class DialogData // класс диалога рекурсивно определенный
 
 public class Dialog : MonoBehaviour
 {
+    private bool IsPrintingPhrase = false;
+    public int DialogResult;
+    public string ResultOfJson;
+    public TextAsset DialogFile;
     // need link to text gameobject
     public GameObject DialogQuestion;
     public GameObject DialogAnswer1;
@@ -34,14 +51,18 @@ public class Dialog : MonoBehaviour
 
     //пример создания цепочки диалога
     DialogData p1 = new DialogData(
-        "Данте: Ты справился унынием! Но это было лишь одно из семи испытаний.\n",
-        "-Да, старец я усвоил жизненный урок\n",
-        "-Ты мне будешь указывать старик!?\n");
-    DialogData p2 = new DialogData(
-        "Данте: Ты молодец, тебе осталось все 6 испытаний до полного очищения\n", "-Ясно", "-Понятно"); // если ветвление не планируется, то пишем вместо ответов нулевую ссылку null 
-    DialogData p3 = new DialogData(
-        "Данте: Ах ты, грязый щенок, не зря ты здесь оказался! Но ничего скоро научишься манерам!\n", null, null);
-    
+        "Данте: Ты справился унынием! Но это было лишь одно из семи испытаний.",
+        "-Да, старец я усвоил жизненный урок",
+        "-Ты мне будешь указывать старик!?", 
+            new DialogData(
+            "Данте: Ты молодец, тебе осталось все 6 испытаний до полного очищения", 
+            "-Ясно", 
+            "-Понятно"),
+            new DialogData(
+            "Данте: Ах ты, грязый щенок, не зря ты здесь оказался! Но ничего скоро научишься манерам!", 
+            null, 
+            null));
+   
     //Переменная для отслеживания развилки диалога
     DialogData CurrentDialog;
 
@@ -50,90 +71,92 @@ public class Dialog : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
+
         DialogQuestion.GetComponent<TMP_Text>().text = "";
-        //Связывание диалогов
-        p1.ReactToAnswer1 = p2;
-        p1.ReactToAnswer2 = p3;
-        //Установка старотового диалога
+       
+        //Установка стартового диалога
         CurrentDialog = p1;
-        RunningCoroutine = PrintDialogQuestion(p1.Question);
+        RunningCoroutine = SpellPhrase(p1.Question);
         StartCoroutine(RunningCoroutine);
-      //  StopCoroutine(RunningCoroutine);
+        
         DialogAnswer1.GetComponent<TMP_Text>().text = p1.Answer1;
         DialogAnswer2.GetComponent<TMP_Text>().text = p1.Answer2;
-
-        //DialogQuestion.GetComponent<TMP_Text>().text = "Данте: Привет! \n";
-        //DialogAnswer1.GetComponent<TMP_Text>().text = "Answer1";
-        //DialogAnswer2.GetComponent<TMP_Text>().text = "Answer2";
-        //StartCoroutine(PrintDialogQuestion("\"Данте: Ты справился унынием! Но это было лишь одно из семи испытаний. \r \nМорт: (выберите ответ)\""));
-
-    }
-
-    //Coroutine для печати диалога построчно
-    IEnumerator PrintDialogQuestion(string question)
-    {
-        StringBuilder s = new StringBuilder(DialogQuestion.GetComponent<TMP_Text>().text);
-        if (s.Length > AmountOfCharsWhichAreDisplayedAtPresent)
-        {
-            DialogQuestion.GetComponent<TMP_Text>().text = DialogQuestion.GetComponent<TMP_Text>().text.Split('\n',System.StringSplitOptions.RemoveEmptyEntries).Last()+'\n';
-            s = new StringBuilder(DialogQuestion.GetComponent<TMP_Text>().text);
-        }
        
-        var a = question.Split('\n',System.StringSplitOptions.RemoveEmptyEntries);
-       
-        foreach(var b in a)
-        {
-            s.Append(b).Append('\n');
-            DialogQuestion.GetComponent<TMP_Text>().text = s.ToString();
-            yield return new WaitForSeconds(3f);
-        }
-
       
 
     }
+
+    void Cleaner()
+    {
+        var s = DialogQuestion.GetComponent<TMP_Text>().text;
+        var a = s.Split('\n',StringSplitOptions.RemoveEmptyEntries);
+        if(a.Length>4 || s.Length > 100)
+        {
+            DialogQuestion.GetComponent<TMP_Text>().text = a.Last() + '\n';
+        }
+
+    }
+
+    // печать по-буквенно
+    IEnumerator SpellPhrase(string s)
+    {
+        Cleaner();
+        IsPrintingPhrase = true;
+        var sb = new StringBuilder(DialogQuestion.GetComponent<TMP_Text>().text);
+        foreach(var x in s+'\n')
+        {
+            sb.Append(x);
+            DialogQuestion.GetComponent<TMP_Text>().text = sb.ToString();
+            yield return new WaitForSeconds(.05f);
+        }
+        IsPrintingPhrase = false;
+    }
+
 
     public void OnFirstAnswerClicked()
     {
-        
-        StartCoroutine(PrintDialogQuestion(CurrentDialog.Answer1));
-
-        if(CurrentDialog.ReactToAnswer1 != null)
+        if(!IsPrintingPhrase) 
+        {
+        var ans = CurrentDialog.Answer1;
+        DialogResult++;
+       
+        if (CurrentDialog.ReactToAnswer1 != null)
         {
             CurrentDialog = CurrentDialog.ReactToAnswer1;
-            
-            RunningCoroutine = PrintDialogQuestion(CurrentDialog.Question);
-            StartCoroutine(RunningCoroutine);
-      
-          
+            StartCoroutine(SpellPhrase(ans+'\n'+CurrentDialog.Question));
         }
         else
         {
-
+            StartCoroutine(SpellPhrase(CurrentDialog.Answer1));
         }
         DialogAnswer1.GetComponent<TMP_Text>().text = CurrentDialog.Answer1;
         DialogAnswer2.GetComponent<TMP_Text>().text = CurrentDialog.Answer2;
 
+        }
+        
     }
     public void OnSecondAnswerClicked()
     {
-        RunningCoroutine = PrintDialogQuestion(CurrentDialog.Answer2);
-        StartCoroutine(RunningCoroutine);
+        if (!IsPrintingPhrase)
+        {
+        var ans = CurrentDialog.Answer2;
+        DialogResult--;
+       
 
-        if(CurrentDialog.ReactToAnswer2 != null)
+        if (CurrentDialog.ReactToAnswer2 != null)
         {
             CurrentDialog = CurrentDialog.ReactToAnswer2;
-
-            RunningCoroutine = PrintDialogQuestion(CurrentDialog.Question);
-            StartCoroutine(RunningCoroutine);
-
-          
+            StartCoroutine(SpellPhrase(ans+'\n'+CurrentDialog.Question));
         }
         else
         {
-            
+            StartCoroutine(SpellPhrase(CurrentDialog.Answer2));
         }
         DialogAnswer1.GetComponent<TMP_Text>().text = CurrentDialog.Answer1;
         DialogAnswer2.GetComponent<TMP_Text>().text = CurrentDialog.Answer2;
+        }
+       
 
     }
     // Update is called once per frame

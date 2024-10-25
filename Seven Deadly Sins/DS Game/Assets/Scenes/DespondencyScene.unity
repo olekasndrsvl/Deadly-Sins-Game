@@ -1643,6 +1643,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -16.955
       objectReference: {fileID: 0}
+    - target: {fileID: 5061947775137162554, guid: 308ab9aab244fc945a2acb0bef5b9b56, type: 3}
+      propertyPath: DialogFile
+      value: 
+      objectReference: {fileID: 4900000, guid: 720caf40eddb58945b5a0c1f67b248c0, type: 3}
     - target: {fileID: 6539782475535651159, guid: 308ab9aab244fc945a2acb0bef5b9b56, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
