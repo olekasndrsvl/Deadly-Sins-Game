@@ -281,7 +281,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 25
+  m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -301,7 +301,7 @@ RectTransform:
   - {fileID: 338863589}
   - {fileID: 214948319}
   - {fileID: 1923797426}
-
+  - {fileID: 8087715306021176478}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -624,7 +624,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-
 --- !u!1 &1499687951
 GameObject:
   m_ObjectHideFlags: 0
@@ -748,7 +747,7 @@ GameObject:
   - component: {fileID: 1923797430}
   - component: {fileID: 1923797429}
   - component: {fileID: 1923797428}
-  - component: {fileID: 1923797427}
+  - component: {fileID: 1923797431}
   m_Layer: 5
   m_Name: GoSetttingsScene
   m_TagString: Untagged
@@ -776,18 +775,6 @@ RectTransform:
   m_AnchoredPosition: {x: 1.1643, y: -54}
   m_SizeDelta: {x: 162.3286, y: 36.9854}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1923797427
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1923797425}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3dd33819b7d84954f81e7351a91b5d94, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1923797428
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -832,8 +819,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1923797427}
-        m_TargetAssemblyTypeName: SettingSceneChange, Assembly-CSharp
+      - m_Target: {fileID: 1923797431}
+        m_TargetAssemblyTypeName: SceneChangeScript, Assembly-CSharp
         m_MethodName: ChangeScene
         m_Mode: 3
         m_Arguments:
@@ -882,7 +869,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1923797425}
   m_CullTransparentMesh: 1
-
+--- !u!114 &1923797431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1923797425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b6d26a10e3881a498e3edc62010d700, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1948241815
 GameObject:
   m_ObjectHideFlags: 0
@@ -1193,6 +1191,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 308ab9aab244fc945a2acb0bef5b9b56, type: 3}
+--- !u!224 &8087715306021176478 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1645951935141868539, guid: 308ab9aab244fc945a2acb0bef5b9b56, type: 3}
+  m_PrefabInstance: {fileID: 8087715306021176477}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
