@@ -132,7 +132,9 @@ GameObject:
   m_Component:
   - component: {fileID: 69894566}
   - component: {fileID: 69894568}
+
   - component: {fileID: 69894567}
+
   m_Layer: 5
   m_Name: Audio Source
   m_TagString: Untagged
@@ -159,6 +161,7 @@ RectTransform:
   m_AnchoredPosition: {x: -1.912178, y: -3.7478104}
   m_SizeDelta: {x: 180.88, y: 87.97}
   m_Pivot: {x: 0.16738643, y: 0.43747798}
+
 --- !u!114 &69894567
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,6 +174,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b6b671241edb01429ee54aaa0366b11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+
+
 --- !u!82 &69894568
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1423,8 +1428,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a5a3c44cf466fd49b804d146a05b9c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+
   volumeSlider: {fileID: 1382648988}
   Audio: {fileID: 69894568}
+
 --- !u!1 &1496642125
 GameObject:
   m_ObjectHideFlags: 0

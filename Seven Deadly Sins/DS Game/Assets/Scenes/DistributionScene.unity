@@ -572,6 +572,10 @@ PrefabInstance:
       value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1587099031299500051, guid: be4cb4e2b32330548a658847809b0a1d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1587099031299500051, guid: be4cb4e2b32330548a658847809b0a1d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
@@ -587,10 +591,6 @@ PrefabInstance:
       propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5617093781939097828, guid: be4cb4e2b32330548a658847809b0a1d, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 63
-      objectReference: {fileID: 0}
     - target: {fileID: 7608162363950016029, guid: be4cb4e2b32330548a658847809b0a1d, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -599,10 +599,6 @@ PrefabInstance:
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1320097600}
-    - target: {fileID: 8287373159202903616, guid: be4cb4e2b32330548a658847809b0a1d, type: 3}
-      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnTipsClicked
-      objectReference: {fileID: 0}
     - target: {fileID: 9001924771245044799, guid: be4cb4e2b32330548a658847809b0a1d, type: 3}
       propertyPath: m_Name
       value: Tips
