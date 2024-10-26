@@ -1221,10 +1221,20 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!1 &1478844937 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3312101530251641086, guid: 308ab9aab244fc945a2acb0bef5b9b56, type: 3}
+  m_PrefabInstance: {fileID: 1845967123}
+  m_PrefabAsset: {fileID: 0}
 --- !u!95 &1499346270 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 8594381869360387070, guid: be4cb4e2b32330548a658847809b0a1d, type: 3}
   m_PrefabInstance: {fileID: 4203565428798162645}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1625797168 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1203499864941969637, guid: 308ab9aab244fc945a2acb0bef5b9b56, type: 3}
+  m_PrefabInstance: {fileID: 1845967123}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1645211135 stripped
 GameObject:
@@ -1527,6 +1537,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -16.955
       objectReference: {fileID: 0}
+    - target: {fileID: 1179521182232407498, guid: 308ab9aab244fc945a2acb0bef5b9b56, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1645951935141868539, guid: 308ab9aab244fc945a2acb0bef5b9b56, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1647,6 +1661,22 @@ PrefabInstance:
       propertyPath: DialogFile
       value: 
       objectReference: {fileID: 4900000, guid: 720caf40eddb58945b5a0c1f67b248c0, type: 3}
+    - target: {fileID: 5061947775137162554, guid: 308ab9aab244fc945a2acb0bef5b9b56, type: 3}
+      propertyPath: CurrentDialog
+      value: 
+      objectReference: {fileID: 11400000, guid: f866470290638484c9a64a6517c9d252, type: 2}
+    - target: {fileID: 5061947775137162554, guid: 308ab9aab244fc945a2acb0bef5b9b56, type: 3}
+      propertyPath: DialogAnswerButton1
+      value: 
+      objectReference: {fileID: 1625797168}
+    - target: {fileID: 5061947775137162554, guid: 308ab9aab244fc945a2acb0bef5b9b56, type: 3}
+      propertyPath: DialogAnswerButton2
+      value: 
+      objectReference: {fileID: 1478844937}
+    - target: {fileID: 5218277182983397770, guid: 308ab9aab244fc945a2acb0bef5b9b56, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6539782475535651159, guid: 308ab9aab244fc945a2acb0bef5b9b56, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
