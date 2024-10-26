@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/DistributionScene.unity
     guid: 3706a1429583996478fb35ae3a2ed201
   - enabled: 1
+    path: Assets/Scenes/SettingsScene.unity
+    guid: f85f6ddc18c3c3445aa2ad2794631feb
+  - enabled: 1
     path: Assets/Scenes/DespondencyScene.unity
     guid: d42f0b6f31ac5fa47b6887d21f2cb3c5
   - enabled: 1
