@@ -4,10 +4,13 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class SettingSceneChange : MonoBehaviour
 {
-
-    public void ChangeScene(int scenenumber)
+    public void ChangeSceneAndSave()
     {
-        SceneManager.LoadScene(scenenumber, LoadSceneMode.Single);
+        SceneManager.LoadScene("StartScene", LoadSceneMode.Single);
+    }
+    public void ChangeScene()
+    {
+        SceneManager.LoadScene("StartScene", LoadSceneMode.Single);
     }
 
 
