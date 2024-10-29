@@ -38,7 +38,7 @@ public class PlayerController : MonoBehaviour
     {
 
 
-       Rigidbody.velocity = new Vector2(HorizontalVectoring,VerticalVectoring);
+       Rigidbody.linearVelocity = new Vector2(HorizontalVectoring,VerticalVectoring);
         if (HorizontalVectoring != 0)
         {
             MortAnim.SetBool("IsWalking", true);

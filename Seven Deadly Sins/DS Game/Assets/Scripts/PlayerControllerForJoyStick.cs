@@ -37,7 +37,7 @@ public class PlayerControllerForJoyStick : MonoBehaviour
 
         if (IsGrounded && Verticalvetoring > .5f)
         {
-            Rigidbody.velocity = Vector2.up * JumpForce;
+            Rigidbody.linearVelocity = Vector2.up * JumpForce;
             MortAnim.SetBool("IsJumped", true);
         }
 
@@ -63,7 +63,7 @@ public class PlayerControllerForJoyStick : MonoBehaviour
         if (IsGrounded)
         {
             MortAnim.SetBool("IsJumped", false); 
-            Rigidbody.velocity = new Vector2(HorizontalVectoring * PlayerSpeed, Rigidbody.velocity.y);
+            Rigidbody.linearVelocity = new Vector2(HorizontalVectoring * PlayerSpeed, Rigidbody.linearVelocity.y);
         }
 
        
