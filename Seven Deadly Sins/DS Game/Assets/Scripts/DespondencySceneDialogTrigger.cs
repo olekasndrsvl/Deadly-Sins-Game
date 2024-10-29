@@ -14,8 +14,12 @@ public class DespondencySceneDialogTrigger : MonoBehaviour
     }
     public void OnTriggerEnter2D(Collider2D other)
     {
-        DialogWindow.SetActive(true);
-        ButtonExit.SetActive(true);
+        if(other.gameObject.name == "Player")
+        {
+            DialogWindow.SetActive(true);
+            ButtonExit.SetActive(true);
+        }
+        
     }
     public void OnOutButtonClicked()
     {
