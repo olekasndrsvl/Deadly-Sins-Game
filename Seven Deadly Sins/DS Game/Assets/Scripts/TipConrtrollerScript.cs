@@ -16,9 +16,7 @@ public class TipConrtrollerScript : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {
-        TipConrtrollerScript.TipsTextMessage = "Данте говорит:\n Привет! Я тебя не обижу иди ко мне!";
-        
+    {   
         TipsWindowAnimator = TipsWindow.GetComponent<Animator>();
 
         TipsText.GetComponent<TMP_Text>().text = TipsTextMessage;
