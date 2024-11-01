@@ -14,6 +14,7 @@ public class Tutotial : MonoBehaviour
         if (PlayerPrefs.GetInt("FirstLaunch") == 1)
         {
             gameObject.SetActive(false);
+            TipConrtrollerScript.TipsTextMessage = phrase;
         }
         else
         {
