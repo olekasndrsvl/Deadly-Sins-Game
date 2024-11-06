@@ -1,12 +1,15 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 
 public class HitBox : MonoBehaviour
 {
+    
     public string Deb;
     public int HealthPoints;
     public int DamageAmount=10;
-   
+    public GameObject HP_text;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Deb = collision.tag;
@@ -39,6 +42,8 @@ public class HitBox : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        HP_text.GetComponent<TMP_Text>().text = "Çהמנמגüו: "+HealthPoints.ToString();
+
         if (HealthPoints <= 0)
         {
             //TODO: activate dialog
