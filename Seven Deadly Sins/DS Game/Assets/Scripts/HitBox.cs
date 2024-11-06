@@ -9,7 +9,7 @@ public class HitBox : MonoBehaviour
     public int HealthPoints;
     public int DamageAmount=10;
     public GameObject HP_text;
-
+    public GameObject Dialog_View;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Deb = collision.tag;
@@ -36,7 +36,7 @@ public class HitBox : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        HealthPoints = 100;
+       HealthPoints = 100;
 
     }
     // Update is called once per frame
@@ -46,7 +46,9 @@ public class HitBox : MonoBehaviour
 
         if (HealthPoints <= 0)
         {
+
             //TODO: activate dialog
+            Dialog_View.SetActive(true);
         }
     }
 }

@@ -12,16 +12,21 @@ public class EnemyScript : MonoBehaviour
     public GameObject HP_text;
     bool IsAtacking = false;
     bool IsWalking = false;
-    
+    int Rage = 4;
     
     private void OnTriggerStay2D(Collider2D collision)
     {
-        
+       
         Deb = collision.tag+" ";
         if (collision.CompareTag("Player"))
         {
-            if(!IsAtacking)
-            StartCoroutine(Atack(collision));
+            collision.gameObject.transform.parent.GetComponent<Rigidbody2D>().linearVelocity = new Vector3(-Rage, Rage, 0);
+            if (!IsAtacking)
+            {
+              
+                StartCoroutine(Atack(collision));
+            }
+          
         }
      
     }
@@ -31,6 +36,7 @@ public class EnemyScript : MonoBehaviour
         IsAtacking= true;
         int i = Random.Range(0, 2); 
         Deb = Deb + i;
+      
         collision.gameObject.GetComponent<HitBox>().HealthPoints -= DamageAmount;
         yield return new WaitForSeconds(3f);
         IsAtacking = false;
