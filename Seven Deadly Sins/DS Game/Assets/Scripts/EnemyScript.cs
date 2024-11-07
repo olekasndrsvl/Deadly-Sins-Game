@@ -20,7 +20,7 @@ public class EnemyScript : MonoBehaviour
         Deb = collision.tag+" ";
         if (collision.CompareTag("Player"))
         {
-            collision.gameObject.transform.parent.GetComponent<Rigidbody2D>().linearVelocity = new Vector3(-Rage, Rage, 0);
+         
             if (!IsAtacking)
             {
               
@@ -35,10 +35,15 @@ public class EnemyScript : MonoBehaviour
     {
         IsAtacking= true;
         int i = Random.Range(0, 2); 
-        Deb = Deb + i;
-      
-        collision.gameObject.GetComponent<HitBox>().HealthPoints -= DamageAmount;
-        yield return new WaitForSeconds(3f);
+        if (i == 1)
+        { 
+            collision.gameObject.transform.Find("HitBox").GetComponent<HitBox>().HealthPoints -= DamageAmount;
+            collision.gameObject.GetComponent<Rigidbody2D>().linearVelocityY = Rage*2;
+            collision.gameObject.GetComponent<Rigidbody2D>().linearVelocityX = -Rage;
+
+        }
+       
+        yield return new WaitForSeconds(1f);
         IsAtacking = false;
     }
 

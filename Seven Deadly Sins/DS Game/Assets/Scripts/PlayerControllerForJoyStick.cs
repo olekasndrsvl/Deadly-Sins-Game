@@ -38,7 +38,7 @@ public class PlayerControllerForJoyStick : MonoBehaviour
         if (IsGrounded && Verticalvetoring > .5f)
         {
             Rigidbody.linearVelocity = Vector2.up * JumpForce;
-            MortAnim.SetBool("IsJumped", true);
+           // MortAnim.SetBool("IsJumped", !IsGrounded);
         }
 
         if(HorizontalVectoring != 0)
@@ -62,7 +62,7 @@ public class PlayerControllerForJoyStick : MonoBehaviour
 
         if (IsGrounded)
         {
-            MortAnim.SetBool("IsJumped", false); 
+            
             Rigidbody.linearVelocity = new Vector2(HorizontalVectoring * PlayerSpeed, Rigidbody.linearVelocity.y);
         }
 
@@ -82,6 +82,7 @@ public class PlayerControllerForJoyStick : MonoBehaviour
 
     private void Update()
     {
+        MortAnim.SetBool("IsJumped", !IsGrounded);
         IsGrounded = Physics2D.OverlapCircle(feetPos.position, CheckRadius, whatIsGround);
 
     }
