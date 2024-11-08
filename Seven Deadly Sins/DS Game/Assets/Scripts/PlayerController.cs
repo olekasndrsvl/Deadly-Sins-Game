@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
     public Animator MortAnim;
     public Transform PlayerBody;
 
+    public AudioSource moveAudio;
+
     float HorizontalVectoring;
     float VerticalVectoring;
     bool FacingRight = true;
@@ -38,12 +40,13 @@ public class PlayerController : MonoBehaviour
     {
 
 
-       Rigidbody.velocity = new Vector2(HorizontalVectoring,VerticalVectoring);
+       Rigidbody.linearVelocity = new Vector2(HorizontalVectoring,VerticalVectoring);
         if (HorizontalVectoring != 0)
         {
             MortAnim.SetBool("IsWalking", true);
             if (FacingRight && HorizontalVectoring < 0)
             {
+                moveAudio.Play();
                 Flip();
             }
 
@@ -55,14 +58,23 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
+
             MortAnim.SetBool("IsWalking", false);
         }
         if(VerticalVectoring !=0)
         {
+            if (!moveAudio.isPlaying)
+            {
+                moveAudio.Play();  
+            }
             MortAnim.SetBool("IsWalking", true);
         }
         else
         {
+            if (moveAudio.isPlaying)
+            {
+                moveAudio.Stop();  
+            }
             MortAnim.SetBool("IsWalking", false);
         }
 
