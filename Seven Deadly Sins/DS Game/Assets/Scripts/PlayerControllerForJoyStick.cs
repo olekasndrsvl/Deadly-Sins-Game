@@ -7,7 +7,7 @@ public class PlayerControllerForJoyStick : MonoBehaviour
 {
     public Joystick joystick;
 
-
+    public bool IsPaused = false;
     public float PlayerSpeed;
     public float JumpForce;
     public float HorizontalVectoring;
@@ -32,6 +32,7 @@ public class PlayerControllerForJoyStick : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if(IsPaused) return;
         float Verticalvetoring = joystick.Vertical;
         HorizontalVectoring = joystick.Horizontal;
 
@@ -82,6 +83,7 @@ public class PlayerControllerForJoyStick : MonoBehaviour
 
     private void Update()
     {
+
         MortAnim.SetBool("IsJumped", !IsGrounded);
         IsGrounded = Physics2D.OverlapCircle(feetPos.position, CheckRadius, whatIsGround);
 

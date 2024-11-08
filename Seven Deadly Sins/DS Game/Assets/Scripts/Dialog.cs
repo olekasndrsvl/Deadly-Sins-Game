@@ -12,7 +12,7 @@ using UnityEngine;
 public class Dialog : MonoBehaviour
 {
 
-    
+   
     private bool IsPrintingPhrase = false;
     public int DialogResult;
     // needs link to text gameobject
@@ -32,6 +32,7 @@ public class Dialog : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+       
         DialogAnswer1 = DialogAnswerButton1.transform.GetChild(0).gameObject;
         DialogAnswer2 = DialogAnswerButton2.transform.GetChild(0).gameObject;
 
