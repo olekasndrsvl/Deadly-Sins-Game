@@ -23,8 +23,15 @@ public class DespondencySceneDialogTrigger : MonoBehaviour
     }
     public void OnOutButtonClicked()
     {
-        SceneManager.LoadScene("StartScene", LoadSceneMode.Single);
+        StartCoroutine(ChangeSceneCoroutine(1.5f));
     }
+
+    private IEnumerator ChangeSceneCoroutine(float delay)
+    {
+        yield return new WaitForSeconds(delay);  
+        SceneManager.LoadScene("StartScene", LoadSceneMode.Single);  
+    }
+
 
     // Update is called once per frame
     void Update()

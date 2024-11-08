@@ -22,6 +22,7 @@ public class PlayerControllerForJoyStick : MonoBehaviour
     public float CheckRadius;
     public LayerMask whatIsGround;
 
+    public AudioSource jumpAudio, moveAudio;
 
     // Start is called before the first frame update
     void Start()
@@ -39,12 +40,27 @@ public class PlayerControllerForJoyStick : MonoBehaviour
         if (IsGrounded && Verticalvetoring > .5f)
         {
             Rigidbody.linearVelocity = Vector2.up * JumpForce;
-           // MortAnim.SetBool("IsJumped", !IsGrounded);
+    // MortAnim.SetBool("IsJumped", !IsGrounded);
+
+          
+
+            if (!jumpAudio.isPlaying)
+            {
+                jumpAudio.Play();
+            }
+
+
         }
 
-        if(HorizontalVectoring != 0)
+        if (HorizontalVectoring != 0)
         {
             MortAnim.SetBool("IsWalking", true);
+
+            if (!moveAudio.isPlaying)
+            {
+                moveAudio.Play();
+            }
+
             if (FacingRight && HorizontalVectoring < 0)
             {
                 Flip();
@@ -59,17 +75,22 @@ public class PlayerControllerForJoyStick : MonoBehaviour
         else
         {
             MortAnim.SetBool("IsWalking", false);
+
+            if (moveAudio.isPlaying)
+            {
+                moveAudio.Stop();
+            }
         }
 
         if (IsGrounded)
         {
-            
+
             Rigidbody.linearVelocity = new Vector2(HorizontalVectoring * PlayerSpeed, Rigidbody.linearVelocity.y);
         }
 
-       
-        
-       
+
+
+
 
 
 

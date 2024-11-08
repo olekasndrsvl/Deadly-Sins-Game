@@ -27,6 +27,8 @@ public class Dialog : MonoBehaviour
     //ѕеременна€ дл€ отслеживани€ развилки диалога
     public TypeDialogData CurrentDialog;
 
+    public AudioSource clickAudio;
+
     IEnumerator RunningCoroutine;
 
     // Start is called before the first frame update
@@ -76,10 +78,18 @@ public class Dialog : MonoBehaviour
         IsPrintingPhrase = false;
     }
 
-
+    private void PlayButtonClickSound()
+    {
+        if (clickAudio != null)
+        {
+            clickAudio.Play();
+        }
+    }
     public void OnFirstAnswerClicked()
     {
-        if(!IsPrintingPhrase) 
+        PlayButtonClickSound();
+
+        if (!IsPrintingPhrase) 
         {
             var ans = CurrentDialog.Answer1;
             DialogResult++;
@@ -118,6 +128,8 @@ public class Dialog : MonoBehaviour
     }
     public void OnSecondAnswerClicked()
     {
+        PlayButtonClickSound();
+
         if (!IsPrintingPhrase)
         { 
             var ans = CurrentDialog.Answer2;
@@ -149,14 +161,18 @@ public class Dialog : MonoBehaviour
 
             }
         }
-       
+
+
 
     }
 
     public void CloseDialogWindow()
     {
+        PlayButtonClickSound();
         DialogWindow.SetActive(false);
     }
+
+   
 
     // Update is called once per frame
     void Update()
