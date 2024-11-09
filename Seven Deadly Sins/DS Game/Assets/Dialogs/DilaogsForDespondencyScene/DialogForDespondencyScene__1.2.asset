@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 131e043873bb5ec4e9b68b5e409bd905, type: 3}
-  m_Name: 1.2
+  m_Name: DialogForDespondencyScene__1.2
   m_EditorClassIdentifier: 
   Question: "\u0414\u0430\u043D\u0442\u0435: \u0410\u0445 \u0442\u044B, \u0433\u0440\u044F\u0437\u044B\u0439
     \u0449\u0435\u043D\u043E\u043A, \u043D\u0435 \u0437\u0440\u044F \u0442\u044B

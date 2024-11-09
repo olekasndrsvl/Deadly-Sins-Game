@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Hell_dirt_asset_0: 3554581804328281603
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
