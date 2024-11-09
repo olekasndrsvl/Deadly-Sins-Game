@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyScript : MonoBehaviour
 {
+    public bool IsPaused = false;
     public string Deb;
     public int HealthPoints;
     public GameObject EnemyBody;
@@ -11,7 +12,7 @@ public class EnemyScript : MonoBehaviour
     public int DamageAmount = 10;
     public GameObject HP_text;
     bool IsAtacking = false;
-    bool IsWalking = false;
+   
     int Rage = 4;
     
     private void OnTriggerStay2D(Collider2D collision)
@@ -66,6 +67,8 @@ public class EnemyScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        HP_text.GetComponent<TMP_Text>().text = HealthPoints.ToString();
+        if (IsPaused) return;
         // Двигаем NPC
         EnemyBody.transform.position += Vector3.right * direction * speed * Time.deltaTime;
 
@@ -80,11 +83,11 @@ public class EnemyScript : MonoBehaviour
         }
 
 
-        HP_text.GetComponent<TMP_Text>().text = HealthPoints.ToString();
-        if (HealthPoints <= 0)
-        {
-            Destroy(this);
-        }
+       
+        //if (HealthPoints <= 0)
+        //{
+           
+        //}
         
     }
 }
