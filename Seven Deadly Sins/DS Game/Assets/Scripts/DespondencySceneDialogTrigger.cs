@@ -23,6 +23,12 @@ public class DespondencySceneDialogTrigger : MonoBehaviour
     }
     public void OnOutButtonClicked()
     {
+        StartCoroutine(ChangeSceneCoroutine(1.5f));
+    }
+
+    private IEnumerator ChangeSceneCoroutine(float delay)
+    {
+        yield return new WaitForSeconds(delay);
         SceneManager.LoadScene("StartScene", LoadSceneMode.Single);
     }
 
