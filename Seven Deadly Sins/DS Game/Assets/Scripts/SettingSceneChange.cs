@@ -13,6 +13,16 @@ public class SettingSceneChange : MonoBehaviour
         SceneManager.LoadScene("StartScene", LoadSceneMode.Single);
     }
 
+    public void ChangeSceneWithDelay(int sceneNumber)
+    {
+        StartCoroutine(ChangeSceneCoroutine(sceneNumber, 1.5f));
+    }
+
+    private IEnumerator ChangeSceneCoroutine(int sceneNumber, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        SceneManager.LoadScene(sceneNumber, LoadSceneMode.Single);
+    }
 
 }
 
