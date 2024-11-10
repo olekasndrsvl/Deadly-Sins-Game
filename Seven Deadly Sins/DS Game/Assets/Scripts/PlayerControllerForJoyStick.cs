@@ -51,7 +51,7 @@ public class PlayerControllerForJoyStick : MonoBehaviour
         if(HorizontalVectoring != 0)
         {
             MortAnim.SetBool("IsWalking", true);
-            
+
             if (!moveAudio.isPlaying)
             {
                 moveAudio.Play();
@@ -76,11 +76,12 @@ public class PlayerControllerForJoyStick : MonoBehaviour
             {
                 moveAudio.Stop();
             }
+
         }
 
         if (IsGrounded)
         {
-            
+ 
             Rigidbody.linearVelocity = new Vector2(HorizontalVectoring * PlayerSpeed, Rigidbody.linearVelocity.y);
         }
 
