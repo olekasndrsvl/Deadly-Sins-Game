@@ -1386,18 +1386,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: slider, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1382648989
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1496,19 +1484,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1496642128}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1496642131}
-        m_TargetAssemblyTypeName: SettingSceneChange, Assembly-CSharp
-        m_MethodName: ChangeSceneAndSave
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1496642128
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1586,6 +1562,7 @@ GameObject:
   - component: {fileID: 1523047804}
   - component: {fileID: 1523047803}
   - component: {fileID: 1523047802}
+  - component: {fileID: 1523047805}
   m_Layer: 5
   m_Name: ButtonGods
   m_TagString: Untagged
@@ -1656,7 +1633,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1523047803}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1523047805}
+        m_TargetAssemblyTypeName: GodScripts, Assembly-CSharp
+        m_MethodName: OnButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1523047803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1695,6 +1684,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1523047800}
   m_CullTransparentMesh: 1
+--- !u!114 &1523047805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1523047800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f098c48d2454e884ea750131338401f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toggleValue: 1
 --- !u!1 &1562103308
 GameObject:
   m_ObjectHideFlags: 0
