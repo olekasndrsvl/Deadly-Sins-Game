@@ -23,4 +23,22 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/OutroScene.unity
     guid: e5e47464f15d376468018c09d91f2327
+  - enabled: 1
+    path: Assets/Scenes/WrathScene.unity
+    guid: cb6306012d661c1459ac27cafb57f72c
+  - enabled: 1
+    path: Assets/Scenes/VanityScene.unity
+    guid: f4c7c4225cf374c4fbb265b00d502b47
+  - enabled: 1
+    path: Assets/Scenes/PrideScene.unity
+    guid: ea2969e9c42935b4783529132e8481e1
+  - enabled: 1
+    path: Assets/Scenes/BoastScene.unity
+    guid: c173ff362fcc4c64eb8f46760900b19f
+  - enabled: 1
+    path: Assets/Scenes/EnvyScene.unity
+    guid: 740d9303b924f0f48aab37a72fd81d82
+  - enabled: 1
+    path: Assets/Scenes/GreedScene.unity
+    guid: 93b2fb29a65512640bfae64259eab2bc
   m_configObjects: {}
