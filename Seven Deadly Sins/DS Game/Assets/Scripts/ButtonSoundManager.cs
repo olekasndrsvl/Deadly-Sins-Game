@@ -12,8 +12,10 @@ public class ButtonSoundManager : MonoBehaviour
         // Get the AudioSource component attached to the same GameObject
         audioSource = GetComponent<AudioSource>();
 
+        
         // Find all buttons that are children of this object
         Button[] buttons = GetComponentsInChildren<Button>();
+
 
         // Loop through each button and add a listener for the onClick event
         foreach (Button button in buttons)
