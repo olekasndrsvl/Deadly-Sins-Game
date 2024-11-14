@@ -102,9 +102,13 @@ public class Dialog : MonoBehaviour
             }
             else
             {
+               
                 StartCoroutine(SpellPhrase(CurrentDialog.Answer1));
                 DialogAnswerButton1.SetActive(false);
                 DialogAnswerButton2.SetActive(false);
+
+
+                SaveKarma();
                 CloseButton.SetActive(true);
 
             }
@@ -117,10 +121,13 @@ public class Dialog : MonoBehaviour
             }
             else
             {
+               
                 DialogAnswerButton1.SetActive(false);
                 DialogAnswerButton2.SetActive(false);
-                CloseButton.SetActive(true);
 
+                SaveKarma();
+                CloseButton.SetActive(true);
+            
             }
 
 
@@ -147,6 +154,8 @@ public class Dialog : MonoBehaviour
             StartCoroutine(SpellPhrase(CurrentDialog.Answer2));
             DialogAnswerButton1.SetActive(false);
             DialogAnswerButton2.SetActive(false);
+
+            SaveKarma();
             CloseButton.SetActive(true);
         }
             if (CurrentDialog.Answer1 != "" && CurrentDialog.Answer2 != "")
@@ -156,13 +165,36 @@ public class Dialog : MonoBehaviour
             }
             else
             {
+                
                 DialogAnswerButton1.SetActive(false);
                 DialogAnswerButton2.SetActive(false);
+
+                SaveKarma();
                 CloseButton.SetActive(true);
+              
 
             }
         }
        
+
+    }
+
+
+    void SaveKarma()
+    {
+
+        if (PlayerPrefs.HasKey("KarmaState"))
+        {
+            PlayerPrefs.SetInt("KarmaState", PlayerPrefs.GetInt("KarmaState") + DialogResult);
+            
+        }
+        else
+        {
+            PlayerPrefs.SetInt("KarmaState", 50);
+          
+
+        }
+
 
     }
 

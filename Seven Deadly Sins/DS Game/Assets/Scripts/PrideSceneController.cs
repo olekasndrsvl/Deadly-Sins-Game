@@ -97,8 +97,8 @@ public class PrideSceneController : MonoBehaviour
         if (dialog3 > 0)
         {
             tips.GetComponent<TMP_Text>().text = "“ы выбрал неверный путь, мой друг! “вое ненасытное желание побеждать всех и каждого сыграло с тобой злую шутку...";
-            Enemy.GetComponent<EnemyScript>().DamageAmount = 10110;
-            PlayerPrefs.SetInt("EnemyDamage", Enemy.GetComponent<EnemyScript>().DamageAmount);
+            Enemy.GetComponent<EnemyScript>().DamageAmount = 100;
+            //PlayerPrefs.SetInt("EnemyDamage", Enemy.GetComponent<EnemyScript>().DamageAmount);
             Enemy.GetComponent<EnemyScript>().HealthPoints = 100;
             PlayerHitbox.HealthPoints = 100;
             PlayerHitbox.gameObject.transform.parent.position = Vector3.zero;
