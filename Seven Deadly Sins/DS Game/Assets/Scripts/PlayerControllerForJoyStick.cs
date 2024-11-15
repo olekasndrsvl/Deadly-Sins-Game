@@ -7,7 +7,7 @@ public class PlayerControllerForJoyStick : MonoBehaviour
 {
     public Joystick joystick;
 
-
+    public bool IsPaused = false;
     public float PlayerSpeed;
     public float JumpForce;
     public float HorizontalVectoring;
@@ -22,6 +22,7 @@ public class PlayerControllerForJoyStick : MonoBehaviour
     public float CheckRadius;
     public LayerMask whatIsGround;
 
+    public AudioSource jumpAudio, moveAudio;
 
     // Start is called before the first frame update
     void Start()
@@ -32,18 +33,30 @@ public class PlayerControllerForJoyStick : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if(IsPaused) return;
         float Verticalvetoring = joystick.Vertical;
         HorizontalVectoring = joystick.Horizontal;
 
         if (IsGrounded && Verticalvetoring > .5f)
         {
-            Rigidbody.velocity = Vector2.up * JumpForce;
-            MortAnim.SetBool("IsJumped", true);
+            Rigidbody.linearVelocity = Vector2.up * JumpForce;
+            // MortAnim.SetBool("IsJumped", !IsGrounded);
+
+            if (!jumpAudio.isPlaying)
+            {
+                jumpAudio.Play();
+            }
         }
 
         if(HorizontalVectoring != 0)
         {
             MortAnim.SetBool("IsWalking", true);
+            
+            if (!moveAudio.isPlaying)
+            {
+                moveAudio.Play();
+            }
+
             if (FacingRight && HorizontalVectoring < 0)
             {
                 Flip();
@@ -58,12 +71,17 @@ public class PlayerControllerForJoyStick : MonoBehaviour
         else
         {
             MortAnim.SetBool("IsWalking", false);
+
+            if (moveAudio.isPlaying)
+            {
+                moveAudio.Stop();
+            }
         }
 
         if (IsGrounded)
         {
-            MortAnim.SetBool("IsJumped", false); 
-            Rigidbody.velocity = new Vector2(HorizontalVectoring * PlayerSpeed, Rigidbody.velocity.y);
+            
+            Rigidbody.linearVelocity = new Vector2(HorizontalVectoring * PlayerSpeed, Rigidbody.linearVelocity.y);
         }
 
        
@@ -82,6 +100,8 @@ public class PlayerControllerForJoyStick : MonoBehaviour
 
     private void Update()
     {
+
+        MortAnim.SetBool("IsJumped", !IsGrounded);
         IsGrounded = Physics2D.OverlapCircle(feetPos.position, CheckRadius, whatIsGround);
 
     }

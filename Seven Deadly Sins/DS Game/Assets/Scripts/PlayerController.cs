@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    
+    public bool IsPaused = false;
     public float VerticalSpeed;
     public float HorizontalSpeed;
 
@@ -37,34 +37,43 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
 
-
-       Rigidbody.velocity = new Vector2(HorizontalVectoring,VerticalVectoring);
-        if (HorizontalVectoring != 0)
+       if (IsPaused)
         {
-            MortAnim.SetBool("IsWalking", true);
-            if (FacingRight && HorizontalVectoring < 0)
-            {
-                Flip();
-            }
 
-            if (!FacingRight && HorizontalVectoring > 0)
-            {
-                Flip();
-            }
-
+            Rigidbody.linearVelocity = new Vector2(0,0);
         }
         else
         {
-            MortAnim.SetBool("IsWalking", false);
+            Rigidbody.linearVelocity = new Vector2(HorizontalVectoring, VerticalVectoring);
+            if (HorizontalVectoring != 0)
+            {
+                MortAnim.SetBool("IsWalking", true);
+                if (FacingRight && HorizontalVectoring < 0)
+                {
+                    Flip();
+                }
+
+                if (!FacingRight && HorizontalVectoring > 0)
+                {
+                    Flip();
+                }
+
+            }
+            else
+            {
+                MortAnim.SetBool("IsWalking", false);
+            }
+            if (VerticalVectoring != 0)
+            {
+                MortAnim.SetBool("IsWalking", true);
+            }
+            else
+            {
+                MortAnim.SetBool("IsWalking", false);
+            }
+
         }
-        if(VerticalVectoring !=0)
-        {
-            MortAnim.SetBool("IsWalking", true);
-        }
-        else
-        {
-            MortAnim.SetBool("IsWalking", false);
-        }
+
 
 
     }

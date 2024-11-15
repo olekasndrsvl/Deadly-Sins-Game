@@ -10,7 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1563635236660855582}
   - component: {fileID: 6508360075933822231}
+<<<<<<< HEAD
   - component: {fileID: 7894917643416552445}
+=======
+>>>>>>> 5fc69b9a16c2bfb65443ce495b3ea3253f7185e2
   m_Layer: 0
   m_Name: person_0
   m_TagString: Untagged
@@ -88,6 +91,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+<<<<<<< HEAD
 --- !u!70 &7894917643416552445
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -125,6 +129,8 @@ CapsuleCollider2D:
   m_Offset: {x: 0.6200303, y: -0.086698554}
   m_Size: {x: 2.1375844, y: 3.2533967}
   m_Direction: 0
+=======
+>>>>>>> 5fc69b9a16c2bfb65443ce495b3ea3253f7185e2
 --- !u!1 &8052838675044187529
 GameObject:
   m_ObjectHideFlags: 0
@@ -135,6 +141,10 @@ GameObject:
   m_Component:
   - component: {fileID: 3389391363380208510}
   - component: {fileID: 6870509181234309285}
+<<<<<<< HEAD
+=======
+  - component: {fileID: 443286807973780137}
+>>>>>>> 5fc69b9a16c2bfb65443ce495b3ea3253f7185e2
   - component: {fileID: 5384447136729492758}
   - component: {fileID: 2328219021445089775}
   m_Layer: 0
@@ -282,6 +292,46 @@ PolygonCollider2D:
       - {x: 3.8169327, y: -0.7446127}
       - {x: 3.227934, y: -0.38957018}
   m_UseDelaunayMesh: 0
+<<<<<<< HEAD
+=======
+--- !u!70 &443286807973780137
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8052838675044187529}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 2.9241304, y: -1.0553281}
+  m_Size: {x: 2.475397, y: 4.251941}
+  m_Direction: 0
+>>>>>>> 5fc69b9a16c2bfb65443ce495b3ea3253f7185e2
 --- !u!50 &5384447136729492758
 Rigidbody2D:
   serializedVersion: 5

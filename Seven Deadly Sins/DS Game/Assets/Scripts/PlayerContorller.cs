@@ -51,7 +51,7 @@ public class PlayerContorller : MonoBehaviour
         if (IsGrounded)
         {
             MortAnim.SetBool("IsJumped", true);
-            Rigidbody.velocity = Vector2.up * JumpForce;
+            Rigidbody.linearVelocity = Vector2.up * JumpForce;
         }
     }
 
@@ -66,7 +66,7 @@ public class PlayerContorller : MonoBehaviour
     {
         
         //Vectoring = Input.GetAxis("Horizontal");
-        Rigidbody.velocity = new Vector2(Vectoring * PlayerSpeed, Rigidbody.velocity.y);
+        Rigidbody.linearVelocity = new Vector2(Vectoring * PlayerSpeed, Rigidbody.linearVelocity.y);
         if(IsGrounded)
         {
             MortAnim.SetBool("IsJumped", false);
