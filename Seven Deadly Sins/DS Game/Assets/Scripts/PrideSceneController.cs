@@ -135,7 +135,7 @@ public class PrideSceneController : MonoBehaviour
     public void FinallDialog()
     {
        
-        SceneManager.LoadScene("StartScene", LoadSceneMode.Single);
+        SceneManager.LoadScene("DistributionScene", LoadSceneMode.Single);
     }
 
     public void Replay()
