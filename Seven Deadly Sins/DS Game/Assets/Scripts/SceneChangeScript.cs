@@ -8,7 +8,7 @@ public class SceneChangeScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+       // PlayerPrefs.DeleteAll();
     }
 
     // Update is called once per frame
@@ -16,6 +16,30 @@ public class SceneChangeScript : MonoBehaviour
     {
         
     }
+
+    public void ForDespondencySceneLoad()
+    {
+      
+        if (PlayerPrefs.HasKey("IsDespondencySceneDone"))
+        {
+            if (PlayerPrefs.GetInt("IsDespondencySceneDone") == 1)
+            {
+                StartCoroutine(ChangeSceneCoroutine(2, 1.5f));
+            }
+            else
+            {
+                StartCoroutine(ChangeSceneCoroutine(4, 1.5f));
+            }
+          
+        }
+        else
+        {
+            StartCoroutine(ChangeSceneCoroutine(4, 1.5f));
+        }
+       
+    }
+
+
     public void ChangeSceneWithDelay(int sceneNumber)
     {
         StartCoroutine(ChangeSceneCoroutine(sceneNumber, 1.5f));
