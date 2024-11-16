@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 131e043873bb5ec4e9b68b5e409bd905, type: 3}
+  m_Name: Fight3_2.2
+  m_EditorClassIdentifier: 
+  Question: "\u0414\u0430\u043D\u0442\u0435: \u041A\u0430\u043A \u0437\u043D\u0430\u0442\u044C,
+    \u043A\u0430\u043A \u0437\u043D\u0430\u0442\u044C! \u0421\u043C\u043E\u0442\u0440\u0438
+    \u043E\u043D \u0443\u0436\u0435 \u0433\u043E\u0442\u043E\u0432 \u0431\u0438\u0442\u044C
+    \u0442\u0435\u0431\u0435 \u043B\u0438\u0446\u043E..."
+  Answer1: 
+  Answer2: 
+  ReactToAnswer1: {fileID: 0}
+  ReactToAnswer2: {fileID: 0}

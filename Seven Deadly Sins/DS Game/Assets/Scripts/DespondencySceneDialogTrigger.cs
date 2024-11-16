@@ -31,7 +31,7 @@ public class DespondencySceneDialogTrigger : MonoBehaviour
     private IEnumerator ChangeSceneCoroutine(float delay)
     {
         yield return new WaitForSeconds(delay);
-        SceneManager.LoadScene("StartScene", LoadSceneMode.Single);
+        SceneManager.LoadScene("DistributionScene", LoadSceneMode.Single);
     }
 
     // Update is called once per frame

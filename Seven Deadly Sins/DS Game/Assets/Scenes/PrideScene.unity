@@ -523,7 +523,7 @@ PrefabInstance:
     - target: {fileID: 5061947775137162554, guid: 308ab9aab244fc945a2acb0bef5b9b56, type: 3}
       propertyPath: CurrentDialog
       value: 
-      objectReference: {fileID: 11400000, guid: ecd9b116cdbf7d34ea347e0bebb2925c, type: 2}
+      objectReference: {fileID: 11400000, guid: 057510605cceafc4ab1ef09813dc6b64, type: 2}
     - target: {fileID: 6539782475535651159, guid: 308ab9aab244fc945a2acb0bef5b9b56, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -3111,7 +3111,7 @@ PrefabInstance:
     - target: {fileID: 5061947775137162554, guid: 308ab9aab244fc945a2acb0bef5b9b56, type: 3}
       propertyPath: CurrentDialog
       value: 
-      objectReference: {fileID: 11400000, guid: ecd9b116cdbf7d34ea347e0bebb2925c, type: 2}
+      objectReference: {fileID: 11400000, guid: 0d701f09fcf65a145bc5814b52a36fde, type: 2}
     - target: {fileID: 6539782475535651159, guid: 308ab9aab244fc945a2acb0bef5b9b56, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
