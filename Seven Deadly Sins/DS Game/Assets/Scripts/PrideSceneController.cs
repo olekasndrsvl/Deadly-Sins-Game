@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class PrideSceneController : MonoBehaviour
 {
+    public GameObject SplashImage;
     public HitBox PlayerHitbox;
     public GameObject Enemy;
     public GameObject tips;
@@ -46,6 +47,13 @@ public class PrideSceneController : MonoBehaviour
         {
             PlayerPrefs.SetInt("EnemyDamage", Enemy.GetComponent<EnemyScript>().DamageAmount);
         }
+
+        if (dialognumber > 1)
+        {
+            SplashImage.SetActive(false);
+        }
+
+
     }
     public void FirstFight()
     {

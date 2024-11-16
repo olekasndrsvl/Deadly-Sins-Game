@@ -24,7 +24,7 @@ public class DespondencySceneDialogTrigger : MonoBehaviour
     public void OnOutButtonClicked()
     {
         StartCoroutine(ChangeSceneCoroutine(1.5f));
-        PlayerPrefs.SetInt("IsDespondencySceneDone", 2);
+        PlayerPrefs.SetInt("IsDespondencySceneDone", 1);
 
     }
 
