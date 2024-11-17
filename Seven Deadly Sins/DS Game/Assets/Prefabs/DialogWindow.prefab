@@ -675,6 +675,7 @@ MonoBehaviour:
   DialogAnswerButton2: {fileID: 3312101530251641086}
   CloseButton: {fileID: 5218277182983397770}
   CurrentDialog: {fileID: 0}
+  clickAudio: {fileID: 0}
 --- !u!1 &2890795482864877226
 GameObject:
   m_ObjectHideFlags: 0
