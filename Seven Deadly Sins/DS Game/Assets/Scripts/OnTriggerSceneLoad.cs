@@ -17,8 +17,8 @@ public class OnTriggerSceneLoad : MonoBehaviour
         switch (NumberOfLoadingScene)
         {
             case 3:
-                LevelDesciption.text = "Вы хотите перейти на уровень \"Уныние\"?";
-                CurrentSceneToLoad = "DespondencyScene";
+                LevelDesciption.text = "Вы хотите перейти на уровень \"Гнев\"?";
+                CurrentSceneToLoad = "WrathScene";
                 break;
             case 4:
 
