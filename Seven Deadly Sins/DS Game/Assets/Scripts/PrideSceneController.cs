@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class PrideSceneController : MonoBehaviour
 {
+    public GameObject SplashImage;
     public HitBox PlayerHitbox;
     public GameObject Enemy;
     public GameObject tips;
@@ -46,6 +47,13 @@ public class PrideSceneController : MonoBehaviour
         {
             PlayerPrefs.SetInt("EnemyDamage", Enemy.GetComponent<EnemyScript>().DamageAmount);
         }
+
+        if (dialognumber > 1)
+        {
+            SplashImage.SetActive(false);
+        }
+
+
     }
     public void FirstFight()
     {
@@ -97,8 +105,8 @@ public class PrideSceneController : MonoBehaviour
         if (dialog3 > 0)
         {
             tips.GetComponent<TMP_Text>().text = "“ы выбрал неверный путь, мой друг! “вое ненасытное желание побеждать всех и каждого сыграло с тобой злую шутку...";
-            Enemy.GetComponent<EnemyScript>().DamageAmount = 10110;
-            PlayerPrefs.SetInt("EnemyDamage", Enemy.GetComponent<EnemyScript>().DamageAmount);
+            Enemy.GetComponent<EnemyScript>().DamageAmount = 100;
+            //PlayerPrefs.SetInt("EnemyDamage", Enemy.GetComponent<EnemyScript>().DamageAmount);
             Enemy.GetComponent<EnemyScript>().HealthPoints = 100;
             PlayerHitbox.HealthPoints = 100;
             PlayerHitbox.gameObject.transform.parent.position = Vector3.zero;
@@ -127,7 +135,7 @@ public class PrideSceneController : MonoBehaviour
     public void FinallDialog()
     {
        
-        SceneManager.LoadScene("StartScene", LoadSceneMode.Single);
+        SceneManager.LoadScene("DistributionScene", LoadSceneMode.Single);
     }
 
     public void Replay()
