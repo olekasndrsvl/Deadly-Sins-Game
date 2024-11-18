@@ -1,50 +1,67 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using UnityEngine.UI;
+using TMPro;
 public class OnTriggerSceneLoad : MonoBehaviour
 {
+    public GameObject LevelChoice;
+    public TextMeshProUGUI LevelDesciption;
     public int NumberOfLoadingScene;
-
+    static string CurrentSceneToLoad;
     public void OnTriggerEnter2D(Collider2D other)
     {
+        LevelChoice.SetActive(true);
         switch (NumberOfLoadingScene)
         {
             case 3:
-                SceneManager.LoadScene("DespondencyScene", LoadSceneMode.Single);
+                LevelDesciption.text = "Вы хотите перейти на уровень \"Уныние\"?";
+                CurrentSceneToLoad = "DespondencyScene";
                 break;
             case 4:
-               
+
                 break;
             case 5:
-                SceneManager.LoadScene("WrathScene", LoadSceneMode.Single);
+                CurrentSceneToLoad = "WrathScene";
+                LevelDesciption.text = "Вы хотите перейти на уровень \"Гнев\"?";
                 break;
             case 6:
-                SceneManager.LoadScene("VanityScene", LoadSceneMode.Single);
+                CurrentSceneToLoad = "VanityScene";
+                LevelDesciption.text = "Вы хотите перейти на уровень \"Тщеславие\"?";
                 break;
             case 7:
-                SceneManager.LoadScene("PrideScene", LoadSceneMode.Single);
+                CurrentSceneToLoad = "PrideScene";
+                LevelDesciption.text = "Вы хотите перейти на уровень \"Гордыня\"?";
                 break;
             case 8:
-                SceneManager.LoadScene("BoastScene", LoadSceneMode.Single);
+                CurrentSceneToLoad = "BoastScene";
+                LevelDesciption.text = "Вы хотите перейти на уровень \"Хваставство\"?";
                 break;
             case 9:
-                SceneManager.LoadScene("EnvyScene", LoadSceneMode.Single);
+                CurrentSceneToLoad = "EnvyScene";
+                LevelDesciption.text = "Вы хотите перейти на уровень \"Зависть\"?";
                 break;
             case 10:
-                SceneManager.LoadScene("GreedScene", LoadSceneMode.Single);
+                CurrentSceneToLoad = "GreedScene";
+                LevelDesciption.text = "Вы хотите перейти на уровень \"Жадность\"?";
                 break;
             default:
-                SceneManager.LoadScene("OutroScene",LoadSceneMode.Single);
+                CurrentSceneToLoad = "OutroScene";
+                LevelDesciption.text = "Вы хотите перейти к финалу игры?";
                 break;
         }
 
-        
     }
-
-
-
+    public void OnConfirmButtonClicked()
+    {
+        SceneManager.LoadScene(CurrentSceneToLoad, LoadSceneMode.Single);
+    }
+    public void Disagreement()
+    {
+        LevelChoice.SetActive(false);
+    }
     // Start is called before the first frame update
     void Start()
     {
