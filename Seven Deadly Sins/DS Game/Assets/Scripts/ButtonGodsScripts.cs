@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ButtonGodScripts  : MonoBehaviour
-
+public class ButtonGodScripts : MonoBehaviour
 {
     public bool toggleValue;
+    public Text buttonText; 
 
     void Start()
     {
@@ -18,12 +18,19 @@ public class ButtonGodScripts  : MonoBehaviour
         {
             toggleValue = true;
         }
-
+        UpdateButtonText();
     }
+
     public void OnButtonClick()
     {
         toggleValue = !toggleValue;
         PlayerPrefs.SetInt("ToggleValue", toggleValue ? 1 : 0);
         PlayerPrefs.Save();
+        UpdateButtonText(); 
+    }
+
+    private void UpdateButtonText()
+    {
+        buttonText.text = toggleValue ? "Вкл" : "Выкл"; 
     }
 }
