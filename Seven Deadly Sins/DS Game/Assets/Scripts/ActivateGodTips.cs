@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ActivateGodTips : MonoBehaviour
 {
@@ -13,11 +14,12 @@ public class ActivateGodTips : MonoBehaviour
                 gameObject.SetActive(false);
             }
         }
-        
-
-        if(PlayerPrefs.HasKey("ToggleValue"))
+       
+        if(PlayerPrefs.HasKey("IsGodModeEnabled"))
         {
-            if (PlayerPrefs.GetInt("ToggleValue") == 0)
+
+            Debug.Log(PlayerPrefs.GetInt("IsGodModeEnabled"));
+            if (PlayerPrefs.GetInt("IsGodModeEnabled") == 0)
             {
                 gameObject.SetActive(false);          
             }
@@ -27,8 +29,11 @@ public class ActivateGodTips : MonoBehaviour
             gameObject.SetActive(false);
         }
 
-
-        PlayerPrefs.SetInt("IsPrideSceneTipDisplayed", 1);
+        if(SceneManager.GetActiveScene().name == "PrideScene") 
+        { 
+            PlayerPrefs.SetInt("IsPrideSceneTipDisplayed", 1); 
+        }
+       
     }
 
     // Update is called once per frame

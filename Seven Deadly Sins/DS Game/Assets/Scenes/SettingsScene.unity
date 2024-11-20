@@ -432,6 +432,7 @@ GameObject:
   - component: {fileID: 330252053}
   - component: {fileID: 330252056}
   - component: {fileID: 330252055}
+  - component: {fileID: 330252057}
   m_Layer: 5
   m_Name: Settings
   m_TagString: Untagged
@@ -611,6 +612,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &330252057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330252051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92bac53b7d8dff647b05709a7403f0ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsGodModeEnabled: 0
+  buttonText: {fileID: 721357351}
+  volumeSlider: {fileID: 1382648988}
+  BackGroundAudio: {fileID: 69894568}
 --- !u!1 &540177239
 GameObject:
   m_ObjectHideFlags: 0
@@ -1353,8 +1370,6 @@ GameObject:
   - component: {fileID: 1308752382}
   - component: {fileID: 1308752381}
   - component: {fileID: 1308752380}
-  - component: {fileID: 1308752379}
-  - component: {fileID: 1308752378}
   m_Layer: 5
   m_Name: BackButton
   m_TagString: Untagged
@@ -1382,33 +1397,6 @@ RectTransform:
   m_AnchoredPosition: {x: 981, y: 151}
   m_SizeDelta: {x: 98.026, y: 37.8985}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1308752378
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1308752376}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3dd33819b7d84954f81e7351a91b5d94, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1308752379
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1308752376}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e741851cba3ad425c91ecf922cc6b379, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _data:
-    _json: '{"declarations":{"Kind":"Object","collection":{"$content":[],"$version":"A"},"$version":"A"}}'
-    _objectReferences: []
 --- !u!114 &1308752380
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1453,10 +1441,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1308752378}
-        m_TargetAssemblyTypeName: SettingSceneChange, Assembly-CSharp
-        m_MethodName: ChangeSceneWithDelay
-        m_Mode: 3
+      - m_Target: {fileID: 330252057}
+        m_TargetAssemblyTypeName: SettingsController, Assembly-CSharp
+        m_MethodName: OnBackButtonClicked
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1513,7 +1501,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1382648987}
   - component: {fileID: 1382648988}
-  - component: {fileID: 1382648989}
   m_Layer: 5
   m_Name: SliderSounds
   m_TagString: Untagged
@@ -1595,8 +1582,8 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1382648989}
-        m_TargetAssemblyTypeName: slider, Assembly-CSharp
+      - m_Target: {fileID: 330252057}
+        m_TargetAssemblyTypeName: SettingsController, Assembly-CSharp
         m_MethodName: ChangeVolume
         m_Mode: 1
         m_Arguments:
@@ -1607,20 +1594,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
---- !u!114 &1382648989
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1382648986}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a5a3c44cf466fd49b804d146a05b9c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  volumeSlider: {fileID: 1382648988}
-  Audio: {fileID: 69894568}
 --- !u!1 &1496642125
 GameObject:
   m_ObjectHideFlags: 0
@@ -1633,8 +1606,6 @@ GameObject:
   - component: {fileID: 1496642129}
   - component: {fileID: 1496642128}
   - component: {fileID: 1496642127}
-  - component: {fileID: 1496642130}
-  - component: {fileID: 1496642131}
   m_Layer: 5
   m_Name: ButtonSave
   m_TagString: Untagged
@@ -1706,10 +1677,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1496642131}
-        m_TargetAssemblyTypeName: SettingSceneChange, Assembly-CSharp
-        m_MethodName: ChangeSceneWithDelay
-        m_Mode: 3
+      - m_Target: {fileID: 330252057}
+        m_TargetAssemblyTypeName: SettingsController, Assembly-CSharp
+        m_MethodName: OnSaveButtonClicked
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1756,33 +1727,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1496642125}
   m_CullTransparentMesh: 1
---- !u!114 &1496642130
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1496642125}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e741851cba3ad425c91ecf922cc6b379, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _data:
-    _json: '{"declarations":{"Kind":"Object","collection":{"$content":[],"$version":"A"},"$version":"A"}}'
-    _objectReferences: []
---- !u!114 &1496642131
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1496642125}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3dd33819b7d84954f81e7351a91b5d94, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1523047800
 GameObject:
   m_ObjectHideFlags: 0
@@ -1795,7 +1739,6 @@ GameObject:
   - component: {fileID: 1523047804}
   - component: {fileID: 1523047803}
   - component: {fileID: 1523047802}
-  - component: {fileID: 1523047805}
   m_Layer: 5
   m_Name: ButtonGods
   m_TagString: Untagged
@@ -1868,9 +1811,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1523047805}
-        m_TargetAssemblyTypeName: GodScripts, Assembly-CSharp
-        m_MethodName: OnButtonClick
+      - m_Target: {fileID: 330252057}
+        m_TargetAssemblyTypeName: SettingsController, Assembly-CSharp
+        m_MethodName: OnGodButtonClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1918,20 +1861,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1523047800}
   m_CullTransparentMesh: 1
---- !u!114 &1523047805
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1523047800}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f098c48d2454e884ea750131338401f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  toggleValue: 1
-  buttonText: {fileID: 721357351}
 --- !u!1 &1562103308
 GameObject:
   m_ObjectHideFlags: 0
@@ -2277,7 +2206,6 @@ GameObject:
   - component: {fileID: 1836874184}
   - component: {fileID: 1836874183}
   - component: {fileID: 1836874182}
-  - component: {fileID: 1836874185}
   m_Layer: 5
   m_Name: ResetProgress
   m_TagString: Untagged
@@ -2349,9 +2277,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1836874185}
-        m_TargetAssemblyTypeName: ResetGameProgress, Assembly-CSharp
-        m_MethodName: ResetGame
+      - m_Target: {fileID: 330252057}
+        m_TargetAssemblyTypeName: SettingsController, Assembly-CSharp
+        m_MethodName: OnResetButtonClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2399,18 +2327,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1836874180}
   m_CullTransparentMesh: 1
---- !u!114 &1836874185
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1836874180}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c399f0749de64c45a05884a03dd8a1e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2109518044
 GameObject:
   m_ObjectHideFlags: 0
