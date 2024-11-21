@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class SettingsController : MonoBehaviour
 {
-
+    public GameObject LoadingScreen;
     public bool IsGodModeEnabled = false;
     public Text buttonText;
 
@@ -62,6 +62,7 @@ public class SettingsController : MonoBehaviour
     }
     public void ChangeSceneWithDelay(int sceneNumber)
     {
+        LoadingScreen.SetActive(true);
         StartCoroutine(ChangeSceneCoroutine(sceneNumber, 1.5f));
     }
 
