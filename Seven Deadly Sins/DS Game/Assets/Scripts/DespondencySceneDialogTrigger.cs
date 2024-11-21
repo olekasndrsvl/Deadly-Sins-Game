@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class DespondencySceneDialogTrigger : MonoBehaviour
 {
+    public GameObject LoadingScreen;
     public GameObject DialogWindow;
     //public GameObject ButtonExit;
     // Start is called before the first frame update
@@ -23,6 +24,7 @@ public class DespondencySceneDialogTrigger : MonoBehaviour
     }
     public void OnOutButtonClicked()
     {
+        LoadingScreen.SetActive(true);
         StartCoroutine(ChangeSceneCoroutine(1.5f));
         PlayerPrefs.SetInt("IsDespondencySceneDone", 1);
 

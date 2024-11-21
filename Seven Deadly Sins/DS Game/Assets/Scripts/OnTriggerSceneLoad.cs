@@ -7,6 +7,7 @@ using UnityEngine.UI;
 using TMPro;
 public class OnTriggerSceneLoad : MonoBehaviour
 {
+    public GameObject LoadingScreen;
     public GameObject LevelChoice;
     public TextMeshProUGUI LevelDesciption;
     public int NumberOfLoadingScene;
@@ -56,6 +57,7 @@ public class OnTriggerSceneLoad : MonoBehaviour
     }
     public void OnConfirmButtonClicked()
     {
+        LoadingScreen.SetActive(true);
         SceneManager.LoadScene(CurrentSceneToLoad, LoadSceneMode.Single);
     }
     public void Disagreement()

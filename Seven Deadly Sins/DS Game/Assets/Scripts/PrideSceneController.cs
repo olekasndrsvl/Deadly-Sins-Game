@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class PrideSceneController : MonoBehaviour
 {
+    public GameObject LoadingScreen;
     public GameObject SplashImage;
     public HitBox PlayerHitbox;
     public GameObject Enemy;
@@ -134,7 +135,7 @@ public class PrideSceneController : MonoBehaviour
 
     public void FinallDialog()
     {
-       
+        LoadingScreen.SetActive(true);
         SceneManager.LoadScene("DistributionScene", LoadSceneMode.Single);
     }
 
