@@ -14,7 +14,12 @@ public class EnemyScript : MonoBehaviour
     bool IsAtacking = false;
    
     int Rage = 4;
-    
+
+    public AudioClip[] HitSounds;
+    private AudioSource audioSource;
+
+    private int lastSoundIndex = -1;
+
     private void OnTriggerStay2D(Collider2D collision)
     {
        
@@ -31,19 +36,32 @@ public class EnemyScript : MonoBehaviour
         }
      
     }
+    private void PlayRandomHitSound()
+    {
+        if (HitSounds.Length > 0 && audioSource != null)
+        {
+            int newSoundIndex;
+            do
+            {
+                newSoundIndex = Random.Range(0, HitSounds.Length);
+            } while (newSoundIndex == lastSoundIndex && HitSounds.Length > 1);
 
+            lastSoundIndex = newSoundIndex;
+            audioSource.PlayOneShot(HitSounds[newSoundIndex]);
+        }
+    }
     IEnumerator Atack(Collider2D collision)
     {
-        IsAtacking= true;
+        IsAtacking = true;
         int i = Random.Range(0, 2); 
         if (i == 1)
-        { 
+        {
+            PlayRandomHitSound();
             collision.gameObject.transform.Find("HitBox").GetComponent<HitBox>().HealthPoints -= DamageAmount;
             collision.gameObject.GetComponent<Rigidbody2D>().linearVelocityY = Rage*2;
             collision.gameObject.GetComponent<Rigidbody2D>().linearVelocityX = -Rage;
-
         }
-       
+
         yield return new WaitForSeconds(1f);
         IsAtacking = false;
     }
@@ -57,7 +75,13 @@ public class EnemyScript : MonoBehaviour
         
         RgEnemy = EnemyBody.GetComponent<Rigidbody2D>();
         HealthPoints = 100;
-      
+
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            Debug.LogError("AudioSource не найден на объекте врага!");
+        }
+
     }
     public float speed = 2f; // Скорость движения NPC
     public float rightLimit = 15f; // Правая граница
