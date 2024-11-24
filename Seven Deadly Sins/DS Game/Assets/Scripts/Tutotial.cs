@@ -9,16 +9,19 @@ public class Tutotial : MonoBehaviour
     public string phrase;
     private Coroutine tutorialCoroutine;
     public TipConrtrollerScript tips;
+    public string key;
+    public bool dante;
     private void Awake()
     {
-        if (PlayerPrefs.GetInt("FirstLaunch") == 1)
+        if (PlayerPrefs.GetInt(key) == 1)
         {
             gameObject.SetActive(false);
-            TipConrtrollerScript.TipsTextMessage = phrase;
+            
+            if(dante) TipConrtrollerScript.TipsTextMessage = phrase;
         }
         else
         {
-            PlayerPrefs.SetInt("FirstLaunch", 1);
+            PlayerPrefs.SetInt(key, 1);
         }
     }
 

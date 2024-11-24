@@ -2863,6 +2863,8 @@ MonoBehaviour:
     \u0438\u0441\u043A\u0443\u043F\u0438\u0442\u044C \u0432\u0441\u0435 \u043F\u0440\u043E\u0448\u043B\u044B\u0435
     \u0433\u0440\u0435\u0445\u0438!"
   tips: {fileID: 896945184}
+  key: DespondencyLevelTutorial
+  dante: 1
 --- !u!1 &832763313
 GameObject:
   m_ObjectHideFlags: 0
@@ -7020,11 +7022,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4616803271815823463, guid: e92374d8739b5bd4d850c1cbe8849d54, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -17.461521
+      value: -17.471256
       objectReference: {fileID: 0}
     - target: {fileID: 4616803271815823463, guid: e92374d8739b5bd4d850c1cbe8849d54, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.113190114
+      value: -0.11320001
       objectReference: {fileID: 0}
     - target: {fileID: 4616803271815823463, guid: e92374d8739b5bd4d850c1cbe8849d54, type: 3}
       propertyPath: m_LocalRotation.w
