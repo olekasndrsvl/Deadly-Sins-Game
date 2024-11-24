@@ -57,7 +57,7 @@ public class SettingsController : MonoBehaviour
       
         PlayerPrefs.SetFloat("VolumeLevel", BackGroundAudio.volume);
         PlayerPrefs.Save();
-        ChangeSceneWithDelay(1);
+        ChangeSceneWithDelay(PlayerPrefs.GetInt("LastScene", 1));
 
     }
     public void ChangeSceneWithDelay(int sceneNumber)
