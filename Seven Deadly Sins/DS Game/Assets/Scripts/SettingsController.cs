@@ -48,7 +48,7 @@ public class SettingsController : MonoBehaviour
 
     public void OnBackButtonClicked()
     {
-        ChangeSceneWithDelay(1);
+        ChangeSceneWithDelay(PlayerPrefs.GetInt("LastScene",1));
     }
 
     public void OnSaveButtonClicked()
