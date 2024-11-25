@@ -8,13 +8,17 @@ public class PauseMenu : MonoBehaviour
     public GameObject preview;
     private void Start()
     {
-        if (PlayerPrefs.GetInt("LastScene") == SceneManager.GetActiveScene().buildIndex)
+        if (PlayerPrefs.GetInt("LastScene") == SceneManager.GetActiveScene().buildIndex && PlayerPrefs.GetInt("IsItRespawn",0)==0)
         {
             if (preview!=null)
             preview.SetActive(false);
             
             Pause();
             menu.SetActive(true);
+        }
+        else
+        {
+            PlayerPrefs.SetInt("IsItRespawn", 0);
         }
     }
 
