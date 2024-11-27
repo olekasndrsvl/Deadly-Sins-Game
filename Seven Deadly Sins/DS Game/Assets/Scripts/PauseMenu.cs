@@ -6,17 +6,6 @@ public class PauseMenu : MonoBehaviour
 {
     public GameObject menu;
     public GameObject preview;
-    private void Start()
-    {
-        if (PlayerPrefs.GetInt("LastScene") == SceneManager.GetActiveScene().buildIndex)
-        {
-            if (preview!=null)
-            preview.SetActive(false);
-            
-            Pause();
-            menu.SetActive(true);
-        }
-    }
 
     public void Pause()
     {
