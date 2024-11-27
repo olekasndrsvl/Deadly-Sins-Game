@@ -5,7 +5,6 @@ using UnityEngine;
 [CreateAssetMenu]
 public class TypeDialogData : ScriptableObject
 {
-
     public string Question;
     public string Answer1;
     public string Answer2;
