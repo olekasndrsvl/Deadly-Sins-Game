@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class VolumeControllerOnScene : MonoBehaviour
@@ -5,7 +6,6 @@ public class VolumeControllerOnScene : MonoBehaviour
 
     public AudioSource BackGroundAudio;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         if (PlayerPrefs.HasKey("VolumeLevel"))
@@ -24,5 +24,21 @@ public class VolumeControllerOnScene : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private void OnEnable()
+    {
+        SettingsController.onVolumeChanged += UpdateVolume;
+    }
+
+    private void OnDisable()
+    {
+        SettingsController.onVolumeChanged -= UpdateVolume;
+    }
+
+    void UpdateVolume()
+    {
+        float savedVolume = PlayerPrefs.GetFloat("VolumeLevel");
+        BackGroundAudio.volume = savedVolume;
     }
 }
