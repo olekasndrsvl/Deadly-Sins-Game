@@ -1,2 +1,15 @@
 fileFormatVersion: 2
 guid: c97d3f2394928494489571b904aad63f
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - GreedDialog: {fileID: 2844452412511585206, guid: 308ab9aab244fc945a2acb0bef5b9b56, type: 3}
+  - LoadingScreen: {instanceID: 0}
+  - WinningDialog: {instanceID: 0}
+  - LosingDialog: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

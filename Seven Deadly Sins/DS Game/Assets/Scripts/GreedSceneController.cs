@@ -3,28 +3,41 @@ using UnityEngine.SceneManagement;
 
 public class GreedSceneController : MonoBehaviour
 {
-    public GameObject DialogWindow;
+    public GameObject GreedDialog;
     public GameObject LoadingScreen;
-    public void OnEndOfDanteDialog()
+    public GameObject WinningDialog;
+    public GameObject LosingDialog;
+
+    int winningThreshold = 3;
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
+        GreedDialog.SetActive(true);
+    }
+    public void EndOfGreed()
+    {
+        GreedDialog.SetActive(false);
+        if (GreedDialog.GetComponent<Dialog>().DialogResult >= winningThreshold)
+        {
+            WinningDialog.SetActive(true);
+        }
+        else
+        {
+            LosingDialog.SetActive(true);
+        }
+    }
+    public void OnEndButtonClicked()
+    {
+        WinningDialog.SetActive(false);
         LoadingScreen.SetActive(true);
         SceneManager.LoadScene("DistributionScene", LoadSceneMode.Single);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void RestartOnLose()
     {
-        DialogWindow.SetActive(true);
-    }
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        PlayerPrefs.Save();
+        LosingDialog.SetActive(false);
+        LoadingScreen.SetActive(true);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
