@@ -49,7 +49,8 @@ public class PersonInQueue:MonoBehaviour
 
                 PlayStepSound();
             }
-                yield return new WaitForSeconds(10f);
+            Debug.Log(IsPaused);
+            yield return new WaitForSeconds(10f);
             
        }
         
