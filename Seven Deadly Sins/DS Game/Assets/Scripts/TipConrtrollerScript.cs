@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using TMPro;
 using UnityEngine;
 
@@ -67,12 +68,28 @@ public class TipConrtrollerScript : MonoBehaviour
         DantesFaceAnimator.SetBool("DanteIsTalking", false);
     }
    
+
+    IEnumerator SpellTip(string tip)
+    {
+        var sb = new StringBuilder();
+        for (int i = 0; i < tip.Length-1; i++)
+        {
+            sb.Append(tip[i]);
+            TipsText.GetComponent<TMP_Text>().text = sb.ToString();
+            yield return new WaitForSeconds(.05f);
+        }
+
+    }
+
     // Update is called once per frame
     void Update()
     {
         if(IsNewTextAdded)
         {
-            TipsOpen();
+            OnTipsClicked();
+            IsNewTextAdded = false;
+            StartCoroutine(SpellTip(TipsTextMessage));
+           
         }
     }
 }
