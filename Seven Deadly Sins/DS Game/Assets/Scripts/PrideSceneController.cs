@@ -142,6 +142,7 @@ public class PrideSceneController : MonoBehaviour
     public void Replay()
     {
         PlayerPrefs.Save();
+        PlayerPrefs.SetInt("IsItRespawn", 1);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         
     }

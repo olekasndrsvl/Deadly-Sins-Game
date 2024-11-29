@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 131e043873bb5ec4e9b68b5e409bd905, type: 3}
+  m_Name: SecondObj 1.1
+  m_EditorClassIdentifier: 
+  Question: "\u0414\u0435\u043C\u043E\u043D:\u0427\u0442\u043E \u0432\u0430\u043C
+    \u043D\u0443\u0436\u043D\u043E,\u0443\u0432\u0430\u0436\u0430\u0435\u043C\u044B\u0439?"
+  Answer1: "-\u041D\u0435 \u043C\u043E\u0433\u043B\u0438 \u0431\u044B \u0432\u044B
+    \u043C\u0435\u043D\u044F \u043F\u0440\u043E\u043F\u0443\u0441\u0442\u0438\u0442\u044C?"
+  Answer2: "-\u041F\u0440\u043E\u043F\u0443\u0441\u0442\u0438 \u043C\u0435\u043D\u044F
+    , \u0441\u043B\u0438\u0437\u044C!"
+  ReactToAnswer1: {fileID: 11400000, guid: 682184ca9897be747a1fe0ffeb666b8e, type: 2}
+  ReactToAnswer2: {fileID: 11400000, guid: 59f264e352668fe45bdc3f4088ed530f, type: 2}

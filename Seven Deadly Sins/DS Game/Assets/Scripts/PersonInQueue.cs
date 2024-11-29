@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class PersonInQueue:MonoBehaviour
 {
+    public bool IsPaused = false;
     Rigidbody2D person;
     public Animator animator;
     private AudioSource audioSource;
@@ -17,37 +18,42 @@ public class PersonInQueue:MonoBehaviour
             audioSource = queueSoundObject.GetComponent<AudioSource>();
             if (audioSource == null)
             {
-                Debug.LogError("На объекте QueueSound нет компонента AudioSource!");
+                //Debug.LogError("На объекте QueueSound нет компонента AudioSource!");
             }
         }
         else
         {
-            Debug.LogError("Объект QueueSound не найден в сцене!");
+           // Debug.LogError("Объект QueueSound не найден в сцене!");
         }
 
         StartCoroutine(movement());
     }
     IEnumerator movement()
     {
-        while (true)
-        {
-            if(animator!=null)
+       
+       while (true)
+       {
+            if (!IsPaused)
             {
-                animator.SetBool("IsWalking", true);
-            }
-           
-            person.linearVelocity = new Vector2(4,0);
-            yield return new WaitForSeconds(.5f);
-            if (animator != null)
-            {
-                animator.SetBool("IsWalking", false);
-            }
+                if (animator != null)
+                {
+                    animator.SetBool("IsWalking", true);
+                }
 
-            PlayStepSound();
+                person.linearVelocity = new Vector2(4, 0);
+                yield return new WaitForSeconds(.5f);
+                if (animator != null)
+                {
+                    animator.SetBool("IsWalking", false);
+                }
+
+                PlayStepSound();
+            }
+            Debug.Log(IsPaused);
+            yield return new WaitForSeconds(10f);
             
-            yield return new WaitForSeconds(5f);
-            
-        }
+       }
+        
     }
     private void PlayStepSound()
     {

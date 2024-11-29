@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System;
 public class SettingsController : MonoBehaviour
 {
     public GameObject LoadingScreen;
@@ -10,6 +11,9 @@ public class SettingsController : MonoBehaviour
 
     public Slider volumeSlider;
     public AudioSource BackGroundAudio;
+    public AudioSource OtherAudio;
+
+    public static event System.Action onVolumeChanged;
 
     void Start()
     {
@@ -48,16 +52,17 @@ public class SettingsController : MonoBehaviour
 
     public void OnBackButtonClicked()
     {
-        ChangeSceneWithDelay(1);
+        gameObject.SetActive(false);
     }
 
     public void OnSaveButtonClicked()
     {
         PlayerPrefs.SetInt("IsGodModeEnabled",  IsGodModeEnabled ? 1 : 0);
-      
+        
         PlayerPrefs.SetFloat("VolumeLevel", BackGroundAudio.volume);
+        onVolumeChanged.Invoke();
         PlayerPrefs.Save();
-        ChangeSceneWithDelay(1);
+        gameObject.SetActive(false);
 
     }
     public void ChangeSceneWithDelay(int sceneNumber)
@@ -70,5 +75,17 @@ public class SettingsController : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         SceneManager.LoadScene(sceneNumber, LoadSceneMode.Single);
+    }
+
+    private void OnDisable()
+    {
+        BackGroundAudio.Pause();
+        OtherAudio.Play();
+    }
+    private void OnEnable()
+    {
+        volumeSlider.value = PlayerPrefs.GetFloat("VolumeLevel");
+        BackGroundAudio.Play();
+        OtherAudio.Pause();
     }
 }
