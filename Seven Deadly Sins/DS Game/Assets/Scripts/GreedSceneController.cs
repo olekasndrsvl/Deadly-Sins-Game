@@ -7,14 +7,22 @@ public class GreedSceneController : MonoBehaviour
     public GameObject LoadingScreen;
     public GameObject WinningDialog;
     public GameObject LosingDialog;
-
+    public GameObject LevelPreview;
     int winningThreshold = 3;
 
     private void Start()
     {
+        if (PlayerPrefs.GetInt("ISGreedPreviewDisplayed", 0) == 1)
+        {
+            LevelPreview.SetActive(false);
+        }
+
+        PlayerPrefs.SetInt("ISGreedPreviewDisplayed", 1);
+        
+
         TipConrtrollerScript.TipsTextMessage = "Пришло время поговорить в с глазу на глаз со своей жадонстью, Морт!";
         TipConrtrollerScript.IsNewTextAdded = true;
-}
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

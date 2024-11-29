@@ -124,22 +124,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2844452412511585206, guid: 308ab9aab244fc945a2acb0bef5b9b56, type: 3}
   m_PrefabInstance: {fileID: 1574282216}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &9824624
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9824623}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c97d3f2394928494489571b904aad63f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GreedDialog: {fileID: 9824623}
-  LoadingScreen: {fileID: 6402481875748329231}
-  WinningDialog: {fileID: 254956784}
-  LosingDialog: {fileID: 1076232524}
 --- !u!224 &9824626 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1645951935141868539, guid: 308ab9aab244fc945a2acb0bef5b9b56, type: 3}
@@ -804,22 +788,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1fae87b585e55244bdc003159e92cdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &254956787
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 254956784}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c97d3f2394928494489571b904aad63f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GreedDialog: {fileID: 9824623}
-  LoadingScreen: {fileID: 6402481875748329231}
-  WinningDialog: {fileID: 254956784}
-  LosingDialog: {fileID: 1076232524}
 --- !u!1 &375600105
 GameObject:
   m_ObjectHideFlags: 0
@@ -1341,27 +1309,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23c662cb34ed2674888ec5075c930589, type: 3}
---- !u!1 &846907762 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5218277182983397770, guid: 308ab9aab244fc945a2acb0bef5b9b56, type: 3}
-  m_PrefabInstance: {fileID: 1392451835}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &846907764
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 846907762}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c97d3f2394928494489571b904aad63f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GreedDialog: {fileID: 9824623}
-  LoadingScreen: {fileID: 6402481875748329231}
-  WinningDialog: {fileID: 254956784}
-  LosingDialog: {fileID: 1076232524}
 --- !u!1001 &894959621
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1786,22 +1733,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1fae87b585e55244bdc003159e92cdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1076232527
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1076232524}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c97d3f2394928494489571b904aad63f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GreedDialog: {fileID: 9824623}
-  LoadingScreen: {fileID: 6402481875748329231}
-  WinningDialog: {fileID: 254956784}
-  LosingDialog: {fileID: 1076232524}
 --- !u!1001 &1117997731
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2396,7 +2327,7 @@ PrefabInstance:
     - target: {fileID: 8551595334810311459, guid: 308ab9aab244fc945a2acb0bef5b9b56, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 254956787}
+      objectReference: {fileID: 2050967312}
     - target: {fileID: 8551595334810311459, guid: 308ab9aab244fc945a2acb0bef5b9b56, type: 3}
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -2428,13 +2359,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2844452412511585206, guid: 308ab9aab244fc945a2acb0bef5b9b56, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 254956787}
-    - targetCorrespondingSourceObject: {fileID: 5218277182983397770, guid: 308ab9aab244fc945a2acb0bef5b9b56, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 846907764}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 308ab9aab244fc945a2acb0bef5b9b56, type: 3}
 --- !u!224 &1429934992 stripped
 RectTransform:
@@ -2713,7 +2638,7 @@ PrefabInstance:
     - target: {fileID: 8551595334810311459, guid: 308ab9aab244fc945a2acb0bef5b9b56, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1076232527}
+      objectReference: {fileID: 2050967312}
     - target: {fileID: 8551595334810311459, guid: 308ab9aab244fc945a2acb0bef5b9b56, type: 3}
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -2745,10 +2670,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2844452412511585206, guid: 308ab9aab244fc945a2acb0bef5b9b56, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1076232527}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 308ab9aab244fc945a2acb0bef5b9b56, type: 3}
 --- !u!1001 &1574282216
 PrefabInstance:
@@ -3057,7 +2979,7 @@ PrefabInstance:
     - target: {fileID: 8551595334810311459, guid: 308ab9aab244fc945a2acb0bef5b9b56, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 9824624}
+      objectReference: {fileID: 2050967312}
     - target: {fileID: 8551595334810311459, guid: 308ab9aab244fc945a2acb0bef5b9b56, type: 3}
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -3089,10 +3011,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2844452412511585206, guid: 308ab9aab244fc945a2acb0bef5b9b56, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 9824624}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 308ab9aab244fc945a2acb0bef5b9b56, type: 3}
 --- !u!1 &1589373280
 GameObject:
@@ -4127,6 +4046,7 @@ MonoBehaviour:
   LoadingScreen: {fileID: 6402481875748329231}
   WinningDialog: {fileID: 254956784}
   LosingDialog: {fileID: 1076232524}
+  LevelPreview: {fileID: 680702835}
 --- !u!224 &2094732693 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 385578356748651640, guid: aecbfb1e2e8452d4a9aedf5e673887c5, type: 3}
