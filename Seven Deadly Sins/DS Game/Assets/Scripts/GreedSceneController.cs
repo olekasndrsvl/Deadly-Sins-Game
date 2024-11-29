@@ -10,6 +10,12 @@ public class GreedSceneController : MonoBehaviour
 
     int winningThreshold = 3;
 
+    private void Start()
+    {
+        TipConrtrollerScript.TipsTextMessage = "Пришло время поговорить в с глазу на глаз со своей жадонстью, Морт!";
+        TipConrtrollerScript.IsNewTextAdded = true;
+}
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         GreedDialog.SetActive(true);
