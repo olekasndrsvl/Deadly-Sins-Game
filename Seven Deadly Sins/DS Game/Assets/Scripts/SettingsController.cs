@@ -13,7 +13,7 @@ public class SettingsController : MonoBehaviour
     public AudioSource BackGroundAudio;
     public AudioSource OtherAudio;
 
-    public static event System.Action onVolumeChanged;
+    public static event Action onVolumeChanged;
 
     void Start()
     {
@@ -60,7 +60,7 @@ public class SettingsController : MonoBehaviour
         PlayerPrefs.SetInt("IsGodModeEnabled",  IsGodModeEnabled ? 1 : 0);
         
         PlayerPrefs.SetFloat("VolumeLevel", BackGroundAudio.volume);
-        onVolumeChanged.Invoke();
+        onVolumeChanged?.Invoke();
         PlayerPrefs.Save();
         gameObject.SetActive(false);
 
