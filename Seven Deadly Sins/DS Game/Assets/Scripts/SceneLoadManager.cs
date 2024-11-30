@@ -13,18 +13,15 @@ public class SceneLoadManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
-        if (PlayerPrefs.HasKey("IsFirstlyLoaded"))
+        Debug.Log(PlayerPrefs.GetInt("IsFirstlyLoaded", 1));
+
+        if (PlayerPrefs.GetInt("IsIntroFirstlyLoaded",1)==0)
         {
             director.Pause();
             Logo.SetActive(true);
         
         }
-        else
-        {
-            PlayerPrefs.SetInt("IsFirstlyLoaded", 0);
-            PlayerPrefs.Save();
-        }
+        PlayerPrefs.SetInt("IsIntroFirstlyLoaded", 0);
 
     }
 

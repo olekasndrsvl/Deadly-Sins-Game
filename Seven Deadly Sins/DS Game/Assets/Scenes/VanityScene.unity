@@ -119,7 +119,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &1082586218
+--- !u!1001 &1048083628
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -197,7 +197,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7650242346587124795, guid: 69ecc72201703ac4e9970888cb4310a8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 86
       objectReference: {fileID: 0}
     - target: {fileID: 7650242346587124795, guid: 69ecc72201703ac4e9970888cb4310a8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -214,33 +214,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4368199655809741503, guid: 69ecc72201703ac4e9970888cb4310a8, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1082586221}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69ecc72201703ac4e9970888cb4310a8, type: 3}
---- !u!224 &1082586219 stripped
+--- !u!224 &1048083629 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7650242346587124795, guid: 69ecc72201703ac4e9970888cb4310a8, type: 3}
-  m_PrefabInstance: {fileID: 1082586218}
+  m_PrefabInstance: {fileID: 1048083628}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1082586220 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4368199655809741503, guid: 69ecc72201703ac4e9970888cb4310a8, type: 3}
-  m_PrefabInstance: {fileID: 1082586218}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1082586221
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1082586220}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e23520076b0889f449b7e4771b40a1c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1532200491
 GameObject:
   m_ObjectHideFlags: 0
@@ -427,7 +407,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1082586219}
+  - {fileID: 1048083629}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}

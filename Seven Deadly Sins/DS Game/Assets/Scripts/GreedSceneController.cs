@@ -20,7 +20,7 @@ public class GreedSceneController : MonoBehaviour
         PlayerPrefs.SetInt("ISGreedPreviewDisplayed", 1);
         
 
-        TipConrtrollerScript.TipsTextMessage = "Пришло время поговорить в с глазу на глаз со своей жадонстью, Морт!";
+        TipConrtrollerScript.TipsTextMessage = "Пришло время поговорить в с глазу на глаз со своей жадностью, Морт!";
         TipConrtrollerScript.IsNewTextAdded = true;
     }
 
