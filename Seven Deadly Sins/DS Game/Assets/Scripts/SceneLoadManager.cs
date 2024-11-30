@@ -22,7 +22,7 @@ public class SceneLoadManager : MonoBehaviour
         
         }
         PlayerPrefs.SetInt("IsIntroFirstlyLoaded", 0);
-
+        PlayerPrefs.Save();
     }
 
     // Update is called once per frame
