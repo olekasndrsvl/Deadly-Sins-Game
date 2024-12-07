@@ -24,7 +24,7 @@ public class Dialog : MonoBehaviour
     GameObject DialogAnswer1;
     GameObject DialogAnswer2;
     public GameObject CloseButton;
-    //Переменная для отслеживания развилки диалога
+    //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     public TypeDialogData CurrentDialog;
 
     public AudioSource clickAudio;
@@ -40,7 +40,7 @@ public class Dialog : MonoBehaviour
 
         DialogQuestion.GetComponent<TMP_Text>().text = "";
      
-        //Установка стартового диалога
+        //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         //CurrentDialog = p1;
         RunningCoroutine = SpellPhrase(CurrentDialog.Question);
         StartCoroutine(RunningCoroutine);
@@ -63,11 +63,13 @@ public class Dialog : MonoBehaviour
 
     }
 
-    // печать по-буквенно
+    // пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ-пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     IEnumerator SpellPhrase(string s)
     {
         Cleaner();
         IsPrintingPhrase = true;
+        DialogAnswerButton1.SetActive((false));
+        DialogAnswerButton2.SetActive((false));
         var sb = new StringBuilder(DialogQuestion.GetComponent<TMP_Text>().text);
         foreach(var x in s+'\n')
         {
@@ -76,6 +78,13 @@ public class Dialog : MonoBehaviour
             yield return new WaitForSeconds(.01f);
         }
         IsPrintingPhrase = false;
+        if (!CloseButton.activeSelf)
+        {
+            DialogAnswerButton1.SetActive((true));
+            DialogAnswerButton2.SetActive((true));
+        }
+        
+        
     }
 
     private void PlayButtonClickSound()
@@ -207,6 +216,7 @@ public class Dialog : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         
     }
 
