@@ -9,7 +9,7 @@ public class HitBox : MonoBehaviour
     public int HealthPoints;
     public int DamageAmount=10;
     public GameObject HP_text;
-
+    public Animator AtackAnimator;
     public AudioClip[] HitButtonSounds;
     private AudioSource audioSource;
 
@@ -23,10 +23,11 @@ public class HitBox : MonoBehaviour
     }
     IEnumerator Hint(float sec)
     {
-
+        AtackAnimator.SetBool("IsFighting",true);
         transform.localPosition = new Vector3(5, 0, 0);
         yield return new WaitForSeconds(sec);
         transform.localPosition = new Vector3(0,0,0);
+        AtackAnimator.SetBool("IsFighting",false);
     }
     public void OnActionButtonClicked()
     {

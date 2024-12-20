@@ -13,6 +13,11 @@ public class TipConrtrollerScript : MonoBehaviour
     Animator TipsWindowAnimator;
     public static string TipsTextMessage;
     public static bool IsNewTextAdded;
+    public bool IsTipShowed{get
+        {
+            return IsTipsWindowActive;
+        }
+    }
     bool IsTipsWindowActive = false;
 
     // Start is called before the first frame update

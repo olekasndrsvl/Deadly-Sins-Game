@@ -1,4 +1,5 @@
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -30,7 +31,8 @@ public class PrideSceneController : MonoBehaviour
     void Start()
     {
         //PlayerPrefs.DeleteAll();
-        tips.GetComponent<TMP_Text>().text = "Это будет тяжелая борьба с самим собой Морт!";
+        TipConrtrollerScript.TipsTextMessage = "Это будет тяжелая борьба с самим собой Морт!";
+        TipConrtrollerScript.IsNewTextAdded = true;
         if (PlayerPrefs.HasKey("DialogNumber"))
         {
             dialognumber = PlayerPrefs.GetInt("DialogNumber");
@@ -105,7 +107,9 @@ public class PrideSceneController : MonoBehaviour
 
         if (dialog3 > 0)
         {
-            tips.GetComponent<TMP_Text>().text = "Ты выбрал неверный путь, мой друг! Твое ненасытное желание побеждать всех и каждого сыграло с тобой злую шутку...";
+            
+            TipConrtrollerScript.TipsTextMessage= "Ты выбрал неверный путь, мой друг! Твое ненасытное желание побеждать всех и каждого сыграло с тобой злую шутку...";
+            TipConrtrollerScript.IsNewTextAdded = true;
             Enemy.GetComponent<EnemyScript>().DamageAmount = 100;
             //PlayerPrefs.SetInt("EnemyDamage", Enemy.GetComponent<EnemyScript>().DamageAmount);
             Enemy.GetComponent<EnemyScript>().HealthPoints = 100;
@@ -156,12 +160,16 @@ public class PrideSceneController : MonoBehaviour
             PauseIt();
             PlayerHitbox.HealthPoints = 1;
             _Died_Dialog.SetActive(true);
-            
+            if (tips.GetComponent<TipConrtrollerScript>().IsTipShowed)
+                TipConrtrollerScript.IsNewTextAdded = true;
         }
 
 
         if (Enemy.GetComponent<EnemyScript>().HealthPoints <= 0)
         {
+            if (tips.GetComponent<TipConrtrollerScript>().IsTipShowed)
+                TipConrtrollerScript.IsNewTextAdded = true;
+            
             switch(dialognumber)
             {
                 case 1:
@@ -169,7 +177,7 @@ public class PrideSceneController : MonoBehaviour
                     Dialog1.SetActive(true);
                     PlayerHitbox.HealthPoints = 100;
                     Enemy.GetComponent<EnemyScript>().IsPaused = true;
-                   PlayerHitbox.gameObject.transform.parent.GetComponent<PlayerControllerForJoyStick>().IsPaused = true;
+                    PlayerHitbox.gameObject.transform.parent.GetComponent<PlayerControllerForJoyStick>().IsPaused = true;
                     break;
                 case 2:
                     Enemy.GetComponent<EnemyScript>().HealthPoints = 1;

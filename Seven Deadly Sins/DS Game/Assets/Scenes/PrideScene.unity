@@ -281,6 +281,7 @@ MonoBehaviour:
   HealthPoints: -1
   DamageAmount: 10
   HP_text: {fileID: 2005188039}
+  AtackAnimator: {fileID: 1682430783}
   HitButtonSounds:
   - {fileID: 8300000, guid: 0c3ee8aec831ee94ea8ad8b24d62af08, type: 3}
   - {fileID: 8300000, guid: edaca426104fedb4085715cebeebd422, type: 3}
@@ -1254,7 +1255,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1508887941969827325, guid: 23c662cb34ed2674888ec5075c930589, type: 3}
   m_PrefabInstance: {fileID: 642822513}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 580045555}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e12c1e3de51a06646b443df63daad95c, type: 3}
@@ -1933,6 +1934,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff538f87662a70a4ea3184674317c07d, type: 3}
+--- !u!1 &580045555 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6955749428034029474, guid: 23c662cb34ed2674888ec5075c930589, type: 3}
+  m_PrefabInstance: {fileID: 642822513}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &586344094
 GameObject:
   m_ObjectHideFlags: 0
@@ -4050,7 +4056,7 @@ MonoBehaviour:
   SplashImage: {fileID: 922618826}
   PlayerHitbox: {fileID: 92348795}
   Enemy: {fileID: 2106381992}
-  tips: {fileID: 1305097492}
+  tips: {fileID: 580045555}
   Dialog1: {fileID: 1594722155}
   Dialog2: {fileID: 1699987724}
   Dialog3: {fileID: 279084591}
@@ -4630,6 +4636,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1681405597}
   m_CullTransparentMesh: 1
+--- !u!95 &1682430783 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2823357268354962543, guid: 7512677b04da3144b99998cc7bf35d63, type: 3}
+  m_PrefabInstance: {fileID: 2015995649}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1699987724 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2844452412511585206, guid: 308ab9aab244fc945a2acb0bef5b9b56, type: 3}
