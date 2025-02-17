@@ -17,7 +17,6 @@ public class SettingsController : MonoBehaviour
 
     void Start()
     {
-      
         IsGodModeEnabled = PlayerPrefs.GetInt("IsGodModeEnabled",0) == 1;
         float savedVolume = PlayerPrefs.GetFloat("VolumeLevel",1);
         volumeSlider.value = savedVolume;
@@ -85,7 +84,9 @@ public class SettingsController : MonoBehaviour
     private void OnEnable()
     {
         volumeSlider.value = PlayerPrefs.GetFloat("VolumeLevel");
+
         BackGroundAudio.Play();
         OtherAudio.Pause();
+
     }
 }
