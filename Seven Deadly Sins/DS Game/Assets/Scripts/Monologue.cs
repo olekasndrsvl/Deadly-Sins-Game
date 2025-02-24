@@ -21,7 +21,7 @@ public class Monologue : MonoBehaviour
     private TMP_Text MonologueOption1;
     private TMP_Text MonologueOption2;
 
-    public TypeDialogData CurrentMonologue;
+    public TypeMonologData CurrentMonologue;
     public AudioSource clickAudio;
 
     IEnumerator RunningCoroutine;
@@ -38,7 +38,7 @@ public class Monologue : MonoBehaviour
     void StartMonologue()
     {
         MonologueText.text = "";
-        RunningCoroutine = SpellPhrase(CurrentMonologue.Question);
+       
         StartCoroutine(RunningCoroutine);
 
         MonologueOption1.text = CurrentMonologue.Answer1;
@@ -90,12 +90,12 @@ public class Monologue : MonoBehaviour
         ProcessNextMonologue(CurrentMonologue.ReactToAnswer2, CurrentMonologue.Answer2);
     }
 
-    void ProcessNextMonologue(TypeDialogData nextMonologue, string answerText)
+    void ProcessNextMonologue(TypeMonologData nextMonologue, string answerText)
     {
         if (nextMonologue != null)
         {
             CurrentMonologue = nextMonologue;
-            StartCoroutine(SpellPhrase(answerText + '\n' + CurrentMonologue.Question));
+            StartCoroutine(SpellPhrase(answerText + '\n'));
         }
         else
         {
