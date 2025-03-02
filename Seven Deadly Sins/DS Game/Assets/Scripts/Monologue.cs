@@ -1,136 +1,197 @@
-using Newtonsoft.Json;
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using TMPro;
 using UnityEngine;
 
+[Serializable]
+public class MonologueData
+{
+    public string text;
+    public string answer1;
+    public string answer2;
+    public MonologueData nextMonologue1;
+    public MonologueData nextMonologue2;
+}
+
 public class Monologue : MonoBehaviour
 {
-    private bool IsPrintingPhrase = false;
-    public int MonologueResult;
+    private bool isPrintingPhrase = false;
+    public int dialogResult;
 
-    public GameObject MonologueWindow;
-    public GameObject MonologueOptionButton1;
-    public GameObject MonologueOptionButton2;
-    public GameObject CloseButton;
+    public GameObject monologueText;
+    public GameObject dialogWindow;
+    public GameObject dialogAnswerButton1;
+    public GameObject dialogAnswerButton2;
+    public GameObject closeButton;
 
-    private TMP_Text MonologueText;
-    private TMP_Text MonologueOption1;
-    private TMP_Text MonologueOption2;
-
-    public TypeDialogData CurrentMonologue;
     public AudioSource clickAudio;
+    private MonologueData currentMonologue;
 
-    IEnumerator RunningCoroutine;
+    IEnumerator runningCoroutine;
 
     void Start()
     {
-        MonologueText = MonologueWindow.GetComponent<TMP_Text>();
-        MonologueOption1 = MonologueOptionButton1.transform.GetChild(0).GetComponent<TMP_Text>();
-        MonologueOption2 = MonologueOptionButton2.transform.GetChild(0).GetComponent<TMP_Text>();
+        MonologueData monologue1 = new MonologueData
+        {
+            text = "Пришло время мне рассказать о себе.",
+            answer1 = "Рассказать какой вы крутой.",
+            answer2 = "Рассказать историю из детства.",
+            nextMonologue1 = new MonologueData
+            {
+                text = "Теперь то я расскажу о том, насколько я крут",
+                answer1 = "Продолжить рассказывать.",
+                answer2 = "Закончить разговор.",
+                nextMonologue1 = new MonologueData
+                {
+                    text = "Ты не выкупаешь, насколько я крут\r\nЯ так нравлюсь твоей лали, ха, она зовёт подруг\r\nКаждой суке дам по малли, нахуй нам не нужен клуб",
+                    answer1 = "Рассказать про клуб.",
+                    answer2 = "Закончить разговор.",
+                    nextMonologue1 = null,
+                    nextMonologue2 = null
+                },
+                nextMonologue2 = null
+            },
+            nextMonologue2 = new MonologueData
+            {
+                text = "Когда я был маленьким, я...",
+                answer1 = "Был очень злым",
+                answer2 = "Был достаточно милым парнем",
+                nextMonologue1 = null,
+                nextMonologue2 = null
+            }
+        };
 
-        StartMonologue();
+        currentMonologue = monologue1;
+
+        dialogAnswerButton1.transform.GetChild(0).GetComponent<TMP_Text>().text = currentMonologue.answer1;
+        dialogAnswerButton2.transform.GetChild(0).GetComponent<TMP_Text>().text = currentMonologue.answer2;
+
+        runningCoroutine = SpellPhrase(currentMonologue.text);
+        StartCoroutine(runningCoroutine);
     }
 
-    void StartMonologue()
+    void Cleaner()
     {
-        MonologueText.text = "";
-        RunningCoroutine = SpellPhrase(CurrentMonologue.Question);
-        StartCoroutine(RunningCoroutine);
+        var textComponent = monologueText.GetComponent<TMP_Text>();
+        var text = textComponent.text;
+        var lines = text.Split(new[] { '\n' }, StringSplitOptions.RemoveEmptyEntries);
 
-        MonologueOption1.text = CurrentMonologue.Answer1;
-        MonologueOption2.text = CurrentMonologue.Answer2;
+        // Limit to a maximum of 4 lines
+        if (lines.Length > 4)
+        {
+            textComponent.text = string.Join("\n", lines.Skip(lines.Length - 4));
+        }
+
+        // Limit to a maximum of 100 characters
+        if (text.Length > 100)
+        {
+            textComponent.text = text.Substring(text.Length - 100);
+        }
     }
 
     IEnumerator SpellPhrase(string s)
     {
-        IsPrintingPhrase = true;
-        MonologueOptionButton1.SetActive(false);
-        MonologueOptionButton2.SetActive(false);
-
-        StringBuilder sb = new StringBuilder();
-        foreach (char x in s + '\n')
+        Cleaner();
+        isPrintingPhrase = true;
+        dialogAnswerButton1.SetActive(false);
+        dialogAnswerButton2.SetActive(false);
+        var sb = new StringBuilder(monologueText.GetComponent<TMP_Text>().text);
+        foreach (var x in s + '\n')
         {
             sb.Append(x);
-            MonologueText.text = sb.ToString();
+            monologueText.GetComponent<TMP_Text>().text = sb.ToString();
             yield return new WaitForSeconds(0.01f);
         }
-
-        IsPrintingPhrase = false;
-        if (!CloseButton.activeSelf)
-        {
-            MonologueOptionButton1.SetActive(true);
-            MonologueOptionButton2.SetActive(true);
-        }
+        isPrintingPhrase = false;
+        dialogAnswerButton1.SetActive(true);
+        dialogAnswerButton2.SetActive(true);
     }
 
     private void PlayButtonClickSound()
     {
-        clickAudio?.Play();
-    }
-
-    public void OnFirstOptionClicked()
-    {
-        PlayButtonClickSound();
-        if (IsPrintingPhrase) return;
-
-        MonologueResult++;
-        ProcessNextMonologue(CurrentMonologue.ReactToAnswer1, CurrentMonologue.Answer1);
-    }
-
-    public void OnSecondOptionClicked()
-    {
-        PlayButtonClickSound();
-        if (IsPrintingPhrase) return;
-
-        MonologueResult--;
-        ProcessNextMonologue(CurrentMonologue.ReactToAnswer2, CurrentMonologue.Answer2);
-    }
-
-    void ProcessNextMonologue(TypeDialogData nextMonologue, string answerText)
-    {
-        if (nextMonologue != null)
+        if (clickAudio != null)
         {
-            CurrentMonologue = nextMonologue;
-            StartCoroutine(SpellPhrase(answerText + '\n' + CurrentMonologue.Question));
+            clickAudio.Play();
+        }
+    }
+
+    public void OnFirstAnswerClicked()
+    {
+        PlayButtonClickSound();
+
+        if (!isPrintingPhrase)
+        {
+            SaveKarma(true); // Add karma for the first answer
+            if (currentMonologue.nextMonologue1 != null)
+            {
+                currentMonologue = currentMonologue.nextMonologue1;
+                UpdateDialog();
+            }
+            else
+            {
+                CloseDialogWindow();
+            }
+        }
+    }
+
+    public void OnSecondAnswerClicked()
+    {
+        PlayButtonClickSound();
+
+        if (!isPrintingPhrase)
+        {
+            SaveKarma(false); // Subtract karma for the second answer
+            if (currentMonologue.nextMonologue2 != null)
+            {
+                currentMonologue = currentMonologue.nextMonologue2;
+                UpdateDialog();
+            }
+            else
+            {
+                CloseDialogWindow();
+            }
+        }
+    }
+
+    private void UpdateDialog()
+    {
+        dialogAnswerButton1.transform.GetChild(0).GetComponent<TMP_Text>().text = currentMonologue.answer1;
+        dialogAnswerButton2.transform.GetChild(0).GetComponent<TMP_Text>().text = currentMonologue.answer2;
+
+        runningCoroutine = SpellPhrase(currentMonologue.text);
+        StartCoroutine(runningCoroutine);
+    }
+
+    public void CloseDialogWindow()
+    {
+        PlayButtonClickSound();
+        dialogWindow.SetActive(false);
+    }
+
+    void SaveKarma(bool isFirstAnswer)
+    {
+        if (PlayerPrefs.HasKey("KarmaState"))
+        {
+            if (isFirstAnswer)
+            {
+                PlayerPrefs.SetInt("KarmaState", PlayerPrefs.GetInt("KarmaState") + 10); // Add karma
+            }
+            else
+            {
+                PlayerPrefs.SetInt("KarmaState", PlayerPrefs.GetInt("KarmaState") - 10); // Subtract karma
+            }
         }
         else
         {
-            StartCoroutine(SpellPhrase(answerText));
-            EndMonologue();
-        }
-
-        if (!string.IsNullOrEmpty(CurrentMonologue.Answer1) && !string.IsNullOrEmpty(CurrentMonologue.Answer2))
-        {
-            MonologueOption1.text = CurrentMonologue.Answer1;
-            MonologueOption2.text = CurrentMonologue.Answer2;
-        }
-        else
-        {
-            EndMonologue();
+            PlayerPrefs.SetInt("KarmaState", 50); // Default karma
         }
     }
 
-    void EndMonologue()
+    // Update is called once per frame
+    void Update()
     {
-        MonologueOptionButton1.SetActive(false);
-        MonologueOptionButton2.SetActive(false);
-        SaveKarma();
-        CloseButton.SetActive(true);
-    }
 
-    void SaveKarma()
-    {
-        int karma = PlayerPrefs.GetInt("KarmaState", 50);
-        PlayerPrefs.SetInt("KarmaState", karma + MonologueResult);
-    }
-
-    public void CloseMonologueWindow()
-    {
-        PlayButtonClickSound();
-        MonologueWindow.SetActive(false);
     }
 }

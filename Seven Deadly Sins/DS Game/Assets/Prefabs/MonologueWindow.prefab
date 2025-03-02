@@ -421,8 +421,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8195987055536518653}
-  - {fileID: 1100569960827025127}
   - {fileID: 3722068096464549930}
+  - {fileID: 1100569960827025127}
   - {fileID: 1049197565936064180}
   m_Father: {fileID: 835969330251476292}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -479,8 +479,8 @@ GameObject:
   m_Component:
   - component: {fileID: 835969330251476292}
   - component: {fileID: 8241879602336166086}
+  - component: {fileID: 1185772713057263559}
   - component: {fileID: 9095105962472727713}
-  - component: {fileID: 7827597248894276803}
   m_Layer: 5
   m_Name: MonologueWindow
   m_TagString: Untagged
@@ -518,6 +518,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1268887849996109400}
   m_CullTransparentMesh: 1
+--- !u!114 &1185772713057263559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1268887849996109400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a9d9558d9e61bf40bcfb2fcf9628c97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogResult: 0
+  monologueText: {fileID: 4543536415880634987}
+  dialogWindow: {fileID: 1268887849996109400}
+  dialogAnswerButton1: {fileID: 8174032872691101774}
+  dialogAnswerButton2: {fileID: 4594993900971814529}
+  closeButton: {fileID: 4364793094595745162}
+  clickAudio: {fileID: 4236054174780971902}
 --- !u!114 &9095105962472727713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -548,25 +567,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &7827597248894276803
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1268887849996109400}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a9d9558d9e61bf40bcfb2fcf9628c97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MonologueResult: 0
-  MonologueWindow: {fileID: 1268887849996109400}
-  MonologueOptionButton1: {fileID: 8174032872691101774}
-  MonologueOptionButton2: {fileID: 4594993900971814529}
-  CloseButton: {fileID: 4364793094595745162}
-  CurrentMonologue: {fileID: 0}
-  clickAudio: {fileID: 4236054174780971902}
 --- !u!1 &2182173930630998522
 GameObject:
   m_ObjectHideFlags: 0
@@ -926,8 +926,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: Dialog, Assembly-CSharp
+        - m_Target: {fileID: 1185772713057263559}
+          m_TargetAssemblyTypeName: Monologue, Assembly-CSharp
           m_MethodName: CloseDialogWindow
           m_Mode: 1
           m_Arguments:
@@ -1170,8 +1170,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: Dialog, Assembly-CSharp
+        - m_Target: {fileID: 1185772713057263559}
+          m_TargetAssemblyTypeName: Monologue, Assembly-CSharp
           m_MethodName: OnSecondAnswerClicked
           m_Mode: 1
           m_Arguments:
@@ -1318,8 +1318,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: Dialog, Assembly-CSharp
+        - m_Target: {fileID: 1185772713057263559}
+          m_TargetAssemblyTypeName: Monologue, Assembly-CSharp
           m_MethodName: OnFirstAnswerClicked
           m_Mode: 1
           m_Arguments:
