@@ -8,7 +8,7 @@ public class Moving : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     private float startPosY;
     private Vector2 touchPos;
 
-    public Vector2 targetPosition = new Vector2(0, 0);
+    public Vector2[] targetPositions;
     public float threshold = 0.1f;
 
     void Start()
@@ -37,10 +37,14 @@ public class Moving : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
                 }
             }
 
-            if (Vector2.Distance(this.transform.localPosition, targetPosition) < threshold)
+            foreach (Vector2 targetPosition in targetPositions)
             {
-                move = false;
-                this.transform.localPosition = targetPosition;
+                if (Vector2.Distance(this.transform.localPosition, targetPosition) < threshold)
+                {
+                    move = false;
+                    this.transform.localPosition = targetPosition;
+                    break;
+                }
             }
         }
     }
