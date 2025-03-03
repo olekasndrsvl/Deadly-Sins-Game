@@ -11,3 +11,4 @@ public class TypeDialogData : ScriptableObject
     public TypeDialogData ReactToAnswer1;
     public TypeDialogData ReactToAnswer2;
 }
+
