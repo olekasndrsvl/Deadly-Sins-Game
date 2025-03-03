@@ -13,6 +13,7 @@ public class BoastSceneController : MonoBehaviour
     public GameObject Mononlog;
     public GameObject BoastTip;
     public GameObject BoastTipText;
+    public GameObject TapToScreenToContinue;
     public int MonologResultWinValue = 2;
     private int i = 0;
     private bool MonologActivated = false;
@@ -28,6 +29,7 @@ public class BoastSceneController : MonoBehaviour
             LevelPreview.SetActive(false);
             i= Tips.Count;
         }
+        TapToScreenToContinue.SetActive(true);
     }
 
     // Update is called once per frame
@@ -37,9 +39,11 @@ public class BoastSceneController : MonoBehaviour
        {
            if (Input.touchCount > 0)
            {
+               TapToScreenToContinue.SetActive(false);
                if (Input.GetTouch(0).phase != TouchPhase.Ended) return;
                if (i < Tips.Count)
                {
+        
                    StartCoroutine(SpellTip(Tips[i]));
                }
                else
@@ -47,6 +51,7 @@ public class BoastSceneController : MonoBehaviour
                    Mononlog.SetActive(true);
                    BoastTip.SetActive(false);
                    MonologActivated = true;
+                   TapToScreenToContinue.SetActive(false);
                }
 
 
@@ -61,6 +66,7 @@ public class BoastSceneController : MonoBehaviour
                {
                    if (Input.touchCount > 0)
                    {
+                       TapToScreenToContinue.SetActive(false);
                        if (Input.GetTouch(0).phase != TouchPhase.Ended) return;
                        if (i < WinTips.Count)
                        {
@@ -77,7 +83,8 @@ public class BoastSceneController : MonoBehaviour
                else
                {
                    if (Input.touchCount > 0)
-                   {
+                   {  
+                       TapToScreenToContinue.SetActive(false);
                        if (Input.GetTouch(0).phase != TouchPhase.Ended) return;
                        if (i < LoseTips.Count)
                        {
@@ -100,6 +107,7 @@ public class BoastSceneController : MonoBehaviour
     public void EndMonolog()
     {
         i = 0;
+        TapToScreenToContinue.SetActive(false);
         MonologEnded = true;
     }
     IEnumerator SpellTip(string s)
@@ -112,7 +120,7 @@ public class BoastSceneController : MonoBehaviour
             BoastTipText.GetComponent<TMP_Text>().text = sb.ToString();
             yield return new WaitForSeconds(0.01f);
         }
-
+        TapToScreenToContinue.SetActive(true);
         i++;
     }
 }
