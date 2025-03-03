@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ae6ebdab8f84379a8c63cad8fe5f415, type: 3}
   m_Name: 1.1 1
   m_EditorClassIdentifier: 
-  Answer1: "\u041D\u0443 \u0447\u0435 \u0432\u044B?"
-  Answer2: "\u0417\u0434\u0440\u0430\u0432\u0441\u0442\u0443\u0439\u0442\u0435"
+  Text: "\u0422\u0435\u043A\u0441\u0442"
+  Answer1: "\u041E\u043A"
+  Answer2: "\u041D\u043E\u0440\u043C"
   ReactToAnswer1: {fileID: 0}
   ReactToAnswer2: {fileID: 0}

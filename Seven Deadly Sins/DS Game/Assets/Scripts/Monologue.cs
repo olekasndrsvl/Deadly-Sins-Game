@@ -6,14 +6,6 @@ using TMPro;
 using UnityEngine;
 
 [Serializable]
-public class MonologueData
-{
-    public string text;
-    public string answer1;
-    public string answer2;
-    public MonologueData nextMonologue1;
-    public MonologueData nextMonologue2;
-}
 
 public class Monologue : MonoBehaviour
 {
@@ -27,48 +19,48 @@ public class Monologue : MonoBehaviour
     public GameObject closeButton;
 
     public AudioSource clickAudio;
-    private MonologueData currentMonologue;
+    public TypeMonologData currentMonologue;
 
     IEnumerator runningCoroutine;
 
     void Start()
     {
-        MonologueData monologue1 = new MonologueData
-        {
-            text = "Пришло время мне рассказать о себе.",
-            answer1 = "Рассказать какой вы крутой.",
-            answer2 = "Рассказать историю из детства.",
-            nextMonologue1 = new MonologueData
-            {
-                text = "Теперь то я расскажу о том, насколько я крут",
-                answer1 = "Продолжить рассказывать.",
-                answer2 = "Закончить разговор.",
-                nextMonologue1 = new MonologueData
-                {
-                    text = "Ты не выкупаешь, насколько я крут\r\nЯ так нравлюсь твоей лали, ха, она зовёт подруг\r\nКаждой суке дам по малли, нахуй нам не нужен клуб",
-                    answer1 = "Рассказать про клуб.",
-                    answer2 = "Закончить разговор.",
-                    nextMonologue1 = null,
-                    nextMonologue2 = null
-                },
-                nextMonologue2 = null
-            },
-            nextMonologue2 = new MonologueData
-            {
-                text = "Когда я был маленьким, я...",
-                answer1 = "Был очень злым",
-                answer2 = "Был достаточно милым парнем",
-                nextMonologue1 = null,
-                nextMonologue2 = null
-            }
-        };
+        // MonologueData monologue1 = new MonologueData
+        // {
+        //     text = "Пришло время мне рассказать о себе.",
+        //     answer1 = "Рассказать какой вы крутой.",
+        //     answer2 = "Рассказать историю из детства.",
+        //     nextMonologue1 = new MonologueData
+        //     {
+        //         text = "Теперь то я расскажу о том, насколько я крут",
+        //         answer1 = "Продолжить рассказывать.",
+        //         answer2 = "Закончить разговор.",
+        //         nextMonologue1 = new MonologueData
+        //         {
+        //             text = "Ты не выкупаешь, насколько я крут\r\nЯ так нравлюсь твоей лали, ха, она зовёт подруг\r\nКаждой суке дам по малли, нахуй нам не нужен клуб",
+        //             answer1 = "Рассказать про клуб.",
+        //             answer2 = "Закончить разговор.",
+        //             nextMonologue1 = null,
+        //             nextMonologue2 = null
+        //         },
+        //         nextMonologue2 = null
+        //     },
+        //     nextMonologue2 = new MonologueData
+        //     {
+        //         text = "Когда я был маленьким, я...",
+        //         answer1 = "Был очень злым",
+        //         answer2 = "Был достаточно милым парнем",
+        //         nextMonologue1 = null,
+        //         nextMonologue2 = null
+        //     }
+        //};
 
-        currentMonologue = monologue1;
+        //currentMonologue = monologue1;
 
-        dialogAnswerButton1.transform.GetChild(0).GetComponent<TMP_Text>().text = currentMonologue.answer1;
-        dialogAnswerButton2.transform.GetChild(0).GetComponent<TMP_Text>().text = currentMonologue.answer2;
+        dialogAnswerButton1.transform.GetChild(0).GetComponent<TMP_Text>().text = currentMonologue.Answer1;
+        dialogAnswerButton2.transform.GetChild(0).GetComponent<TMP_Text>().text = currentMonologue.Answer2;
 
-        runningCoroutine = SpellPhrase(currentMonologue.text);
+        runningCoroutine = SpellPhrase(currentMonologue.Text);
         StartCoroutine(runningCoroutine);
     }
 
@@ -124,14 +116,17 @@ public class Monologue : MonoBehaviour
         if (!isPrintingPhrase)
         {
             SaveKarma(true); // Add karma for the first answer
-            if (currentMonologue.nextMonologue1 != null)
+            if (currentMonologue.ReactToAnswer1 != null)
             {
-                currentMonologue = currentMonologue.nextMonologue1;
+                currentMonologue = currentMonologue.ReactToAnswer1;
                 UpdateDialog();
             }
             else
             {
-                CloseDialogWindow();
+                dialogAnswerButton1.SetActive(false);
+                dialogAnswerButton2.SetActive(false);
+                closeButton.SetActive(true);
+                //CloseDialogWindow();
             }
         }
     }
@@ -143,24 +138,27 @@ public class Monologue : MonoBehaviour
         if (!isPrintingPhrase)
         {
             SaveKarma(false); // Subtract karma for the second answer
-            if (currentMonologue.nextMonologue2 != null)
+            if (currentMonologue.ReactToAnswer2 != null)
             {
-                currentMonologue = currentMonologue.nextMonologue2;
+                currentMonologue = currentMonologue.ReactToAnswer2;
                 UpdateDialog();
             }
             else
             {
-                CloseDialogWindow();
+                dialogAnswerButton1.SetActive(false);
+                dialogAnswerButton2.SetActive(false);
+                closeButton.SetActive(true);
+                //CloseDialogWindow();
             }
         }
     }
 
     private void UpdateDialog()
     {
-        dialogAnswerButton1.transform.GetChild(0).GetComponent<TMP_Text>().text = currentMonologue.answer1;
-        dialogAnswerButton2.transform.GetChild(0).GetComponent<TMP_Text>().text = currentMonologue.answer2;
+        dialogAnswerButton1.transform.GetChild(0).GetComponent<TMP_Text>().text = currentMonologue.Answer1;
+        dialogAnswerButton2.transform.GetChild(0).GetComponent<TMP_Text>().text = currentMonologue.Answer2;
 
-        runningCoroutine = SpellPhrase(currentMonologue.text);
+        runningCoroutine = SpellPhrase(currentMonologue.Text);
         StartCoroutine(runningCoroutine);
     }
 

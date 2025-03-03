@@ -5,6 +5,7 @@ using UnityEngine;
 [CreateAssetMenu]
 public class TypeMonologData : ScriptableObject
 {
+    public string Text;
     public string Answer1;
     public string Answer2;
     public TypeMonologData ReactToAnswer1;
