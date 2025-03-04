@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 55da635db96ae2944ad5c0f173bda039
+guid: daf6bc934b2ecb1478546334624a6288
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4593565127144133967
-    second: "\u0437\u0430\u0432\u0438\u0441\u0442\u044C_\u0438\u043A\u043E\u043D_0"
+      213: -4629344477944474323
+    second: Floor_envy_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "\u0437\u0430\u0432\u0438\u0441\u0442\u044C_\u0438\u043A\u043E\u043D_0"
+      name: Floor_envy_0
       rect:
         serializedVersion: 2
-        x: 131
-        y: 137
-        width: 1018
-        height: 1006
+        x: 0
+        y: 0
+        width: 483
+        height: 66
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f455c08352f9fbf30800000000000000
-      internalID: 4593565127144133967
+      spriteID: d25143189b341cfb0800000000000000
+      internalID: -4629344477944474323
       vertices: []
       indices: 
       edges: []
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      "\u0437\u0430\u0432\u0438\u0441\u0442\u044C_\u0438\u043A\u043E\u043D_0": 4593565127144133967
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
