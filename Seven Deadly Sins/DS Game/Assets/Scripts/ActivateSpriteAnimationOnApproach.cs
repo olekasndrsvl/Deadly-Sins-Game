@@ -30,10 +30,10 @@ public class SpriteAnimationOnApproach : MonoBehaviour
     {
         Debug.LogWarning("Игрок вышел из триггера");
         if (other.CompareTag(playerTag))
-            {
+        {
 
-                animator.enabled = false;
-            }
+            animator.enabled = false;
+        }
     
     }
 

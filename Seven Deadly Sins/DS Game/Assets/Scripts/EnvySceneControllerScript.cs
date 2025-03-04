@@ -5,7 +5,7 @@ public class EnvySceneControllerScript : MonoBehaviour
 {
     public GameObject Enemy;
     int enemyhp = 0;
-
+    public GameObject FinalDialog;
     private int levelphase = 0;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -18,8 +18,6 @@ public class EnvySceneControllerScript : MonoBehaviour
     void SwitchPhaseOf()
     {
         levelphase++;
-        
-
     }
 
     // Update is called once per frame
@@ -28,6 +26,11 @@ public class EnvySceneControllerScript : MonoBehaviour
         if (Enemy.GetComponent<BetterVersionOfMprtScript>().HealthPoints <= 0)
         {
             levelphase++;
+        }
+
+        if (levelphase >= 1)
+        {
+            FinalDialog.SetActive(true);
         }
     }
 }
