@@ -1869,7 +1869,7 @@ PrefabInstance:
       objectReference: {fileID: 1944060071}
     - target: {fileID: 4616803271815823463, guid: e92374d8739b5bd4d850c1cbe8849d54, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.8545185
+      value: 1.3328229
       objectReference: {fileID: 0}
     - target: {fileID: 4616803271815823463, guid: e92374d8739b5bd4d850c1cbe8849d54, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2337,11 +2337,11 @@ PrefabInstance:
     - target: {fileID: 5061947775137162554, guid: 308ab9aab244fc945a2acb0bef5b9b56, type: 3}
       propertyPath: 'speachSounds.Array.data[0]'
       value: 
-      objectReference: {fileID: 8300000, guid: 13fe172983cf96e44934b6444da2e06f, type: 3}
+      objectReference: {fileID: 8300000, guid: 4284d00bdce5e7e4587b5e65608f39ac, type: 3}
     - target: {fileID: 5061947775137162554, guid: 308ab9aab244fc945a2acb0bef5b9b56, type: 3}
       propertyPath: 'speachSounds.Array.data[1]'
       value: 
-      objectReference: {fileID: 8300000, guid: 0283a2bda123ad34db4f4a69c9fb0837, type: 3}
+      objectReference: {fileID: 8300000, guid: 22519f84202a6b64eb4b1544bedb31ae, type: 3}
     - target: {fileID: 6539782475535651159, guid: 308ab9aab244fc945a2acb0bef5b9b56, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -2668,11 +2668,11 @@ PrefabInstance:
     - target: {fileID: 5061947775137162554, guid: 308ab9aab244fc945a2acb0bef5b9b56, type: 3}
       propertyPath: 'speachSounds.Array.data[0]'
       value: 
-      objectReference: {fileID: 8300000, guid: 13fe172983cf96e44934b6444da2e06f, type: 3}
+      objectReference: {fileID: 8300000, guid: 4284d00bdce5e7e4587b5e65608f39ac, type: 3}
     - target: {fileID: 5061947775137162554, guid: 308ab9aab244fc945a2acb0bef5b9b56, type: 3}
       propertyPath: 'speachSounds.Array.data[1]'
       value: 
-      objectReference: {fileID: 8300000, guid: 0283a2bda123ad34db4f4a69c9fb0837, type: 3}
+      objectReference: {fileID: 8300000, guid: 22519f84202a6b64eb4b1544bedb31ae, type: 3}
     - target: {fileID: 6539782475535651159, guid: 308ab9aab244fc945a2acb0bef5b9b56, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -3025,11 +3025,11 @@ PrefabInstance:
     - target: {fileID: 5061947775137162554, guid: 308ab9aab244fc945a2acb0bef5b9b56, type: 3}
       propertyPath: 'speachSounds.Array.data[0]'
       value: 
-      objectReference: {fileID: 8300000, guid: 13fe172983cf96e44934b6444da2e06f, type: 3}
+      objectReference: {fileID: 8300000, guid: 4284d00bdce5e7e4587b5e65608f39ac, type: 3}
     - target: {fileID: 5061947775137162554, guid: 308ab9aab244fc945a2acb0bef5b9b56, type: 3}
       propertyPath: 'speachSounds.Array.data[1]'
       value: 
-      objectReference: {fileID: 8300000, guid: 8854d56203f86f84280479152b6b27ab, type: 3}
+      objectReference: {fileID: 8300000, guid: f1413d6c564f2b14c935d323406b2c2d, type: 3}
     - target: {fileID: 6539782475535651159, guid: 308ab9aab244fc945a2acb0bef5b9b56, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -3178,8 +3178,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 4d37d807da190ec4bbaeca56b995e8f2, type: 3}
-  m_Resource: {fileID: 8300000, guid: 4d37d807da190ec4bbaeca56b995e8f2, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 5b765d54c6ff0044b9a81792958fbfb4, type: 3}
+  m_Resource: {fileID: 8300000, guid: 5b765d54c6ff0044b9a81792958fbfb4, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -3310,7 +3310,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.171
+  m_Volume: 0.159
   m_Pitch: 1
   Loop: 0
   Mute: 0
