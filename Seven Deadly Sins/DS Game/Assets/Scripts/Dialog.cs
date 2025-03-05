@@ -11,8 +11,8 @@ using UnityEngine;
 
 public class Dialog : MonoBehaviour
 {
-
    
+    public string NameNPC = "";
     private bool IsPrintingPhrase = false;
     public int DialogResult;
     // needs link to text gameobject
@@ -24,58 +24,72 @@ public class Dialog : MonoBehaviour
     GameObject DialogAnswer1;
     GameObject DialogAnswer2;
     public GameObject CloseButton;
-    //���������� ��� ������������ �������� �������
+    //                                            
     public TypeDialogData CurrentDialog;
 
     public AudioSource clickAudio;
+    public AudioClip[] speachSounds;
+    public AudioSource speachAudio;
 
     IEnumerator RunningCoroutine;
 
     // Start is called before the first frame update
     void Start()
     {
-       
+
         DialogAnswer1 = DialogAnswerButton1.transform.GetChild(0).gameObject;
         DialogAnswer2 = DialogAnswerButton2.transform.GetChild(0).gameObject;
 
         DialogQuestion.GetComponent<TMP_Text>().text = "";
-     
-        //��������� ���������� �������
+
+        //                            
         //CurrentDialog = p1;
         RunningCoroutine = SpellPhrase(CurrentDialog.Question);
         StartCoroutine(RunningCoroutine);
-        
+
         DialogAnswer1.GetComponent<TMP_Text>().text = CurrentDialog.Answer1;
         DialogAnswer2.GetComponent<TMP_Text>().text = CurrentDialog.Answer2;
-       
-      
+
+
 
     }
 
     void Cleaner()
     {
         var s = DialogQuestion.GetComponent<TMP_Text>().text;
-        var a = s.Split('\n',StringSplitOptions.RemoveEmptyEntries);
-        if(a.Length>4 || s.Length > 100)
+        var a = s.Split('\n', StringSplitOptions.RemoveEmptyEntries);
+        if (a.Length > 4 || s.Length > 100)
         {
             DialogQuestion.GetComponent<TMP_Text>().text = a.Last() + '\n';
         }
 
     }
 
-    // ������ ��-��������
+    //          -        
     IEnumerator SpellPhrase(string s)
     {
         Cleaner();
         IsPrintingPhrase = true;
         DialogAnswerButton1.SetActive((false));
         DialogAnswerButton2.SetActive((false));
+
         var sb = new StringBuilder(DialogQuestion.GetComponent<TMP_Text>().text);
-        foreach(var x in s+'\n')
+
+        Queue<char> speakerBuffer = new Queue<char>();
+        int lastSpeaker = 0;
+
+        foreach (var x in s + '\n')
         {
+
             sb.Append(x);
             DialogQuestion.GetComponent<TMP_Text>().text = sb.ToString();
-            yield return new WaitForSeconds(.01f);
+
+            Debug.Log(speachSounds);
+
+            if (speachSounds.Length > 0 && NameNPC != "")
+                speachAudio.PlayOneShot(speachSounds[WhoSpeaker(x)]);
+
+            yield return new WaitForSeconds(.03f);
         }
         IsPrintingPhrase = false;
         if (!CloseButton.activeSelf)
@@ -83,8 +97,35 @@ public class Dialog : MonoBehaviour
             DialogAnswerButton1.SetActive((true));
             DialogAnswerButton2.SetActive((true));
         }
-        
-        
+
+        int WhoSpeaker(char c)
+        {
+            if (NameNPC == "") { return 0; }
+            if (c == '-')
+            {
+                speakerBuffer.Clear();
+                lastSpeaker = 0;
+                return lastSpeaker;
+            }
+
+            if (speakerBuffer.Count == NameNPC.Length)
+            {
+                speakerBuffer.Dequeue();
+            }
+            speakerBuffer.Enqueue(c);
+
+            if (speakerBuffer.Count == NameNPC.Length)
+            {
+                string currentWindow = new string(speakerBuffer.ToArray());
+                if (currentWindow == NameNPC)
+                {
+                    lastSpeaker = 1;
+                    return lastSpeaker;
+                }
+            }
+            return lastSpeaker;
+        }
+
     }
 
     private void PlayButtonClickSound()
@@ -99,19 +140,19 @@ public class Dialog : MonoBehaviour
     {
         PlayButtonClickSound();
 
-        if (!IsPrintingPhrase) 
+        if (!IsPrintingPhrase)
         {
             var ans = CurrentDialog.Answer1;
             DialogResult++;
-       
+
             if (CurrentDialog.ReactToAnswer1 != null)
             {
                 CurrentDialog = CurrentDialog.ReactToAnswer1;
-                StartCoroutine(SpellPhrase(ans+'\n'+CurrentDialog.Question));
+                StartCoroutine(SpellPhrase(ans + '\n' + CurrentDialog.Question));
             }
             else
             {
-               
+
                 StartCoroutine(SpellPhrase(CurrentDialog.Answer1));
                 DialogAnswerButton1.SetActive(false);
                 DialogAnswerButton2.SetActive(false);
@@ -123,50 +164,6 @@ public class Dialog : MonoBehaviour
             }
 
 
-            if(CurrentDialog.Answer1 != ""&& CurrentDialog.Answer2!="")
-            {
-            DialogAnswer1.GetComponent<TMP_Text>().text = CurrentDialog.Answer1;
-            DialogAnswer2.GetComponent<TMP_Text>().text = CurrentDialog.Answer2;
-            }
-            else
-            {
-               
-                DialogAnswerButton1.SetActive(false);
-                DialogAnswerButton2.SetActive(false);
-
-                SaveKarma();
-                CloseButton.SetActive(true);
-            
-            }
-
-
-        }
-        
-    }
-    public void OnSecondAnswerClicked()
-    {
-        PlayButtonClickSound();
-
-        if (!IsPrintingPhrase)
-        { 
-            var ans = CurrentDialog.Answer2;
-        DialogResult--;
-       
-
-        if (CurrentDialog.ReactToAnswer2 != null)
-        {
-            CurrentDialog = CurrentDialog.ReactToAnswer2;
-            StartCoroutine(SpellPhrase(ans+'\n'+CurrentDialog.Question));
-        }
-        else
-        {
-            StartCoroutine(SpellPhrase(CurrentDialog.Answer2));
-            DialogAnswerButton1.SetActive(false);
-            DialogAnswerButton2.SetActive(false);
-
-            SaveKarma();
-            CloseButton.SetActive(true);
-        }
             if (CurrentDialog.Answer1 != "" && CurrentDialog.Answer2 != "")
             {
                 DialogAnswer1.GetComponent<TMP_Text>().text = CurrentDialog.Answer1;
@@ -174,17 +171,61 @@ public class Dialog : MonoBehaviour
             }
             else
             {
-                
+
                 DialogAnswerButton1.SetActive(false);
                 DialogAnswerButton2.SetActive(false);
 
                 SaveKarma();
                 CloseButton.SetActive(true);
-              
+
+            }
+
+
+        }
+
+    }
+    public void OnSecondAnswerClicked()
+    {
+        PlayButtonClickSound();
+
+        if (!IsPrintingPhrase)
+        {
+            var ans = CurrentDialog.Answer2;
+            DialogResult--;
+
+
+            if (CurrentDialog.ReactToAnswer2 != null)
+            {
+                CurrentDialog = CurrentDialog.ReactToAnswer2;
+                StartCoroutine(SpellPhrase(ans + '\n' + CurrentDialog.Question));
+            }
+            else
+            {
+                StartCoroutine(SpellPhrase(CurrentDialog.Answer2));
+                DialogAnswerButton1.SetActive(false);
+                DialogAnswerButton2.SetActive(false);
+
+                SaveKarma();
+                CloseButton.SetActive(true);
+            }
+            if (CurrentDialog.Answer1 != "" && CurrentDialog.Answer2 != "")
+            {
+                DialogAnswer1.GetComponent<TMP_Text>().text = CurrentDialog.Answer1;
+                DialogAnswer2.GetComponent<TMP_Text>().text = CurrentDialog.Answer2;
+            }
+            else
+            {
+
+                DialogAnswerButton1.SetActive(false);
+                DialogAnswerButton2.SetActive(false);
+
+                SaveKarma();
+                CloseButton.SetActive(true);
+
 
             }
         }
-       
+
 
     }
 
@@ -195,12 +236,12 @@ public class Dialog : MonoBehaviour
         if (PlayerPrefs.HasKey("KarmaState"))
         {
             PlayerPrefs.SetInt("KarmaState", PlayerPrefs.GetInt("KarmaState") + DialogResult);
-            
+
         }
         else
         {
             PlayerPrefs.SetInt("KarmaState", 50);
-          
+
 
         }
 
@@ -216,8 +257,8 @@ public class Dialog : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        
+
+
     }
 
 }
