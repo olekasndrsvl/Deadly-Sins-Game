@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class HitBox : MonoBehaviour
 {
@@ -12,15 +14,19 @@ public class HitBox : MonoBehaviour
     public Animator AtackAnimator;
     public AudioClip[] HitButtonSounds;
     private AudioSource audioSource;
+    public static event Action onNPCdamaged;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Deb = collision.tag;
         if (collision.CompareTag("Enemy"))
         {
-            collision.gameObject.transform.Find("HitBox").GetComponent<EnemyScript>().HealthPoints-=DamageAmount;
+            collision.gameObject.transform.Find("HitBox").GetComponent<EnemyScript>().HealthPoints -= DamageAmount;
         }
+
+        onNPCdamaged?.Invoke();
     }
+
     IEnumerator Hint(float sec)
     {
         AtackAnimator.SetBool("IsFighting",true);
@@ -50,13 +56,13 @@ public class HitBox : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         if (audioSource == null)
         {
-            Debug.LogError("AudioSource не найден на объекте HitBox!");
+            Debug.LogError("AudioSource РЅРµ РЅР°Р№РґРµРЅ РЅР° РѕР±СЉРµРєС‚Рµ HitBox!");
         }
     }
     // Update is called once per frame
     void Update()
     {
-        HP_text.GetComponent<TMP_Text>().text = "Здоровье: "+HealthPoints.ToString();
+        HP_text.GetComponent<TMP_Text>().text = "Р—РґРѕСЂРѕРІСЊРµ: "+HealthPoints.ToString();
 
         //if (HealthPoints <= 0)
         //{
