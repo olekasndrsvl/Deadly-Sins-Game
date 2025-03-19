@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class EnvySceneControllerScript : MonoBehaviour
 {
+    public GameObject BetterVersionofMort;
     public GameObject Player;
     public GameObject Enemy;
     int enemyhp = 0;
@@ -29,6 +30,7 @@ public class EnvySceneControllerScript : MonoBehaviour
         if (Player.GetComponent<EnvylLevelPlayerHitBox>().HealthPoints <= 0)
         {
             LoseDialog.SetActive(true);
+            BetterVersionofMort.GetComponent<BetterVersionOfMortControllerScript>().IsPaused = true;
         }
 
         if (Enemy.GetComponent<BetterVersionOfMprtScript>().HealthPoints <= 0)

@@ -57,7 +57,11 @@ public class EnvylLevelPlayerHitBox : MonoBehaviour
     void Update()
     {
         HP_text.GetComponent<TMP_Text>().text = "Çהמנמגüו: "+HealthPoints.ToString();
-
+        if (HealthPoints < 0)
+        {
+            HealthPoints = 0;
+        }
+        
         //if (HealthPoints <= 0)
         //{
 

@@ -1721,7 +1721,7 @@ MonoBehaviour:
   Deb: 
   HealthPoints: 0
   EnemyBody: {fileID: 1747276516}
-  DamageAmount: 10
+  DamageAmount: 40
   HP_text: {fileID: 1763984584}
   HitSounds:
   - {fileID: 8300000, guid: 692a714623273de498e12439f09c63e5, type: 3}
@@ -2781,6 +2781,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73e86e42252a80745840a51ed4cbb52a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BetterVersionofMort: {fileID: 1747276516}
   Player: {fileID: 1330089220}
   Enemy: {fileID: 738080035}
   levelpreview: {fileID: 746201741}
@@ -3181,11 +3182,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1145787543237810189, guid: 308ab9aab244fc945a2acb0bef5b9b56, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 53.325806
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1145787543237810189, guid: 308ab9aab244fc945a2acb0bef5b9b56, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.5109005
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1145787543237810189, guid: 308ab9aab244fc945a2acb0bef5b9b56, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -3317,11 +3318,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3930781001062009254, guid: 308ab9aab244fc945a2acb0bef5b9b56, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 58.97081
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3930781001062009254, guid: 308ab9aab244fc945a2acb0bef5b9b56, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.5109005
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3930781001062009254, guid: 308ab9aab244fc945a2acb0bef5b9b56, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -3385,11 +3386,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7164713206301348322, guid: 308ab9aab244fc945a2acb0bef5b9b56, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 56.46269
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7164713206301348322, guid: 308ab9aab244fc945a2acb0bef5b9b56, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 36.393837
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7419628017765848601, guid: 308ab9aab244fc945a2acb0bef5b9b56, type: 3}
       propertyPath: m_SizeDelta.y
@@ -3741,6 +3742,14 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 2417506536554166512, guid: 7512677b04da3144b99998cc7bf35d63, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -8339013760857306323, guid: ef390dbf9586cde4eb95cc0c8118b751, type: 3}
+    - target: {fileID: 2823357268354962543, guid: 7512677b04da3144b99998cc7bf35d63, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 44fa5ae22e3c86245b3b57f74867d407, type: 2}
     - target: {fileID: 9212260763027397825, guid: 7512677b04da3144b99998cc7bf35d63, type: 3}
       propertyPath: joystick
       value: 
