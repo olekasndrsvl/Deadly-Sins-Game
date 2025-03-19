@@ -27,7 +27,7 @@ public class BoastSceneController : MonoBehaviour
         if (PlayerPrefs.GetInt("BoastPreviewIsDisplayed", 0) == 1)
         {
             LevelPreview.SetActive(false);
-            i= Tips.Count;
+            //i= Tips.Count;
         }
         TapToScreenToContinue.SetActive(true);
     }
@@ -106,7 +106,7 @@ public class BoastSceneController : MonoBehaviour
 
     public void EndMonolog()
     {
-        i = 0;
+        i = Tips.Count;
         TapToScreenToContinue.SetActive(false);
         MonologEnded = true;
     }
