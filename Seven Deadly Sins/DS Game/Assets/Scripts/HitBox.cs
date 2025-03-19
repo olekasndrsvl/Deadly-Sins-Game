@@ -23,14 +23,13 @@ public class HitBox : MonoBehaviour
         {
             collision.gameObject.transform.Find("HitBox").GetComponent<EnemyScript>().HealthPoints -= DamageAmount;
         }
-
-        onNPCdamaged?.Invoke();
     }
 
     IEnumerator Hint(float sec)
     {
         AtackAnimator.SetBool("IsFighting",true);
         transform.localPosition = new Vector3(5, 0, 0);
+        onNPCdamaged?.Invoke();
         yield return new WaitForSeconds(sec);
         transform.localPosition = new Vector3(0,0,0);
         AtackAnimator.SetBool("IsFighting",false);
