@@ -672,11 +672,11 @@ PrefabInstance:
       objectReference: {fileID: 1035655886}
     - target: {fileID: 4616803271815823463, guid: e92374d8739b5bd4d850c1cbe8849d54, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.4196
+      value: -1.2547657
       objectReference: {fileID: 0}
     - target: {fileID: 4616803271815823463, guid: e92374d8739b5bd4d850c1cbe8849d54, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.0129
+      value: -1.0128952
       objectReference: {fileID: 0}
     - target: {fileID: 4616803271815823463, guid: e92374d8739b5bd4d850c1cbe8849d54, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2513,7 +2513,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3764919194329316922, guid: ff538f87662a70a4ea3184674317c07d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4801957233265225644, guid: ff538f87662a70a4ea3184674317c07d, type: 3}
       propertyPath: m_Pivot.x
@@ -3033,7 +3033,7 @@ MonoBehaviour:
   BoastTip: {fileID: 723786136}
   BoastTipText: {fileID: 842171105}
   TapToScreenToContinue: {fileID: 1366433988}
-  MonologResultWinValue: 2
+  MonologResultWinValue: 4
   Tips:
   - "\u041F\u043E\u0434\u0441\u043A\u0430\u0437\u043A\u0430 1"
   - "\u041F\u043E\u0434\u0441\u043A\u0430\u0437\u043A\u0430 2"

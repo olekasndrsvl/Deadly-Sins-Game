@@ -14,7 +14,7 @@ public class BoastSceneController : MonoBehaviour
     public GameObject BoastTip;
     public GameObject BoastTipText;
     public GameObject TapToScreenToContinue;
-    public int MonologResultWinValue = 2;
+    public int MonologResultWinValue = 4;
     private int i = 0;
     private bool MonologActivated = false;
     private bool MonologEnded = false;
@@ -62,7 +62,7 @@ public class BoastSceneController : MonoBehaviour
            if (MonologEnded)
            {
                BoastTip.SetActive(true);
-               if (Mononlog.GetComponent<Monologue>().MonologResult == MonologResultWinValue)
+               if (Mononlog.GetComponent<Monologue>().MonologResult >= MonologResultWinValue)
                {
                    if (Input.touchCount > 0)
                    {
