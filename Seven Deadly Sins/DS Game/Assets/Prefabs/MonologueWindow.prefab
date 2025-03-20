@@ -530,13 +530,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a9d9558d9e61bf40bcfb2fcf9628c97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogResult: 0
+  MonologResult: 0
   monologueText: {fileID: 4543536415880634987}
   dialogWindow: {fileID: 1268887849996109400}
   dialogAnswerButton1: {fileID: 8174032872691101774}
   dialogAnswerButton2: {fileID: 4594993900971814529}
   closeButton: {fileID: 4364793094595745162}
   clickAudio: {fileID: 4236054174780971902}
+  currentMonologue: {fileID: 0}
 --- !u!114 &9095105962472727713
 MonoBehaviour:
   m_ObjectHideFlags: 0
