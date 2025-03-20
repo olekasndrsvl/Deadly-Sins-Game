@@ -36,6 +36,7 @@ public class WrathSceneController : MonoBehaviour
         if (tipsCounter>=3)
         {
             tipsPanel.SetActive(false);
+            SpawnNPC();
         }
     }
 
@@ -56,7 +57,7 @@ public class WrathSceneController : MonoBehaviour
     }
     private void Start()
     {
-        SpawnNPC();
+        NextTip();
     }
 
     public void Lose()
