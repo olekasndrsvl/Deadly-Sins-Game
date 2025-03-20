@@ -15,7 +15,7 @@ public class BoastSceneController : MonoBehaviour
     public GameObject BoastTipText;
     public GameObject TapToScreenToContinue;
     public int MonologResultWinValue = 4;
-    private int i = 0;
+    public int i = 0;
     private bool MonologActivated = false;
     private bool MonologEnded = false;
     public List<string> Tips;
@@ -27,7 +27,7 @@ public class BoastSceneController : MonoBehaviour
         if (PlayerPrefs.GetInt("BoastPreviewIsDisplayed", 0) == 1)
         {
             LevelPreview.SetActive(false);
-            //i= Tips.Count;
+            i= Tips.Count;
         }
         TapToScreenToContinue.SetActive(true);
     }
@@ -40,10 +40,11 @@ public class BoastSceneController : MonoBehaviour
            if (Input.touchCount > 0)
            {
                TapToScreenToContinue.SetActive(false);
+             
                if (Input.GetTouch(0).phase != TouchPhase.Ended) return;
                if (i < Tips.Count)
                {
-        
+                   BoastTip.SetActive(true);
                    StartCoroutine(SpellTip(Tips[i]));
                }
                else
@@ -106,7 +107,7 @@ public class BoastSceneController : MonoBehaviour
 
     public void EndMonolog()
     {
-        i = Tips.Count;
+        i = 0;
         TapToScreenToContinue.SetActive(false);
         MonologEnded = true;
     }
