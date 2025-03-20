@@ -1444,7 +1444,6 @@ RectTransform:
   - {fileID: 444507440}
   - {fileID: 1169391277}
   - {fileID: 555380456}
-  - {fileID: 1540860483}
   - {fileID: 1756512424}
   - {fileID: 1372026365}
   - {fileID: 695827026}
@@ -1454,6 +1453,7 @@ RectTransform:
   - {fileID: 213057845}
   - {fileID: 2037138919}
   - {fileID: 1368541562}
+  - {fileID: 1540860483}
   - {fileID: 763457951}
   - {fileID: 307267679}
   - {fileID: 745855092}
@@ -3042,7 +3042,13 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 912547771278021807, guid: d37454ea245ba954f8fbefac49bd9fee, type: 3}
       propertyPath: m_text
-      value: "\u0422\u0435\u043A\u0441\u0442 \u043F\u043E\u0434\u0441\u043A\u0430\u0437\u043A\u0438"
+      value: "\u041F\u043E\u0434\u0441\u043A\u0430\u0437\u043A\u0430 \u0440\u0435\u0436\u0438\u043C\u0430
+        \u0411\u043E\u0433\u0430: \u0423\u0431\u0435\u0439 \u043B\u0443\u0447\u0448\u0443\u044E
+        \u0432\u0435\u0440\u0441\u0438\u044E \u0441\u0435\u0431\u044F \u043A\u0430\u043A
+        \u043C\u043E\u0436\u043D\u043E \u0431\u044B\u0441\u0442\u0440\u0435\u0435!
+        \u0423\u0447\u0442\u0438, \u0447\u0442\u043E \u043E\u043D\u0430 \u043F\u043E\u0432\u0442\u043E\u0440\u044F\u0442
+        \u0432\u0441\u0435 \u0437\u0430 \u0442\u043E\u0431\u043E\u0439, \u043D\u043E
+        \u0442\u043E\u043B\u044C\u043A\u043E \u043B\u0443\u0447\u0448\u0435!"
       objectReference: {fileID: 0}
     - target: {fileID: 2462017969906552288, guid: d37454ea245ba954f8fbefac49bd9fee, type: 3}
       propertyPath: m_Pivot.x
@@ -3130,7 +3136,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6804475732826968917, guid: d37454ea245ba954f8fbefac49bd9fee, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
