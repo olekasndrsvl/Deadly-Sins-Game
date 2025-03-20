@@ -2307,7 +2307,7 @@ PrefabInstance:
     - target: {fileID: 5061947775137162554, guid: 308ab9aab244fc945a2acb0bef5b9b56, type: 3}
       propertyPath: CurrentDialog
       value: 
-      objectReference: {fileID: 11400000, guid: 88e7a3b89e3c3734da1b429391b5149e, type: 2}
+      objectReference: {fileID: 11400000, guid: 3e77df6bfb0a82342bab50b14942341f, type: 2}
     - target: {fileID: 5218277182983397770, guid: 308ab9aab244fc945a2acb0bef5b9b56, type: 3}
       propertyPath: m_IsActive
       value: 0
