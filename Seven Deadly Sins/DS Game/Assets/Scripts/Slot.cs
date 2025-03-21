@@ -6,6 +6,7 @@ public class Slot : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerE
     public string correctObjectTag; // Тег правильного объекта
     public bool isOccupied = false; // Флаг, указывающий, занят ли слот
     public GameObject currentItem; // Текущий объект в слоте
+   
 
     public void OnDrop(PointerEventData eventData)
     {
