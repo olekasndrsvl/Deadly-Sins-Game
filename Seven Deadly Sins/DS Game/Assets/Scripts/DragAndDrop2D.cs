@@ -5,11 +5,12 @@ using UnityEngine.UI;
 public class DragAndDropText : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler
 {
     private RectTransform rectTransform;
-
+    private Canvas canvas;
     private void Awake()
     {
         // Получаем RectTransform текстового объекта
         rectTransform = GetComponent<RectTransform>();
+        canvas= GetComponentInParent<Canvas>();
     }
 
     // Вызывается, когда начинается перетаскивание
@@ -23,7 +24,7 @@ public class DragAndDropText : MonoBehaviour, IBeginDragHandler, IEndDragHandler
     public void OnDrag(PointerEventData eventData)
     {
         // Перемещаем текстовый объект в соответствии с движением мыши/касания
-        rectTransform.anchoredPosition += eventData.delta;
+        rectTransform.anchoredPosition += eventData.delta/canvas.scaleFactor;
     }
 
     // Вызывается, когда перетаскивание завершено
