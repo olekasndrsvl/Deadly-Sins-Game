@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -6,8 +7,8 @@ public class SlotCounter : MonoBehaviour
     public static SlotCounter Instance; // Синглтон для удобного доступа к счетчику
     public GameObject[] slots;
     public GameObject[] slotspos;
-    private int totalCount = 0; // Общее количество объектов в слотах
-    private int correctCount = 0; // Количество правильных объектов в слотах
+    public int totalCount = 0; // Общее количество объектов в слотах
+    public int correctCount = 0; // Количество правильных объектов в слотах
 
     private void Awake()
     {
@@ -74,6 +75,7 @@ public class SlotCounter : MonoBehaviour
         if (correctCount >= 3)
         {
             Debug.Log("Все объекты правильные! Переход на сцену победы...");
+            VanitySceneController.IncLevelphase();
             //LoadScene(2); // Переход на сцену победы (индекс 2)
         }
         else
@@ -95,7 +97,25 @@ public class SlotCounter : MonoBehaviour
                 totalCount = 0;
                 Debug.Log("Счет правильных: " + correctCount);
                 Debug.Log("Общий счет: " + totalCount);
+                VanitySceneController.ShowLoseTip();
         }
+    }
+
+    public void Reset()
+    {
+        foreach(GameObject x in slots)
+        {
+                    
+            x.gameObject.GetComponent<DragAndDropText>().Reset();
+        }
+
+        foreach (var x in slotspos)
+        {
+            x.GetComponent<Slot>().isOccupied=false;
+            x.GetComponent<Slot>().currentItem=null;
+        }
+        correctCount = 0;
+        totalCount = 0;
     }
 
     // Метод для перехода на другую сцену

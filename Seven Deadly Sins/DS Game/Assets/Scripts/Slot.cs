@@ -19,15 +19,15 @@ public class Slot : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerE
             // Запоминаем текущий объект в слоте
             currentItem = eventData.pointerDrag;
             isOccupied = true;
-
-            // Уведомляем SlotCounter о том, что объект попал в слот
-            SlotCounter.Instance.IncrementTotalCount();
-
             // Проверяем, является ли объект правильным
             if (currentItem.CompareTag(correctObjectTag))
             {
                 SlotCounter.Instance.IncrementCorrectCount();
             }
+            // Уведомляем SlotCounter о том, что объект попал в слот
+            SlotCounter.Instance.IncrementTotalCount();
+
+            
         }
     }
 
