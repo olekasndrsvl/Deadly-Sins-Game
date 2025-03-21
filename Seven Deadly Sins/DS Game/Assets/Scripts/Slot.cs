@@ -4,8 +4,8 @@ using UnityEngine.EventSystems;
 public class Slot : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerExitHandler
 {
     public string correctObjectTag; // Тег правильного объекта
-    private bool isOccupied = false; // Флаг, указывающий, занят ли слот
-    private GameObject currentItem; // Текущий объект в слоте
+    public bool isOccupied = false; // Флаг, указывающий, занят ли слот
+    public GameObject currentItem; // Текущий объект в слоте
 
     public void OnDrop(PointerEventData eventData)
     {

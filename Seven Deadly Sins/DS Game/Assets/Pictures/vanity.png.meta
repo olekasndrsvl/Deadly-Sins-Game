@@ -1,16 +1,19 @@
 fileFormatVersion: 2
-guid: 5a209cfcd808a7d41932ee3af9486303
+guid: 3f484e1be352d804cb3f7932ccff20af
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 683496428582328125
-    second: vanity_icon_0
+      213: 4628017849462852857
+    second: vanity_0
   - first:
-      213: -7156503104326860027
-    second: vanity_icon_1
+      213: -4643838378055413676
+    second: vanity_1
   - first:
-      213: -2251443874751897488
-    second: vanity_icon_2
+      213: -5145398270314627959
+    second: vanity_2
+  - first:
+      213: 8262187242304480849
+    second: vanity_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -52,7 +55,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -119,13 +122,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: vanity_icon_0
+      name: vanity_0
       rect:
         serializedVersion: 2
-        x: 94
-        y: 0
-        width: 463
-        height: 900
+        x: 205
+        y: 2
+        width: 318
+        height: 1020
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -134,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d37d5e661644c7900800000000000000
-      internalID: 683496428582328125
+      spriteID: 9fc866bb6b50a3040800000000000000
+      internalID: 4628017849462852857
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: vanity_icon_1
+      name: vanity_1
       rect:
         serializedVersion: 2
-        x: 678
-        y: 619
-        width: 12
-        height: 14
+        x: 481
+        y: 809
+        width: 55
+        height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -156,20 +159,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5030e98e75efeac90800000000000000
-      internalID: -7156503104326860027
+      spriteID: 4505ea96995cd8fb0800000000000000
+      internalID: -4643838378055413676
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: vanity_icon_2
+      name: vanity_2
       rect:
         serializedVersion: 2
-        x: 685
-        y: 626
-        width: 24
-        height: 35
+        x: 525
+        y: 818
+        width: 120
+        height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -178,8 +181,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0702fad79b341c0e0800000000000000
-      internalID: -2251443874751897488
+      spriteID: 98cbcfdd88fd798b0800000000000000
+      internalID: -5145398270314627959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vanity_3
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 840
+        width: 71
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 156a25d958f29a270800000000000000
+      internalID: 8262187242304480849
       vertices: []
       indices: 
       edges: []
@@ -188,7 +213,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -198,9 +223,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      vanity_icon_0: 683496428582328125
-      vanity_icon_1: -7156503104326860027
-      vanity_icon_2: -2251443874751897488
+      vanity_0: 4628017849462852857
+      vanity_1: -4643838378055413676
+      vanity_2: -5145398270314627959
+      vanity_3: 8262187242304480849
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
