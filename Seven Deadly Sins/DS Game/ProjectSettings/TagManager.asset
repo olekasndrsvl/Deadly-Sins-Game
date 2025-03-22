@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 3
   tags:
   - Enemy
+  - 1opt
+  - 2opt
+  - 3opt
   - NPC
   - skipped
   layers:
