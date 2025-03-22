@@ -19,6 +19,7 @@ public class WrathSceneController : MonoBehaviour
     public float waitTime;
     public GameObject currentEnemy;
     public TMP_Text tipText;
+    public GameObject LevelPreview;
     
     private int npcCounter;
     private int tipsCounter;
@@ -58,6 +59,13 @@ public class WrathSceneController : MonoBehaviour
     private void Start()
     {
         NextTip();
+        if (PlayerPrefs.GetInt("WrathPreviewDisplayed", 0) == 1)
+        {
+            LevelPreview.SetActive(false);
+        }
+        PlayerPrefs.SetInt("WrathPreviewDisplayed",0);
+        
+        
     }
 
     public void Lose()
@@ -67,6 +75,7 @@ public class WrathSceneController : MonoBehaviour
     public void Replay()
     {
         PlayerPrefs.Save();
+        PlayerPrefs.SetInt("WrathPreviewDisplayed",1);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         
     }
