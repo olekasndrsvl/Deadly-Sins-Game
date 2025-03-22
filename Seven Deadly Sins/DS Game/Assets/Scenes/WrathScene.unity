@@ -187,6 +187,14 @@ PrefabInstance:
       propertyPath: m_FlipY
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2417506536554166512, guid: 7512677b04da3144b99998cc7bf35d63, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -8339013760857306323, guid: ef390dbf9586cde4eb95cc0c8118b751, type: 3}
+    - target: {fileID: 2823357268354962543, guid: 7512677b04da3144b99998cc7bf35d63, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 44fa5ae22e3c86245b3b57f74867d407, type: 2}
     - target: {fileID: 9212260763027397825, guid: 7512677b04da3144b99998cc7bf35d63, type: 3}
       propertyPath: joystick
       value: 
@@ -967,6 +975,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e92374d8739b5bd4d850c1cbe8849d54, type: 3}
+--- !u!1 &622043636 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6824210018471917497, guid: 409dbbe1c74421c4ca48ea0e1aae7f6b, type: 3}
+  m_PrefabInstance: {fileID: 1353180245}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &645932169
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3899,7 +3912,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2845100562886572874, guid: 409dbbe1c74421c4ca48ea0e1aae7f6b, type: 3}
   m_PrefabInstance: {fileID: 1353180245}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 622043636}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3b6d26a10e3881a498e3edc62010d700, type: 3}
@@ -5910,10 +5923,15 @@ MonoBehaviour:
   - "\u0442\u0435\u043A\u0441\u0442 1"
   - "\u0442\u0435\u043A\u0441\u0442 2"
   - "\u0442\u0435\u043A\u0441\u0442 3"
+  WinTipsList:
+  - 1
+  - 2
+  - 3
   waitTime: 3
   currentEnemy: {fileID: 1962548427}
   tipText: {fileID: 2079201566}
   LevelPreview: {fileID: 1636379663}
+  SceneChanger: {fileID: 622043636}
   button: {fileID: 696375802}
 --- !u!1001 &2075996583
 PrefabInstance:

@@ -16,25 +16,27 @@ public class WrathSceneController : MonoBehaviour
     public List<GameObject> phrasesList;
     public List<Transform> positionsList;
     public List<string> tipsList;
+    public List<string> WinTipsList;
     public float waitTime;
     public GameObject currentEnemy;
     public TMP_Text tipText;
     public GameObject LevelPreview;
-    
+    bool isStartedTipsShown = false;
+    bool IsWinner = false;
     private int npcCounter;
     private int tipsCounter;
     private bool isTyping;
-
+    public GameObject SceneChanger;
     public GameObject button;
 
     public void NextTip()
     {
-        if (!isTyping&&tipsCounter<3)
+        if (!isTyping&&tipsCounter<tipsList.Count)
         {
             StartCoroutine(TypeTip());
         }
 
-        if (tipsCounter>=3)
+        if (tipsCounter>=tipsList.Count)
         {
             tipsPanel.SetActive(false);
             SpawnNPC();
@@ -92,7 +94,8 @@ public class WrathSceneController : MonoBehaviour
         Destroy(currentEnemy);
         npcCounter++;
         wrathIcon.SetActive(false);
-        if (npcCounter < 4) SpawnNPC();
+        if (npcCounter < 4) 
+            SpawnNPC();
     }
 
     private void SpawnNPC()
@@ -103,6 +106,7 @@ public class WrathSceneController : MonoBehaviour
         currentEnemy.transform.localScale = positionsList[npcCounter].localScale;
         currentEnemy.GetComponent<WrathNPCLogic>().interactButton = button;
         currentEnemy.GetComponent<WrathNPCLogic>().controller = this;
+        isStartedTipsShown=true;
         
     }
     public void TapButton()
@@ -110,5 +114,28 @@ public class WrathSceneController : MonoBehaviour
         phrasesList[npcCounter].SetActive(true);
         currentEnemy.GetComponent<WrathNPCLogic>().CloseButton();
     }
-    
+
+    private void Update()
+    {
+        if (isStartedTipsShown)
+        {
+            tipsCounter = 0;
+            isStartedTipsShown = false;
+        }
+        
+        if (npcCounter == 4 && !IsWinner)
+        {
+            tipsPanel.SetActive(true);
+            
+            tipsList = WinTipsList;
+            NextTip();
+            IsWinner = true;
+        }
+
+
+        if (IsWinner)
+        {
+            SceneChanger.GetComponent<SceneChangeScript>().ChangeSceneWithDelay(2);
+        }
+    }
 }
