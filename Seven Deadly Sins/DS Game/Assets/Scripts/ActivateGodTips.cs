@@ -8,12 +8,18 @@ public class ActivateGodTips : MonoBehaviour
     void Start()
     {
        
-            if (PlayerPrefs.GetInt("IsPrideSceneTipDisplayed",0) == 1)
+            if (PlayerPrefs.GetInt("IsPrideSceneTipDisplayed",0) == 1 && SceneManager.GetActiveScene().name == "PrideScene")
             {
                 gameObject.SetActive(false);
             }
-      
-       
+            if (PlayerPrefs.GetInt("IsEnvySceneTipDisplayed",0) == 1 && SceneManager.GetActiveScene().name == "EnvyScene")
+            {
+                gameObject.SetActive(false);
+            }
+            if (PlayerPrefs.GetInt("IsBoastSceneTipDisplayed",0) == 1 && SceneManager.GetActiveScene().name == "BoastScene")
+            {
+                gameObject.SetActive(false);
+            }
             Debug.Log(PlayerPrefs.GetInt("IsGodModeEnabled", 0));
 
             if (PlayerPrefs.GetInt("IsGodModeEnabled",0) == 0)
@@ -22,10 +28,18 @@ public class ActivateGodTips : MonoBehaviour
             }
         
 
-        if(SceneManager.GetActiveScene().name == "PrideScene") 
-        { 
-            PlayerPrefs.SetInt("IsPrideSceneTipDisplayed", 1); 
-        }
+            if(SceneManager.GetActiveScene().name == "PrideScene") 
+            { 
+                PlayerPrefs.SetInt("IsPrideSceneTipDisplayed", 1); 
+            }
+            if(SceneManager.GetActiveScene().name == "EnvyScene") 
+            { 
+                PlayerPrefs.SetInt("IsEnvySceneTipDisplayed", 1); 
+            }
+            if(SceneManager.GetActiveScene().name == "BoastScene") 
+            { 
+                PlayerPrefs.SetInt("IsBoastSceneTipDisplayed", 1); 
+            }
        
     }
 

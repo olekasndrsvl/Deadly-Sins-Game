@@ -10,7 +10,7 @@ using UnityEngine;
 public class Monologue : MonoBehaviour
 {
     private bool isPrintingPhrase = false;
-    public int dialogResult;
+    public int MonologResult=0;
 
     public GameObject monologueText;
     public GameObject dialogWindow;
@@ -175,6 +175,7 @@ public class Monologue : MonoBehaviour
             if (isFirstAnswer)
             {
                 PlayerPrefs.SetInt("KarmaState", PlayerPrefs.GetInt("KarmaState") + 10); // Add karma
+                MonologResult++;
             }
             else
             {
