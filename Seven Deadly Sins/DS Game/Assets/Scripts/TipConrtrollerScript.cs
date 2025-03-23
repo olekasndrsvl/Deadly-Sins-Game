@@ -83,7 +83,9 @@ public class TipConrtrollerScript : MonoBehaviour
             TipsText.GetComponent<TMP_Text>().text = sb.ToString();
             yield return new WaitForSeconds(.05f);
         }
-
+        yield return new WaitForSeconds(3f);
+        TipsClose();
+        IsTipsWindowActive = false;
     }
 
     // Update is called once per frame

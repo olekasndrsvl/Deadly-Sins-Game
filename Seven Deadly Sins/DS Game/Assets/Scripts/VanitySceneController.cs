@@ -101,6 +101,18 @@ public class VanitySceneController : MonoBehaviour
     public static void IncLevelphase()
     {
         levelphase++;
+        if (PlayerPrefs.HasKey("KarmaState"))
+        {
+            PlayerPrefs.SetInt("KarmaState", PlayerPrefs.GetInt("KarmaState") + 10);
+
+        }
+        else
+        {
+            PlayerPrefs.SetInt("KarmaState", 50);
+
+
+        }
+
         if (levelphase<3)
         {
           

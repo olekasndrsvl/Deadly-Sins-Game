@@ -29,7 +29,7 @@ public class EnvySceneControllerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Player.GetComponent<EnvylLevelPlayerHitBox>().HealthPoints <= 0)
+        if (Player.GetComponent<EnvylLevelPlayerHitBox>().HealthPoints <= 0 && FinalDialog.activeSelf == false)
         {
             LoseDialog.SetActive(true);
             BetterVersionofMort.GetComponent<BetterVersionOfMortControllerScript>().IsPaused = true;

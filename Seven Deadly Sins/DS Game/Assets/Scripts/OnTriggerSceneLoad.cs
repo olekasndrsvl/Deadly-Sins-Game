@@ -19,7 +19,7 @@ public class OnTriggerSceneLoad : MonoBehaviour
         switch (NumberOfLoadingScene)
         {
             case 3:
-                if (PlayerPrefs.GetInt("KarmaState", 0) > 190)
+                if (PlayerPrefs.GetInt("KarmaState", 0) >= 110)
                 {  
                     LevelChoice.SetActive(true);
                     CurrentSceneToLoad = "WrathScene";
@@ -36,7 +36,7 @@ public class OnTriggerSceneLoad : MonoBehaviour
 
                 break;
             case 5:
-                if (PlayerPrefs.GetInt("KarmaState", 0) > 190)
+                if (PlayerPrefs.GetInt("KarmaState", 0) >= 110)
                 {  
                     LevelChoice.SetActive(true);
                     CurrentSceneToLoad = "WrathScene";
@@ -51,7 +51,7 @@ public class OnTriggerSceneLoad : MonoBehaviour
               
                 break;
             case 6:
-                if (PlayerPrefs.GetInt("KarmaState", 0) > 110)
+                if (PlayerPrefs.GetInt("KarmaState", 0) >= 60)
                 { 
                     LevelChoice.SetActive(true);
                     CurrentSceneToLoad = "VanityScene";
@@ -66,7 +66,7 @@ public class OnTriggerSceneLoad : MonoBehaviour
                
                 break;
             case 7:
-                if (PlayerPrefs.GetInt("KarmaState", 0) > 60)
+                if (PlayerPrefs.GetInt("KarmaState", 0) >= 53)
                 {
                     LevelChoice.SetActive(true);
                     CurrentSceneToLoad = "PrideScene";
@@ -80,7 +80,7 @@ public class OnTriggerSceneLoad : MonoBehaviour
                 
                 break;
             case 8:
-                if (PlayerPrefs.GetInt("KarmaState", 0) > 100)
+                if (PlayerPrefs.GetInt("KarmaState", 0) >= 90)
                 { 
                     LevelChoice.SetActive(true);
                     CurrentSceneToLoad = "BoastScene";
@@ -96,7 +96,7 @@ public class OnTriggerSceneLoad : MonoBehaviour
                 break;
             case 9:
                
-                if (PlayerPrefs.GetInt("KarmaState", 0) > 80)
+                if (PlayerPrefs.GetInt("KarmaState", 0) >= 58)
                 { 
                     LevelChoice.SetActive(true);
                     CurrentSceneToLoad = "EnvyScene";
@@ -111,7 +111,7 @@ public class OnTriggerSceneLoad : MonoBehaviour
                 break;
             case 10:
                
-                if (PlayerPrefs.GetInt("KarmaState", 0) > 70)
+                if (PlayerPrefs.GetInt("KarmaState", 0) >= 57)
                 {
                     LevelChoice.SetActive(true);
                     CurrentSceneToLoad = "GreedScene";
@@ -126,7 +126,7 @@ public class OnTriggerSceneLoad : MonoBehaviour
                 break;
             default:
                 LevelChoice.SetActive(false);
-                if (PlayerPrefs.GetInt("KarmaState", 0) > 200)
+                if (PlayerPrefs.GetInt("KarmaState", 0) >= 114)
                 {
                     CurrentSceneToLoad = "OutroScene";
                     SceneChanger.GetComponent<SceneChangeScript>().ChangeSceneWithDelay(5);
