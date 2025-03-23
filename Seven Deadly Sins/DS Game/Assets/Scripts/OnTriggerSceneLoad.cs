@@ -129,6 +129,7 @@ public class OnTriggerSceneLoad : MonoBehaviour
                 if (PlayerPrefs.GetInt("KarmaState", 0) >= 114)
                 {
                     CurrentSceneToLoad = "OutroScene";
+                    Debug.Log("Scene change!");
                     SceneChanger.GetComponent<SceneChangeScript>().ChangeSceneWithDelay(5);
                 }
                 else

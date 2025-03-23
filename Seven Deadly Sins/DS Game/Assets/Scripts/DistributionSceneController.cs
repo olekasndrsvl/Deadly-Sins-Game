@@ -12,6 +12,6 @@ public class DistributionSceneController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(PlayerPrefs.GetInt("KarmaState", 0));
+       // Debug.Log(PlayerPrefs.GetInt("KarmaState", 0));
     }
 }

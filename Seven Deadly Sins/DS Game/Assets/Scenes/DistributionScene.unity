@@ -226,8 +226,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd04e865feaef0a4395493ae16c98d35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneChanger: {fileID: 0}
-  LoadingScreen: {fileID: 0}
+  SceneChanger: {fileID: 1103797378}
+  LoadingScreen: {fileID: 1300320730}
   LevelChoice: {fileID: 1106312554}
   LevelDesciption: {fileID: 221809752}
   NumberOfLoadingScene: 3
@@ -2167,6 +2167,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1103797378 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6824210018471917497, guid: 409dbbe1c74421c4ca48ea0e1aae7f6b, type: 3}
+  m_PrefabInstance: {fileID: 2074902821}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1106312554
 GameObject:
   m_ObjectHideFlags: 0
@@ -2250,7 +2255,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2845100562886572874, guid: 409dbbe1c74421c4ca48ea0e1aae7f6b, type: 3}
   m_PrefabInstance: {fileID: 2074902821}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1103797378}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3b6d26a10e3881a498e3edc62010d700, type: 3}
@@ -2402,8 +2407,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd04e865feaef0a4395493ae16c98d35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneChanger: {fileID: 0}
-  LoadingScreen: {fileID: 0}
+  SceneChanger: {fileID: 1103797378}
+  LoadingScreen: {fileID: 1300320730}
   LevelChoice: {fileID: 1106312554}
   LevelDesciption: {fileID: 221809752}
   NumberOfLoadingScene: -1
@@ -3774,8 +3779,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd04e865feaef0a4395493ae16c98d35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneChanger: {fileID: 0}
-  LoadingScreen: {fileID: 0}
+  SceneChanger: {fileID: 1103797378}
+  LoadingScreen: {fileID: 1300320730}
   LevelChoice: {fileID: 1106312554}
   LevelDesciption: {fileID: 221809752}
   NumberOfLoadingScene: 6
