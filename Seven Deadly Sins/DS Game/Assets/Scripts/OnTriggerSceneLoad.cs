@@ -7,6 +7,7 @@ using UnityEngine.UI;
 using TMPro;
 public class OnTriggerSceneLoad : MonoBehaviour
 {
+    public GameObject SceneChanger;
     public GameObject LoadingScreen;
     public GameObject LevelChoice;
     public TextMeshProUGUI LevelDesciption;
@@ -14,43 +15,131 @@ public class OnTriggerSceneLoad : MonoBehaviour
     static string CurrentSceneToLoad;
     public void OnTriggerEnter2D(Collider2D other)
     {
-        LevelChoice.SetActive(true);
+      
         switch (NumberOfLoadingScene)
         {
             case 3:
-                LevelDesciption.text = "Вы хотите перейти на уровень \"Гнев\"?";
-                CurrentSceneToLoad = "WrathScene";
+                if (PlayerPrefs.GetInt("KarmaState", 0) > 190)
+                {  
+                    LevelChoice.SetActive(true);
+                    CurrentSceneToLoad = "WrathScene";
+                    LevelDesciption.text = "Вы хотите перейти на уровень \"Гнев\"?";
+                  
+                }
+                else
+                {
+                    TipConrtrollerScript.TipsTextMessage = "Тебе еще рано в этот котел! Справься с более простыми грехами!";
+                    TipConrtrollerScript.IsNewTextAdded = true;
+                }
                 break;
             case 4:
 
                 break;
             case 5:
-                CurrentSceneToLoad = "WrathScene";
-                LevelDesciption.text = "Вы хотите перейти на уровень \"Гнев\"?";
+                if (PlayerPrefs.GetInt("KarmaState", 0) > 190)
+                {  
+                    LevelChoice.SetActive(true);
+                    CurrentSceneToLoad = "WrathScene";
+                    LevelDesciption.text = "Вы хотите перейти на уровень \"Гнев\"?";
+                  
+                }
+                else
+                {
+                    TipConrtrollerScript.TipsTextMessage = "Тебе еще рано в этот котел! Справься с более простыми грехами!";
+                    TipConrtrollerScript.IsNewTextAdded = true;
+                }
+              
                 break;
             case 6:
-                CurrentSceneToLoad = "VanityScene";
-                LevelDesciption.text = "Вы хотите перейти на уровень \"Тщеславие\"?";
+                if (PlayerPrefs.GetInt("KarmaState", 0) > 110)
+                { 
+                    LevelChoice.SetActive(true);
+                    CurrentSceneToLoad = "VanityScene";
+                    LevelDesciption.text = "Вы хотите перейти на уровень \"Тщеславие\"?";
+                    
+                }
+                else
+                {
+                    TipConrtrollerScript.TipsTextMessage = "Тебе еще рано в этот котел! Справься с более простыми грехами!";
+                    TipConrtrollerScript.IsNewTextAdded = true;
+                }
+               
                 break;
             case 7:
-                CurrentSceneToLoad = "PrideScene";
-                LevelDesciption.text = "Вы хотите перейти на уровень \"Гордыня\"?";
+                if (PlayerPrefs.GetInt("KarmaState", 0) > 60)
+                {
+                    LevelChoice.SetActive(true);
+                    CurrentSceneToLoad = "PrideScene";
+                    LevelDesciption.text = "Вы хотите перейти на уровень \"Гордыня\"?";
+                }
+                else
+                {
+                    TipConrtrollerScript.TipsTextMessage = "Тебе еще рано в этот котел! Справься с более простыми грехами!";
+                    TipConrtrollerScript.IsNewTextAdded = true;
+                }
+                
                 break;
             case 8:
-                CurrentSceneToLoad = "BoastScene";
-                LevelDesciption.text = "Вы хотите перейти на уровень \"Хваставство\"?";
+                if (PlayerPrefs.GetInt("KarmaState", 0) > 100)
+                { 
+                    LevelChoice.SetActive(true);
+                    CurrentSceneToLoad = "BoastScene";
+                    LevelDesciption.text = "Вы хотите перейти на уровень \"Хваставство\"?";
+                    
+                }
+                else
+                {
+                    TipConrtrollerScript.TipsTextMessage = "Тебе еще рано в этот котел! Справься с более простыми грехами!";
+                    TipConrtrollerScript.IsNewTextAdded = true;
+                }
+               
                 break;
             case 9:
-                CurrentSceneToLoad = "EnvyScene";
-                LevelDesciption.text = "Вы хотите перейти на уровень \"Зависть\"?";
+               
+                if (PlayerPrefs.GetInt("KarmaState", 0) > 80)
+                { 
+                    LevelChoice.SetActive(true);
+                    CurrentSceneToLoad = "EnvyScene";
+                    LevelDesciption.text = "Вы хотите перейти на уровень \"Зависть\"?";
+                   
+                }
+                else
+                {
+                    TipConrtrollerScript.TipsTextMessage = "Тебе еще рано в этот котел! Справься с более простыми грехами!";
+                    TipConrtrollerScript.IsNewTextAdded = true;
+                }
                 break;
             case 10:
-                CurrentSceneToLoad = "GreedScene";
-                LevelDesciption.text = "Вы хотите перейти на уровень \"Жадность\"?";
+               
+                if (PlayerPrefs.GetInt("KarmaState", 0) > 70)
+                {
+                    LevelChoice.SetActive(true);
+                    CurrentSceneToLoad = "GreedScene";
+                    LevelDesciption.text = "Вы хотите перейти на уровень \"Жадность\"?";
+                }
+                else
+                {
+                    TipConrtrollerScript.TipsTextMessage = "Тебе еще рано в этот котел! Справься с более простыми грехами!";
+                    TipConrtrollerScript.IsNewTextAdded = true;
+                }
+                
                 break;
             default:
-                CurrentSceneToLoad = "OutroScene";
-                LevelDesciption.text = "Вы хотите перейти к финалу игры?";
+                LevelChoice.SetActive(false);
+                if (PlayerPrefs.GetInt("KarmaState", 0) > 200)
+                {
+                    CurrentSceneToLoad = "OutroScene";
+                    SceneChanger.GetComponent<SceneChangeScript>().ChangeSceneWithDelay(5);
+                }
+                else
+                {
+                    TipConrtrollerScript.TipsTextMessage = "Ты еще не окончил путь очищения, сын мой!";
+                    TipConrtrollerScript.IsNewTextAdded = true;
+                }
+                
+
+              
+                //LevelDesciption.text = "Вы хотите перейти к финалу игры?";
                 break;
         }
 
