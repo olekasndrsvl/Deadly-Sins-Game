@@ -1110,6 +1110,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 213057844}
   m_CullTransparentMesh: 1
+--- !u!1 &261230332 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2844452412511585206, guid: 308ab9aab244fc945a2acb0bef5b9b56, type: 3}
+  m_PrefabInstance: {fileID: 50058003}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &307267679 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7650242346587124795, guid: 69ecc72201703ac4e9970888cb4310a8, type: 3}
@@ -2785,6 +2790,7 @@ MonoBehaviour:
   Player: {fileID: 1330089220}
   Enemy: {fileID: 738080035}
   levelpreview: {fileID: 746201741}
+  StartDialog: {fileID: 261230332}
   FinalDialog: {fileID: 513698676}
   LoseDialog: {fileID: 1564289476}
 --- !u!4 &1306169318

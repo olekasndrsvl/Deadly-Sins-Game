@@ -8,6 +8,7 @@ public class EnvySceneControllerScript : MonoBehaviour
     public GameObject Enemy;
     int enemyhp = 0;
     public GameObject levelpreview;
+    public GameObject StartDialog;
     public GameObject FinalDialog;
     public GameObject LoseDialog;
     private int levelphase = 0;
@@ -19,6 +20,7 @@ public class EnvySceneControllerScript : MonoBehaviour
         if (PlayerPrefs.GetInt("IsLevelPreviewDisplayed", 0) == 1)
         {
             levelpreview.SetActive(false);
+            StartDialog.SetActive(false);
         }
         PlayerPrefs.SetInt("IsLevelPreviewDisplayed",1);
     }
