@@ -8,6 +8,7 @@ using UnityEngine.UI;
 
 public class VanitySceneController : MonoBehaviour
 {
+    public GameObject TipPanel;
     public GameObject[] Holders;
     public GameObject SceneLoadManager;
     public GameObject LevelPreview;
@@ -42,6 +43,7 @@ public class VanitySceneController : MonoBehaviour
             Debug.Log(IsLoseTipsShown.ToString());
             //TapToScreenToContinue.SetActive(true);
             //VanityTip.SetActive(true);
+            TipPanel.SetActive(true);
             ShowTip(LoseTips);
            // Debug.Log(LoseTips.Count);
         }
@@ -51,9 +53,11 @@ public class VanitySceneController : MonoBehaviour
             {
                 //Начальные подсказки показываем
                 case -1:
+                    TipPanel.SetActive(true);
                     ShowTip(Tips);
                     break;
                 case 0:
+                    TipPanel.SetActive(false);
                     for (int j = 0; j < 3; j++)
                     {
                         Holders[j].GetComponent<Text>().text = Wealthies1[j];
@@ -62,6 +66,7 @@ public class VanitySceneController : MonoBehaviour
                    
                     break;
                 case 1:
+                    TipPanel.SetActive(false);
                     for (int j = 0; j < 3; j++)
                     {
                         Holders[j].GetComponent<Text>().text = Wealthies2[j];
@@ -70,6 +75,7 @@ public class VanitySceneController : MonoBehaviour
                   
                     break;
                 case 2:
+                    TipPanel.SetActive(false);
                     for (int j = 0; j < 3; j++)
                     {
                         Holders[j].GetComponent<Text>().text = Wealthies3[j];
@@ -78,6 +84,7 @@ public class VanitySceneController : MonoBehaviour
                  
                     break;
                 case 3:
+                    TipPanel.SetActive(true);
                     ShowTip(WinTips);
                     break;
             }
