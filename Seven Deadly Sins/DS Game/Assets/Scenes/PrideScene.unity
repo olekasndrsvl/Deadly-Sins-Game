@@ -4516,11 +4516,11 @@ RectTransform:
   - {fileID: 746393349}
   - {fileID: 379304517}
   - {fileID: 2005188040}
-  - {fileID: 664107970}
   - {fileID: 1386992555}
   - {fileID: 958314770}
   - {fileID: 1155885442}
   - {fileID: 380548666}
+  - {fileID: 664107970}
   - {fileID: 2135849408}
   - {fileID: 469449434}
   - {fileID: 1123780260}
@@ -5049,7 +5049,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1547246484368317891, guid: aff9720f41c193d4d833008982ccbd7f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 84.05
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3723539132611956526, guid: aff9720f41c193d4d833008982ccbd7f, type: 3}
       propertyPath: m_Pivot.x
