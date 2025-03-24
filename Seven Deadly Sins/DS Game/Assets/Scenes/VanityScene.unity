@@ -434,27 +434,28 @@ MonoBehaviour:
   VanityTipText: {fileID: 772358724}
   TapToScreenToContinue: {fileID: 14384806}
   Tips:
-  - "\u041E\u041F\u0430"
-  - 2
-  - 3
-  WinTips:
-  - q
-  - q
-  LoseTips:
-  - "\u0421\u043B\u0430\u0431"
-  - "\u0421\u043B\u0430\u0431"
+  - "\u0417\u0434\u0440\u0430\u0432\u0441\u0442\u0432\u0443\u0439, \u041C\u043E\u0440\u0442!
+    \u0422\u044B \u0436\u0435 \u0445\u043E\u0447\u0435\u0448\u044C, \u0447\u0442\u043E\u0431\u044B
+    \u0432\u0435\u0441\u044C \u043C\u0438\u0440 \u0431\u044B\u043B \u0443 \u0442\u0432\u043E\u0438\u0445
+    \u043D\u043E\u0433?"
+  - "\u041A\u0430\u0436\u0434\u043E\u0435 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u043E
+    \u0432 \u0442\u0432\u043E\u0435\u0439 \u0432\u043B\u0430\u0441\u0442\u0438\u2026.\u0438\u043B\u0438
+    \u0442\u044B \u0432 \u0438\u0445? \\r\\n\u0414\u0430\u0432\u0430\u0439 \u0443\u0437\u043D\u0430\u0435\u043C."
+  - "\u0420\u0430\u0441\u0441\u0442\u0430\u0432\u044C \u0446\u0435\u043D\u043D\u043E\u0441\u0442\u0438
+    \u043A\u0430\u043A \u043F\u043E\u0434\u043E\u0431\u0430\u0435\u0442 \u043A\u043E\u0440\u043E\u043B\u044E.\\r\\n\u041D\u0438\u0447\u0442\u043E
+    \u043D\u0435 \u0438\u0441\u0442\u0438\u043D\u043D\u043E, \u0432\u0441\u0435 \u0434\u043E\u0437\u0432\u043E\u043B\u0435\u043D\u043E."
   Wealthies1:
-  - 1
-  - 2
-  - 3
+  - "\u041A\u0440\u0430\u0441\u043E\u0442\u0430 "
+  - "\u0420\u0430\u0437\u0432\u043B\u0435\u0447\u0435\u043D\u0438\u044F"
+  - "\u0412\u043B\u0430\u0441\u0442\u044C"
   Wealthies2:
-  - 4
-  - 5
-  - 6
+  - "\u0421\u0432\u043E\u0431\u043E\u0434\u0430 "
+  - "\u0421\u0442\u0430\u0431\u0438\u043B\u044C\u043D\u043E\u0441\u0442\u044C"
+  - "\u041A\u043E\u043C\u0444\u043E\u0440\u0442"
   Wealthies3:
-  - 7
-  - 8
-  - 9
+  - "\u041C\u0443\u0434\u0440\u043E\u0441\u0442\u044C"
+  - "\u0427\u0435\u0441\u0442\u043D\u043E\u0441\u0442\u044C"
+  - "\u0422\u0432\u043E\u0440\u0447\u0435\u0441\u0442\u0432\u043E"
 --- !u!224 &177472153 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 385578356748651640, guid: aecbfb1e2e8452d4a9aedf5e673887c5, type: 3}
@@ -547,6 +548,10 @@ PrefabInstance:
       propertyPath: m_Text
       value: New Text2
       objectReference: {fileID: 0}
+    - target: {fileID: 270386146534800283, guid: 06d3cb28f2bb5c8428eafc8036a05182, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 421863854083047268, guid: 06d3cb28f2bb5c8428eafc8036a05182, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -571,9 +576,17 @@ PrefabInstance:
       propertyPath: m_Text
       value: New Text1
       objectReference: {fileID: 0}
+    - target: {fileID: 3682211002171254552, guid: 06d3cb28f2bb5c8428eafc8036a05182, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 4213418711060356963, guid: 06d3cb28f2bb5c8428eafc8036a05182, type: 3}
       propertyPath: m_Text
       value: New Text3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4213418711060356963, guid: 06d3cb28f2bb5c8428eafc8036a05182, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 5640631133010619458, guid: 06d3cb28f2bb5c8428eafc8036a05182, type: 3}
       propertyPath: m_Type
@@ -1591,8 +1604,11 @@ PrefabInstance:
     - target: {fileID: 912547771278021807, guid: d37454ea245ba954f8fbefac49bd9fee, type: 3}
       propertyPath: m_text
       value: "\u041F\u043E\u0434\u0441\u043A\u0430\u0437\u043A\u0430 \u0440\u0435\u0436\u0438\u043C\u0430
-        \u0411\u043E\u0433\u0430:\n\u041E\u0442\u0432\u0435\u0442\u044B: (\u041C\u0438\u0448\u0430
-        \u0437\u0430\u043F\u043E\u043B\u043D\u0438!)\n"
+        \u0411\u043E\u0433\u0430:\n\u041E\u0442\u0432\u0435\u0442\u044B: \n1. \u041A\u0440\u0430\u0441\u043E\u0442\u0430,
+        \u0420\u0430\u0437\u0432\u043B\u0435\u0447\u0435\u043D\u0438\u044F, \u0412\u043B\u0430\u0441\u0442\u044C;
+        \n2. \u0421\u0432\u043E\u0431\u043E\u0434\u0430, \u0421\u0442\u0430\u0431\u0438\u043B\u044C\u043D\u043E\u0441\u0442\u044C,
+        \u041A\u043E\u043C\u0444\u043E\u0440\u0442;\n3. \u041C\u0443\u0434\u0440\u043E\u0441\u0442\u044C,
+        \u0427\u0435\u0441\u0442\u043D\u043E\u0441\u0442\u044C, \u0422\u0432\u043E\u0440\u0447\u0435\u0441\u0442\u0432\u043E.\n"
       objectReference: {fileID: 0}
     - target: {fileID: 2462017969906552288, guid: d37454ea245ba954f8fbefac49bd9fee, type: 3}
       propertyPath: m_Pivot.x
