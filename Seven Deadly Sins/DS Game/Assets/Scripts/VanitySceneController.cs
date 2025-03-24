@@ -8,6 +8,7 @@ using UnityEngine.UI;
 
 public class VanitySceneController : MonoBehaviour
 {
+    public static VanitySceneController instance;
     public GameObject TipPanel;
     public GameObject[] Holders;
     public GameObject SceneLoadManager;
@@ -17,90 +18,65 @@ public class VanitySceneController : MonoBehaviour
     public GameObject VanityTipText;
     public GameObject TapToScreenToContinue;
     public List<string> Tips;
-    public List<string> WinTips;
-    public List<string> LoseTips;
+    public List<List<string>> WinTips;
+    public List<List<string>> LoseTips;
     public static bool IsLoseTipsShown = false;
+    public static bool IsWinTipsShown1 = false;
     public List<string> Wealthies1;
     public List<string> Wealthies2;
     public List<string> Wealthies3;
-    static int levelphase = -1;
-    private int i = 0;
+    static int levelphase = 0;
+
+    private static int i = 0;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        VanityTipText.GetComponent<TMP_Text>().text = Tips[i];
-        i++;
+        instance = this;
+        WinTips = new List<List<string>>()
+        {
+            new List<string>() { "1", "2,", "3" },
+            new List<string>() { "4", "5,", "6" },
+            new List<string>() { "7", "8,", "9" },
+            new List<string>() { "F", "i,", "n" }
+        };
+
+        LoseTips = new List<List<string>>()
+        {
+            new List<string>() { "11", "21,", "31" },
+            new List<string>() { "14", "15,", "16" },
+            new List<string>() { "17", "18,", "19" }
+        };
+
+        StartCoroutine(ShowTip(Tips));
+        for (int j = 0; j < 3; j++)
+        {
+            Holders[j].GetComponent<Text>().text = Wealthies1[j];
+
+        }
+      
     }
 
     // Update is called once per frame
     void Update()
     {
-    //   Debug.Log(levelphase);
-        if (IsLoseTipsShown)
-        {
-          
-            
-            Debug.Log(IsLoseTipsShown.ToString());
-            //TapToScreenToContinue.SetActive(true);
-            //VanityTip.SetActive(true);
-            TipPanel.SetActive(true);
-            ShowTip(LoseTips);
-           // Debug.Log(LoseTips.Count);
-        }
-        else
-        {
-            switch (levelphase)
-            {
-                //Начальные подсказки показываем
-                case -1:
-                    TipPanel.SetActive(true);
-                    ShowTip(Tips);
-                    break;
-                case 0:
-                    TipPanel.SetActive(false);
-                    for (int j = 0; j < 3; j++)
-                    {
-                        Holders[j].GetComponent<Text>().text = Wealthies1[j];
-                       
-                    }
-                   
-                    break;
-                case 1:
-                    TipPanel.SetActive(false);
-                    for (int j = 0; j < 3; j++)
-                    {
-                        Holders[j].GetComponent<Text>().text = Wealthies2[j];
-                        
-                    }
-                  
-                    break;
-                case 2:
-                    TipPanel.SetActive(false);
-                    for (int j = 0; j < 3; j++)
-                    {
-                        Holders[j].GetComponent<Text>().text = Wealthies3[j];
-                       
-                    } 
-                 
-                    break;
-                case 3:
-                    TipPanel.SetActive(true);
-                    ShowTip(WinTips);
-                    break;
-            }
-        }
-        
-        
-        
+        Debug.Log(levelphase);
     }
+
+
+
+    
 
     public static void ShowLoseTip()
     {
-        IsLoseTipsShown = true;
+        instance.StartCoroutine(instance.ShowTip(instance.LoseTips[levelphase]));
     }
+
     public static void IncLevelphase()
     {
         levelphase++;
+        instance.StartCoroutine(instance.ShowTip(instance.WinTips[levelphase]));
+
         if (PlayerPrefs.HasKey("KarmaState"))
         {
             PlayerPrefs.SetInt("KarmaState", PlayerPrefs.GetInt("KarmaState") + 10);
@@ -113,60 +89,94 @@ public class VanitySceneController : MonoBehaviour
 
         }
 
-        if (levelphase<3)
+        switch (levelphase)
         {
-          
+            case 1:
+                for (int j = 0; j < 3; j++)
+                {
+                    instance.Holders[j].GetComponent<Text>().text = instance.Wealthies2[j];
+
+                }
+
+                break;
+            case 2:
+
+                for (int j = 0; j < 3; j++)
+                {
+                    instance.Holders[j].GetComponent<Text>().text = instance.Wealthies3[j];
+
+                }
+
+                break;
+            case 3:
+                
+                instance.StartCoroutine(instance.ShowTip(instance.WinTips[levelphase]));
+              
+                break;
+
+
+        }
+
+        if (levelphase < 3)
+        {
+
             SlotCounter.Instance.Reset();
         }
-      
     }
-    void ShowTip(List<string> tips)
-    {
-        if (Input.touchCount > 0)
+
+    IEnumerator ShowTip(List<string> tips)
         {
+            TipPanel.SetActive(true);
+            VanityTip.SetActive(true);
             TapToScreenToContinue.SetActive(false);
-             
-            if (Input.GetTouch(0).phase != TouchPhase.Ended) 
-                return;
+            vanityanimator.SetBool("IsAppeared", false);
+            foreach (string tip in tips)
+            {
+                yield return StartCoroutine(SpellTip(tip));
             
-            if (i < tips.Count)
-            {
-                vanityanimator.SetBool("IsAppeared",false);
-                VanityTip.SetActive(true);
-                StartCoroutine(SpellTip(tips[i]));
-            }
-            else
-            {
-                vanityanimator.SetBool("IsAppeared",true);
-                TapToScreenToContinue.SetActive(false);
-                
-                if (levelphase == 3)
+                TapToScreenToContinue.SetActive(true);
+            
+                bool tapped = false;
+            
+                while (!tapped)
                 {
-                   SceneLoadManager.GetComponent<SceneChangeScript>().ChangeSceneWithDelay(2);
-                }
-                if (levelphase == -1)
-                    levelphase++;
-                i = 0;
-                IsLoseTipsShown = false;
-                
+                    if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended)
+                    {
+                        tapped = true;
+                    }
 
+                    yield return null;
+                }
+
+                TapToScreenToContinue.SetActive(false);
             }
 
+       
+            vanityanimator.SetBool("IsAppeared", true);
+            TipPanel.SetActive(false);
+            if (levelphase == 3)
+            {
+                instance.SceneLoadManager.GetComponent<SceneChangeScript>().ChangeSceneWithDelay(2);
+            }
+        }
 
-        }
-    }
+
+
+
+        
     
-    IEnumerator SpellTip(string s)
-    {
-        VanityTipText.GetComponent<TMP_Text>().text = "";
-        var sb = new StringBuilder();
-        foreach (var x in s + '\n')
+    
+        IEnumerator SpellTip(string s)
         {
-            sb.Append(x);
-            VanityTipText.GetComponent<TMP_Text>().text = sb.ToString();
-            yield return new WaitForSeconds(0.01f);
+            VanityTipText.GetComponent<TMP_Text>().text = "";
+            var sb = new StringBuilder();
+            foreach (var x in s + '\n')
+            {
+                sb.Append(x);
+                VanityTipText.GetComponent<TMP_Text>().text = sb.ToString();
+                yield return new WaitForSeconds(0.01f);
+            }
+            TapToScreenToContinue.SetActive(true);
+            i++;
         }
-        TapToScreenToContinue.SetActive(true);
-        i++;
-    }
 }
