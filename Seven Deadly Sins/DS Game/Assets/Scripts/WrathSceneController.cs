@@ -39,7 +39,14 @@ public class WrathSceneController : MonoBehaviour
         if (tipsCounter>=tipsList.Count)
         {
             tipsPanel.SetActive(false);
-            SpawnNPC();
+            if (!IsWinner)
+            {
+                SpawnNPC();
+            }
+            else
+            {
+                SceneChanger.GetComponent<SceneChangeScript>().ChangeSceneWithDelay(2);
+            }
         }
     }
 
@@ -96,6 +103,12 @@ public class WrathSceneController : MonoBehaviour
         wrathIcon.SetActive(false);
         if (npcCounter < 4) 
             SpawnNPC();
+        else
+        {
+            tipsList = WinTipsList;
+            tipsCounter = 0;
+            NextTip();
+        }
     }
 
     private void SpawnNPC()
@@ -126,16 +139,9 @@ public class WrathSceneController : MonoBehaviour
         if (npcCounter == 4 && !IsWinner)
         {
             tipsPanel.SetActive(true);
-            
-            tipsList = WinTipsList;
-            NextTip();
             IsWinner = true;
         }
 
 
-        if (IsWinner)
-        {
-            SceneChanger.GetComponent<SceneChangeScript>().ChangeSceneWithDelay(2);
-        }
     }
 }
