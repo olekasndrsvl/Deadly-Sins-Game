@@ -66,7 +66,7 @@ public class OnTriggerSceneLoad : MonoBehaviour
                
                 break;
             case 7:
-                if (PlayerPrefs.GetInt("KarmaState", 0) >= 53)
+                if (PlayerPrefs.GetInt("KarmaState", 0) >= 0)
                 {
                     LevelChoice.SetActive(true);
                     CurrentSceneToLoad = "PrideScene";
