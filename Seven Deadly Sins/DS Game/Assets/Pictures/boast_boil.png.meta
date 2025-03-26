@@ -197,7 +197,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      boast_boil_0: 5252732111485270001
+      boast_boil_1: 6300181794045168303
+      boast_boil_2: -8019917920766580358
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
