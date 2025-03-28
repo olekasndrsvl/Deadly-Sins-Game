@@ -27,6 +27,8 @@ public class VanitySceneController : MonoBehaviour
     public List<string> Wealthies3;
     static int levelphase = 0;
 
+    public AudioSource LoseTipSound;
+
     private static int i = 0;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -69,6 +71,7 @@ public class VanitySceneController : MonoBehaviour
 
     public static void ShowLoseTip()
     {
+        instance.LoseTipSound.Play();
         instance.StartCoroutine(instance.ShowTip(instance.LoseTips[levelphase]));
     }
 
