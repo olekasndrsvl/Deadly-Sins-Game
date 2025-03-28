@@ -45,6 +45,7 @@ public class WrathSceneController : MonoBehaviour
             }
             else
             {
+                PlayerPrefs.SetInt("LevelsCompleted", PlayerPrefs.GetInt("LevelsCompleted",0) + 1);
                 SceneChanger.GetComponent<SceneChangeScript>().ChangeSceneWithDelay(2);
             }
         }
@@ -67,6 +68,8 @@ public class WrathSceneController : MonoBehaviour
     }
     private void Start()
     {
+        TipConrtrollerScript.TipsTextMessage = "Борись со своим гневом, не дай ему взять над тобой верх!";
+        TipConrtrollerScript.IsNewTextAdded = true;
         NextTip();
         if (PlayerPrefs.GetInt("WrathPreviewDisplayed", 0) == 1)
         {
