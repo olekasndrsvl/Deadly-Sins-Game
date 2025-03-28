@@ -222,7 +222,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      greed_boil_0: -91020812662933255
+      greed_boil_1: 5774922412657072185
+      greed_boil_2: -8537625355488618114
+      greed_boil_3: -4695268351781980157
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
