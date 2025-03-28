@@ -27,6 +27,7 @@ public class DespondencySceneDialogTrigger : MonoBehaviour
         LoadingScreen.SetActive(true);
         StartCoroutine(ChangeSceneCoroutine(1.5f));
         PlayerPrefs.SetInt("IsDespondencySceneDone", 1);
+        PlayerPrefs.SetInt("LevelsCompleted", PlayerPrefs.GetInt("LevelsCompleted",0) + 1);
 
     }
 

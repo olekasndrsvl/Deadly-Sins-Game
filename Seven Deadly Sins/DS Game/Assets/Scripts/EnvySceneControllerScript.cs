@@ -25,7 +25,10 @@ public class EnvySceneControllerScript : MonoBehaviour
         PlayerPrefs.SetInt("IsLevelPreviewDisplayed",1);
     }
 
-   
+    public void onLevelEnd()
+    {
+        PlayerPrefs.SetInt("LevelsCompleted", PlayerPrefs.GetInt("LevelsCompleted",0) + 1);
+    }
     // Update is called once per frame
     void Update()
     {

@@ -45,6 +45,7 @@ public class GreedSceneController : MonoBehaviour
         WinningDialog.SetActive(false);
         LoadingScreen.SetActive(true);
         SceneManager.LoadScene("DistributionScene", LoadSceneMode.Single);
+        PlayerPrefs.SetInt("LevelsCompleted", PlayerPrefs.GetInt("LevelsCompleted",0) + 1);
     }
 
     public void RestartOnLose()

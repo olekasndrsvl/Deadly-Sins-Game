@@ -9,6 +9,9 @@ public class DragAndDropText : MonoBehaviour, IBeginDragHandler, IEndDragHandler
     private RectTransform rectTransform;
     private Canvas canvas;
     public Vector3 startPosition;
+    public AudioClip[] SelectSounds;
+
+   
     private void Awake()
     {
         // Получаем RectTransform текстового объекта
@@ -35,6 +38,10 @@ public class DragAndDropText : MonoBehaviour, IBeginDragHandler, IEndDragHandler
     public void OnEndDrag(PointerEventData eventData)
     {
         // Включаем Raycast Target обратно
+        AudioSource audioSource = GetComponentInParent<AudioSource>();
+
+        var randomSound = UnityEngine.Random.Range(0, SelectSounds.Length);
+        audioSource.PlayOneShot(SelectSounds[randomSound]);
         GetComponent<Graphic>().raycastTarget = true;
     }
 

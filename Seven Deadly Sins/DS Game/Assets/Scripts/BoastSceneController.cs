@@ -76,6 +76,7 @@ public class BoastSceneController : MonoBehaviour
                        else
                        {
                           SceneLoadManager.GetComponent<SceneChangeScript>().ChangeScene(2);
+                          PlayerPrefs.SetInt("LevelsCompleted", PlayerPrefs.GetInt("LevelsCompleted",0) + 1);
                        }
 
 

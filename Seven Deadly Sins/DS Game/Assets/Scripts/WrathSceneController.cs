@@ -39,7 +39,15 @@ public class WrathSceneController : MonoBehaviour
         if (tipsCounter>=tipsList.Count)
         {
             tipsPanel.SetActive(false);
-            SpawnNPC();
+            if (!IsWinner)
+            {
+                SpawnNPC();
+            }
+            else
+            {
+                PlayerPrefs.SetInt("LevelsCompleted", PlayerPrefs.GetInt("LevelsCompleted",0) + 1);
+                SceneChanger.GetComponent<SceneChangeScript>().ChangeSceneWithDelay(2);
+            }
         }
     }
 
@@ -60,6 +68,8 @@ public class WrathSceneController : MonoBehaviour
     }
     private void Start()
     {
+        TipConrtrollerScript.TipsTextMessage = "Борись со своим гневом, не дай ему взять над тобой верх!";
+        TipConrtrollerScript.IsNewTextAdded = true;
         NextTip();
         if (PlayerPrefs.GetInt("WrathPreviewDisplayed", 0) == 1)
         {
@@ -96,6 +106,12 @@ public class WrathSceneController : MonoBehaviour
         wrathIcon.SetActive(false);
         if (npcCounter < 4) 
             SpawnNPC();
+        else
+        {
+            tipsList = WinTipsList;
+            tipsCounter = 0;
+            NextTip();
+        }
     }
 
     private void SpawnNPC()
@@ -126,16 +142,9 @@ public class WrathSceneController : MonoBehaviour
         if (npcCounter == 4 && !IsWinner)
         {
             tipsPanel.SetActive(true);
-            
-            tipsList = WinTipsList;
-            NextTip();
             IsWinner = true;
         }
 
 
-        if (IsWinner)
-        {
-            SceneChanger.GetComponent<SceneChangeScript>().ChangeSceneWithDelay(2);
-        }
     }
 }
