@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      WrathBackGround_0: -2420236474795152035
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
