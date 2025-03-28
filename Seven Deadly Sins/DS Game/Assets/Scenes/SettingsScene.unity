@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 69894566}
   - component: {fileID: 69894568}
   m_Layer: 5
-  m_Name: Audio Source
+  m_Name: BackGroundSound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -165,8 +165,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 77b1829f55109a541a29fab50635fd5c, type: 3}
-  m_Resource: {fileID: 8300000, guid: 77b1829f55109a541a29fab50635fd5c, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 98599e88b43afb745a33b9bea1cb41bf, type: 3}
+  m_Resource: {fileID: 8300000, guid: 98599e88b43afb745a33b9bea1cb41bf, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -629,6 +629,7 @@ MonoBehaviour:
   buttonText: {fileID: 721357351}
   volumeSlider: {fileID: 1382648988}
   BackGroundAudio: {fileID: 69894568}
+  OtherAudio: {fileID: 0}
 --- !u!1 &540177239
 GameObject:
   m_ObjectHideFlags: 0
