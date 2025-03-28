@@ -46,10 +46,35 @@ public class BoastSceneController : MonoBehaviour
             {
                 tapCount++;
 
+
                 if (tapCount == 2)
                 {
                     StartCoroutine(FadeOutAudio());
                 }
+
+           }
+       }
+       else
+       {
+           if (MonologEnded)
+           {
+               BoastTip.SetActive(true);
+               if (Mononlog.GetComponent<Monologue>().MonologResult >= MonologResultWinValue)
+               {
+                   if (Input.touchCount > 0)
+                   {
+                       TapToScreenToContinue.SetActive(false);
+                       if (Input.GetTouch(0).phase != TouchPhase.Ended) return;
+                       if (i < WinTips.Count)
+                       {
+                           StartCoroutine(SpellTip(WinTips[i]));
+                       }
+                       else
+                       {
+                          SceneLoadManager.GetComponent<SceneChangeScript>().ChangeScene(2);
+                          PlayerPrefs.SetInt("LevelsCompleted", PlayerPrefs.GetInt("LevelsCompleted",0) + 1);
+                       }
+
 
                 TapToScreenToContinue.SetActive(false);
                 if (Input.GetTouch(0).phase != TouchPhase.Ended) return;
@@ -103,7 +128,7 @@ public class BoastSceneController : MonoBehaviour
                         }
                         else
                         {
-                            //Перезагрузка уровня
+                            //ГЏГҐГ°ГҐГ§Г ГЈГ°ГіГ§ГЄГ  ГіГ°Г®ГўГ­Гї
                             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
                             PlayerPrefs.SetInt("BoastPreviewIsDisplayed", 1);
                         }

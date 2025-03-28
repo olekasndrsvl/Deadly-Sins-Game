@@ -6,7 +6,7 @@ public class Slot : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerE
     public string correctObjectTag; // Тег правильного объекта
     public bool isOccupied = false; // Флаг, указывающий, занят ли слот
     public GameObject currentItem; // Текущий объект в слоте
-   
+    public int a, b;
 
     public void OnDrop(PointerEventData eventData)
     {
@@ -14,7 +14,7 @@ public class Slot : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerE
         {
             // Устанавливаем позицию перетаскиваемого объекта на позицию слота
             eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = 
-            GetComponent<RectTransform>().anchoredPosition;
+            GetComponent<RectTransform>().anchoredPosition-new Vector2(a,b);
 
             // Запоминаем текущий объект в слоте
             currentItem = eventData.pointerDrag;
