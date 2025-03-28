@@ -18,111 +18,54 @@ public class BoastSceneController : MonoBehaviour
     public AudioSource audioApplaudeCrowd;
     public AudioSource audioBooingCrowd;
     public int MonologResultWinValue = 4;
-    public int i = 0;
+    public int levelphase = 0;
     private bool MonologActivated = false;
     private bool MonologEnded = false;
+    private bool ifLoseTipsdisplayed = false;
+    private bool ifWinDisplayed = false;
     private int tapCount = 0;
     public float fadeDuration = 2f;
     public List<string> Tips;
     public List<string> WinTips;
     public List<string> LoseTips;
-
+    
     void Start()
     {
         if (PlayerPrefs.GetInt("BoastPreviewIsDisplayed", 0) == 1)
         {
             LevelPreview.SetActive(false);
-            i = Tips.Count;
         }
-        TapToScreenToContinue.SetActive(true);
+
+        StartCoroutine(ShowTip(Tips));
     }
    
     // Update is called once per frame
     void Update()
     {
-        if (!MonologActivated)
+        if (levelphase == 1)
         {
-            tapCount++;
-
-
-            if (tapCount == 2)
-            {
-                StartCoroutine(FadeOutAudio());
-            }
-            if (Input.touchCount > 0)
-            {
-                TapToScreenToContinue.SetActive(false);
-
-                if (Input.GetTouch(0).phase != TouchPhase.Ended) return;
-                if (i < Tips.Count)
-                {
-                    BoastTip.SetActive(true);
-                    StartCoroutine(SpellTip(Tips[i]));
-                }
-                else
-                {
-                    Mononlog.SetActive(true);
-                    BoastTip.SetActive(false);
-                    MonologActivated = true;
-                    TapToScreenToContinue.SetActive(false);
-                }
-
-
-            }
-        }
-        else
-        {
-            if (MonologEnded)
-            {
-                BoastTip.SetActive(true);
-                if (Mononlog.GetComponent<Monologue>().MonologResult >= MonologResultWinValue)
-                {
-                    if (Input.touchCount > 0)
-                    {
-                        TapToScreenToContinue.SetActive(false);
-                        if (Input.GetTouch(0).phase != TouchPhase.Ended) return;
-                        if (i < WinTips.Count)
-                        {
-                            StartCoroutine(SpellTip(WinTips[i]));
-                        }
-                        else
-                        {
-                            SceneLoadManager.GetComponent<SceneChangeScript>().ChangeScene(2);
-                            PlayerPrefs.SetInt("LevelsCompleted", PlayerPrefs.GetInt("LevelsCompleted", 0) + 1);
-                        }
-
-
-                    }
-                }
-                else
-                {
-                    if (Input.touchCount > 0)
-                    {
-                        TapToScreenToContinue.SetActive(false);
-                        if (Input.GetTouch(0).phase != TouchPhase.Ended) return;
-                        if (i < LoseTips.Count)
-                        {
-                            StartCoroutine(SpellTip(LoseTips[i]));
-                        }
-                        else
-                        {
-                            //???????????? ??????
-                            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-                            PlayerPrefs.SetInt("BoastPreviewIsDisplayed", 1);
-                        }
-                    }
-                }
-
-
-            }
+            Mononlog.SetActive(true);
+            MonologActivated = true;
+            levelphase++;
         }
     }
 
     public void EndMonolog()
     {
-        i = 0;
-        TapToScreenToContinue.SetActive(false);
-        MonologEnded = true;
+        Mononlog.SetActive(false);
+        
+        if (Mononlog.GetComponent<Monologue>().MonologResult >= MonologResultWinValue)
+        {
+            StartCoroutine(ShowTip(WinTips));
+            ifWinDisplayed=true;
+        }
+        else
+        {
+            StartCoroutine(ShowTip(LoseTips));
+            ifLoseTipsdisplayed=true;
+        }
+        //TapToScreenToContinue.SetActive(false);
+        
     }
 
     IEnumerator SpellTip(string s)
@@ -135,8 +78,54 @@ public class BoastSceneController : MonoBehaviour
             BoastTipText.GetComponent<TMP_Text>().text = sb.ToString();
             yield return new WaitForSeconds(0.01f);
         }
-        TapToScreenToContinue.SetActive(true);
-        i++;
+       
+       
+    }
+
+    IEnumerator ShowTip(List<string> tips)
+    {
+
+        BoastTip.SetActive(true);
+        TapToScreenToContinue.SetActive(false);
+
+        foreach (string tip in tips)
+        {
+            yield return StartCoroutine(SpellTip(tip));
+
+            TapToScreenToContinue.SetActive(true);
+
+            bool tapped = false;
+
+            while (!tapped)
+            {
+                if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended)
+                {
+                    tapped = true;
+                }
+
+                yield return null;
+            }
+
+            TapToScreenToContinue.SetActive(false);
+           
+        }
+        BoastTip.SetActive(false);
+        if (ifLoseTipsdisplayed)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            PlayerPrefs.SetInt("BoastPreviewIsDisplayed", 1);
+        }
+            
+        if (ifWinDisplayed)
+        {
+            SceneLoadManager.GetComponent<SceneChangeScript>().ChangeScene(2);
+            PlayerPrefs.SetInt("LevelsCompleted", PlayerPrefs.GetInt("LevelsCompleted", 0) + 1);
+        }
+            
+        ifLoseTipsdisplayed = false;
+        ifWinDisplayed = false;
+        levelphase++;
+        StartCoroutine(FadeOutAudio());
     }
 
     IEnumerator FadeOutAudio()
