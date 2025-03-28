@@ -26,7 +26,7 @@ public class VanitySceneController : MonoBehaviour
     public List<string> Wealthies2;
     public List<string> Wealthies3;
     static int levelphase = 0;
-
+    bool isSceneChanging = false;
     public AudioSource LoseTipSound;
 
     private static int i = 0;
@@ -157,10 +157,13 @@ public class VanitySceneController : MonoBehaviour
        
             vanityanimator.SetBool("IsAppeared", true);
             TipPanel.SetActive(false);
-            if (levelphase == 3)
+            if (levelphase == 3 && !isSceneChanging)
             {
-                instance.SceneLoadManager.GetComponent<SceneChangeScript>().ChangeSceneWithDelay(2);
                 PlayerPrefs.SetInt("LevelsCompleted", PlayerPrefs.GetInt("LevelsCompleted",0) + 1);
+                isSceneChanging = true;
+                instance.SceneLoadManager.GetComponent<SceneChangeScript>().ChangeSceneWithDelay(2);
+                
+                
             }
         }
 

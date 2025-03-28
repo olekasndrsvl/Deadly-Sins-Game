@@ -4960,6 +4960,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8287373159202903616, guid: be4cb4e2b32330548a658847809b0a1d, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 2082128428}
+    - target: {fileID: 8287373159202903616, guid: be4cb4e2b32330548a658847809b0a1d, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: OnTipsClicked
+      objectReference: {fileID: 0}
     - target: {fileID: 9001924771245044799, guid: be4cb4e2b32330548a658847809b0a1d, type: 3}
       propertyPath: m_Name
       value: Tips (1)
@@ -6863,6 +6871,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2079201564}
   m_CullTransparentMesh: 1
+--- !u!114 &2082128428 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1508887941969827325, guid: 23c662cb34ed2674888ec5075c930589, type: 3}
+  m_PrefabInstance: {fileID: 98967751}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e12c1e3de51a06646b443df63daad95c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2094619190 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6854585493700386104, guid: be4cb4e2b32330548a658847809b0a1d, type: 3}

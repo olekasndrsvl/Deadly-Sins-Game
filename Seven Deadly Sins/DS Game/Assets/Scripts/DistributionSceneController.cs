@@ -53,7 +53,7 @@ public class DistributionSceneController : MonoBehaviour
                 else
                 {
                     TipConrtrollerScript.TipsTextMessage =
-                        "Это было сложно расставить приоритеты, но ты справился!";
+                        "Многие оставались навечно в котле Зависти, но ты справился. С чем не могу тебя не поздравить, Морт!";
                     TipConrtrollerScript.IsNewTextAdded = true;
                 }
                 break;
@@ -69,7 +69,7 @@ public class DistributionSceneController : MonoBehaviour
                 else
                 {
                     TipConrtrollerScript.TipsTextMessage =
-                        "Хороший рассказ,Морт! Тебе бы в ораторы...";
+                        "Это было сложно расставить приоритеты, но ты справился!";
                     TipConrtrollerScript.IsNewTextAdded = true;
                 }
                 break;
@@ -84,7 +84,7 @@ public class DistributionSceneController : MonoBehaviour
                 else
                 {
                     TipConrtrollerScript.TipsTextMessage =
-                        "Умение сдерживаться тебе пригодиться!";
+                        "Хороший рассказ,Морт! Тебе бы в ораторы...";
                     TipConrtrollerScript.IsNewTextAdded = true;
                 }
                 break;
