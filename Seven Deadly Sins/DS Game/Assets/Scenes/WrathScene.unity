@@ -195,6 +195,18 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 44fa5ae22e3c86245b3b57f74867d407, type: 2}
+    - target: {fileID: 8074552336254947194, guid: 7512677b04da3144b99998cc7bf35d63, type: 3}
+      propertyPath: m_Volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8074552336254947194, guid: 7512677b04da3144b99998cc7bf35d63, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: 51a83b93757f7b84eb1330594fb08102, type: 3}
+    - target: {fileID: 8074552336254947194, guid: 7512677b04da3144b99998cc7bf35d63, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 51a83b93757f7b84eb1330594fb08102, type: 3}
     - target: {fileID: 9212260763027397825, guid: 7512677b04da3144b99998cc7bf35d63, type: 3}
       propertyPath: joystick
       value: 
@@ -5351,7 +5363,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 6cf9f05a8b75cea408e165900b6603cd, type: 3}
   m_Resource: {fileID: 8300000, guid: 6cf9f05a8b75cea408e165900b6603cd, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.031
   m_Pitch: 1
   Loop: 1
   Mute: 0
