@@ -25,19 +25,19 @@ public class SpritesSorter : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log(other.gameObject.name);
-        if (other.gameObject.name=="Feet_Position"){
+      
             trigger = true;
            // gameObject.GetComponent<BoxCollider2D>().enabled = false;
             UpdateSortingOrder();
-        }
+      
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
-        if (other.gameObject.name=="Feet_Position"){
+       
             trigger = false;
             //gameObject.GetComponent<BoxCollider2D>().enabled = true;
             UpdateSortingOrder();
-        }
+        
     }
 }

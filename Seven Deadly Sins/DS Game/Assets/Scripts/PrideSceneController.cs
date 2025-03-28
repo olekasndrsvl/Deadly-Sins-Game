@@ -140,6 +140,7 @@ public class PrideSceneController : MonoBehaviour
     public void FinallDialog()
     {
         LoadingScreen.SetActive(true);
+        PlayerPrefs.SetInt("LevelsCompleted", PlayerPrefs.GetInt("LevelsCompleted",0) + 1);
         SceneManager.LoadScene("DistributionScene", LoadSceneMode.Single);
     }
 

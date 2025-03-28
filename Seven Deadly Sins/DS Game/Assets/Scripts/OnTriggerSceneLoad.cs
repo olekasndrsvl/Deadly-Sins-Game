@@ -13,13 +13,14 @@ public class OnTriggerSceneLoad : MonoBehaviour
     public TextMeshProUGUI LevelDesciption;
     public int NumberOfLoadingScene;
     static string CurrentSceneToLoad;
+    
     public void OnTriggerEnter2D(Collider2D other)
     {
       
         switch (NumberOfLoadingScene)
         {
             case 3:
-                if (PlayerPrefs.GetInt("KarmaState", 0) >= 110)
+                if (PlayerPrefs.GetInt("KarmaState", 0) >= 110&& PlayerPrefs.GetInt("LevelsCompleted",0)==6)
                 {  
                     LevelChoice.SetActive(true);
                     CurrentSceneToLoad = "WrathScene";
@@ -28,15 +29,25 @@ public class OnTriggerSceneLoad : MonoBehaviour
                 }
                 else
                 {
-                    TipConrtrollerScript.TipsTextMessage = "Тебе еще рано в этот котел! Справься с более простыми грехами!";
-                    TipConrtrollerScript.IsNewTextAdded = true;
+                    if(PlayerPrefs.GetInt("LevelsCompleted",0)<6)
+                    {
+                        TipConrtrollerScript.TipsTextMessage =
+                            "Тебе еще рано в этот котел! Справься с более простыми грехами!";
+                        TipConrtrollerScript.IsNewTextAdded = true;
+                    }
+                    else
+                    {
+                        TipConrtrollerScript.TipsTextMessage =
+                            "Ты уже здесь был!";
+                        TipConrtrollerScript.IsNewTextAdded = true;
+                    }
                 }
                 break;
             case 4:
 
                 break;
             case 5:
-                if (PlayerPrefs.GetInt("KarmaState", 0) >= 110)
+                if (PlayerPrefs.GetInt("KarmaState", 0) >= 110 &&PlayerPrefs.GetInt("LevelsCompleted",0)==6)
                 {  
                     LevelChoice.SetActive(true);
                     CurrentSceneToLoad = "WrathScene";
@@ -45,13 +56,23 @@ public class OnTriggerSceneLoad : MonoBehaviour
                 }
                 else
                 {
-                    TipConrtrollerScript.TipsTextMessage = "Тебе еще рано в этот котел! Справься с более простыми грехами!";
-                    TipConrtrollerScript.IsNewTextAdded = true;
+                    if(PlayerPrefs.GetInt("LevelsCompleted",0)<6)
+                    {
+                        TipConrtrollerScript.TipsTextMessage =
+                            "Тебе еще рано в этот котел! Справься с более простыми грехами!";
+                        TipConrtrollerScript.IsNewTextAdded = true;
+                    }
+                    else
+                    {
+                        TipConrtrollerScript.TipsTextMessage =
+                            "Ты уже здесь был!";
+                        TipConrtrollerScript.IsNewTextAdded = true;
+                    }
                 }
               
                 break;
             case 6:
-                if (PlayerPrefs.GetInt("KarmaState", 0) >= 60)
+                if (PlayerPrefs.GetInt("KarmaState", 0) >= 60 && PlayerPrefs.GetInt("LevelsCompleted",0)==4)
                 { 
                     LevelChoice.SetActive(true);
                     CurrentSceneToLoad = "VanityScene";
@@ -60,13 +81,23 @@ public class OnTriggerSceneLoad : MonoBehaviour
                 }
                 else
                 {
-                    TipConrtrollerScript.TipsTextMessage = "Тебе еще рано в этот котел! Справься с более простыми грехами!";
-                    TipConrtrollerScript.IsNewTextAdded = true;
+                    if(PlayerPrefs.GetInt("LevelsCompleted",0)<4)
+                    {
+                        TipConrtrollerScript.TipsTextMessage =
+                            "Тебе еще рано в этот котел! Справься с более простыми грехами!";
+                        TipConrtrollerScript.IsNewTextAdded = true;
+                    }
+                    else
+                    {
+                        TipConrtrollerScript.TipsTextMessage =
+                            "Ты уже здесь был!";
+                        TipConrtrollerScript.IsNewTextAdded = true;
+                    }
                 }
                
                 break;
             case 7:
-                if (PlayerPrefs.GetInt("KarmaState", 0) >= 0)
+                if (PlayerPrefs.GetInt("KarmaState", 0) >= 0 && PlayerPrefs.GetInt("LevelsCompleted",0) ==1)
                 {
                     LevelChoice.SetActive(true);
                     CurrentSceneToLoad = "PrideScene";
@@ -74,13 +105,23 @@ public class OnTriggerSceneLoad : MonoBehaviour
                 }
                 else
                 {
-                    TipConrtrollerScript.TipsTextMessage = "Тебе еще рано в этот котел! Справься с более простыми грехами!";
-                    TipConrtrollerScript.IsNewTextAdded = true;
+                    if(PlayerPrefs.GetInt("LevelsCompleted",0)<1)
+                    {
+                        TipConrtrollerScript.TipsTextMessage =
+                            "Тебе еще рано в этот котел! Справься с более простыми грехами!";
+                        TipConrtrollerScript.IsNewTextAdded = true;
+                    }
+                    else
+                    {
+                        TipConrtrollerScript.TipsTextMessage =
+                            "Ты уже здесь был!";
+                        TipConrtrollerScript.IsNewTextAdded = true;
+                    }
                 }
                 
                 break;
             case 8:
-                if (PlayerPrefs.GetInt("KarmaState", 0) >= 90)
+                if (PlayerPrefs.GetInt("KarmaState", 0) >= 90 && PlayerPrefs.GetInt("LevelsCompleted",0)==5)
                 { 
                     LevelChoice.SetActive(true);
                     CurrentSceneToLoad = "BoastScene";
@@ -89,14 +130,24 @@ public class OnTriggerSceneLoad : MonoBehaviour
                 }
                 else
                 {
-                    TipConrtrollerScript.TipsTextMessage = "Тебе еще рано в этот котел! Справься с более простыми грехами!";
-                    TipConrtrollerScript.IsNewTextAdded = true;
+                    if(PlayerPrefs.GetInt("LevelsCompleted",0)<5)
+                    {
+                        TipConrtrollerScript.TipsTextMessage =
+                            "Тебе еще рано в этот котел! Справься с более простыми грехами!";
+                        TipConrtrollerScript.IsNewTextAdded = true;
+                    }
+                    else
+                    {
+                        TipConrtrollerScript.TipsTextMessage =
+                            "Ты уже здесь был!";
+                        TipConrtrollerScript.IsNewTextAdded = true;
+                    }
                 }
                
                 break;
             case 9:
                
-                if (PlayerPrefs.GetInt("KarmaState", 0) >= 58)
+                if (PlayerPrefs.GetInt("KarmaState", 0) >= 58 && PlayerPrefs.GetInt("LevelsCompleted",0)==3)
                 { 
                     LevelChoice.SetActive(true);
                     CurrentSceneToLoad = "EnvyScene";
@@ -105,13 +156,23 @@ public class OnTriggerSceneLoad : MonoBehaviour
                 }
                 else
                 {
-                    TipConrtrollerScript.TipsTextMessage = "Тебе еще рано в этот котел! Справься с более простыми грехами!";
-                    TipConrtrollerScript.IsNewTextAdded = true;
+                    if(PlayerPrefs.GetInt("LevelsCompleted",0)<3)
+                    {
+                        TipConrtrollerScript.TipsTextMessage =
+                            "Тебе еще рано в этот котел! Справься с более простыми грехами!";
+                        TipConrtrollerScript.IsNewTextAdded = true;
+                    }
+                    else
+                    {
+                        TipConrtrollerScript.TipsTextMessage =
+                            "Ты уже здесь был!";
+                        TipConrtrollerScript.IsNewTextAdded = true;
+                    }
                 }
                 break;
             case 10:
                
-                if (PlayerPrefs.GetInt("KarmaState", 0) >= 57)
+                if (PlayerPrefs.GetInt("KarmaState", 0) >= 57 && PlayerPrefs.GetInt("LevelsCompleted", 0) == 2)
                 {
                     LevelChoice.SetActive(true);
                     CurrentSceneToLoad = "GreedScene";
@@ -119,14 +180,24 @@ public class OnTriggerSceneLoad : MonoBehaviour
                 }
                 else
                 {
-                    TipConrtrollerScript.TipsTextMessage = "Тебе еще рано в этот котел! Справься с более простыми грехами!";
-                    TipConrtrollerScript.IsNewTextAdded = true;
+                    if(PlayerPrefs.GetInt("LevelsCompleted",0)<2)
+                    {
+                        TipConrtrollerScript.TipsTextMessage =
+                            "Тебе еще рано в этот котел! Справься с более простыми грехами!";
+                        TipConrtrollerScript.IsNewTextAdded = true;
+                    }
+                    else
+                    {
+                        TipConrtrollerScript.TipsTextMessage =
+                            "Ты уже здесь был!";
+                        TipConrtrollerScript.IsNewTextAdded = true;
+                    }
                 }
                 
                 break;
             default:
                 LevelChoice.SetActive(false);
-                if (PlayerPrefs.GetInt("KarmaState", 0) >= 114)
+                if (PlayerPrefs.GetInt("KarmaState", 0) >= 114 &&PlayerPrefs.GetInt("LevelsCompleted",0)==7)
                 {
                     CurrentSceneToLoad = "OutroScene";
                     Debug.Log("Scene change!");

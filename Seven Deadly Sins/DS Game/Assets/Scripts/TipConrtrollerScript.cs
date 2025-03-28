@@ -13,6 +13,7 @@ public class TipConrtrollerScript : MonoBehaviour
     Animator TipsWindowAnimator;
     public static string TipsTextMessage;
     public static bool IsNewTextAdded;
+    private bool isSpelling = false;
     public bool IsTipShowed{get
         {
             return IsTipsWindowActive;
@@ -76,6 +77,7 @@ public class TipConrtrollerScript : MonoBehaviour
 
     IEnumerator SpellTip(string tip)
     {
+        isSpelling = true;
         var sb = new StringBuilder();
         for (int i = 0; i < tip.Length-1; i++)
         {
@@ -86,12 +88,13 @@ public class TipConrtrollerScript : MonoBehaviour
         yield return new WaitForSeconds(3f);
         TipsClose();
         IsTipsWindowActive = false;
+        isSpelling = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(IsNewTextAdded)
+        if(IsNewTextAdded&& !isSpelling)
         {
             OnTipsClicked();
             IsNewTextAdded = false;

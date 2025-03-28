@@ -160,6 +160,7 @@ public class VanitySceneController : MonoBehaviour
             if (levelphase == 3)
             {
                 instance.SceneLoadManager.GetComponent<SceneChangeScript>().ChangeSceneWithDelay(2);
+                PlayerPrefs.SetInt("LevelsCompleted", PlayerPrefs.GetInt("LevelsCompleted",0) + 1);
             }
         }
 
