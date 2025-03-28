@@ -36,49 +36,24 @@ public class BoastSceneController : MonoBehaviour
         }
         TapToScreenToContinue.SetActive(true);
     }
-
+   
     // Update is called once per frame
     void Update()
     {
         if (!MonologActivated)
         {
+            tapCount++;
+
+
+            if (tapCount == 2)
+            {
+                StartCoroutine(FadeOutAudio());
+            }
             if (Input.touchCount > 0)
             {
-                tapCount++;
-
-
-                if (tapCount == 2)
-                {
-                    StartCoroutine(FadeOutAudio());
-                }
-
-           }
-       }
-       else
-       {
-           if (MonologEnded)
-           {
-               BoastTip.SetActive(true);
-               if (Mononlog.GetComponent<Monologue>().MonologResult >= MonologResultWinValue)
-               {
-                   if (Input.touchCount > 0)
-                   {
-                       TapToScreenToContinue.SetActive(false);
-                       if (Input.GetTouch(0).phase != TouchPhase.Ended) return;
-                       if (i < WinTips.Count)
-                       {
-                           StartCoroutine(SpellTip(WinTips[i]));
-                       }
-                       else
-                       {
-                          SceneLoadManager.GetComponent<SceneChangeScript>().ChangeScene(2);
-                          PlayerPrefs.SetInt("LevelsCompleted", PlayerPrefs.GetInt("LevelsCompleted",0) + 1);
-                       }
-
-
                 TapToScreenToContinue.SetActive(false);
-                if (Input.GetTouch(0).phase != TouchPhase.Ended) return;
 
+                if (Input.GetTouch(0).phase != TouchPhase.Ended) return;
                 if (i < Tips.Count)
                 {
                     BoastTip.SetActive(true);
@@ -91,6 +66,8 @@ public class BoastSceneController : MonoBehaviour
                     MonologActivated = true;
                     TapToScreenToContinue.SetActive(false);
                 }
+
+
             }
         }
         else
@@ -107,12 +84,14 @@ public class BoastSceneController : MonoBehaviour
                         if (i < WinTips.Count)
                         {
                             StartCoroutine(SpellTip(WinTips[i]));
-                            audioApplaudeCrowd.Play();
                         }
                         else
                         {
                             SceneLoadManager.GetComponent<SceneChangeScript>().ChangeScene(2);
+                            PlayerPrefs.SetInt("LevelsCompleted", PlayerPrefs.GetInt("LevelsCompleted", 0) + 1);
                         }
+
+
                     }
                 }
                 else
@@ -124,16 +103,17 @@ public class BoastSceneController : MonoBehaviour
                         if (i < LoseTips.Count)
                         {
                             StartCoroutine(SpellTip(LoseTips[i]));
-                            audioBooingCrowd.Play();
                         }
                         else
                         {
-                            //Ïåðåçàãðóçêà óðîâíÿ
+                            //???????????? ??????
                             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
                             PlayerPrefs.SetInt("BoastPreviewIsDisplayed", 1);
                         }
                     }
                 }
+
+
             }
         }
     }
