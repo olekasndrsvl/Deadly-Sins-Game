@@ -56,11 +56,13 @@ public class BoastSceneController : MonoBehaviour
         
         if (Mononlog.GetComponent<Monologue>().MonologResult >= MonologResultWinValue)
         {
+            audioApplaudeCrowd.Play();
             StartCoroutine(ShowTip(WinTips));
             ifWinDisplayed=true;
         }
         else
         {
+            audioBooingCrowd.Play();
             StartCoroutine(ShowTip(LoseTips));
             ifLoseTipsdisplayed=true;
         }
