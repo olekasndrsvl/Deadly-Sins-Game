@@ -83,11 +83,25 @@ public class EnemyScript : MonoBehaviour
         }
 
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     public float speed = 2f; // Скорость движения NPC
     public float rightLimit = 15f; // Правая граница
     public float leftLimit = 10f; // Левая граница
 
     private int direction = 1;
+    
     // Update is called once per frame
     void Update()
     {
