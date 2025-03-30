@@ -3,14 +3,14 @@ using UnityEngine;
 
 public class EnvySceneControllerScript : MonoBehaviour
 {
-    public GameObject BetterVersionofMort;
     public GameObject Player;
     public GameObject Enemy;
-    int enemyhp = 0;
     public GameObject levelpreview;
     public GameObject StartDialog;
     public GameObject FinalDialog;
     public GameObject LoseDialog;
+    public TMP_Text HP_Player;
+    public TMP_Text HP_Enemy;
     private int levelphase = 0;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -32,15 +32,29 @@ public class EnvySceneControllerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Player.GetComponent<EnvylLevelPlayerHitBox>().HealthPoints <= 0 && FinalDialog.activeSelf == false)
+        HP_Player.text = "Çהמנמגüו: "+Player.GetComponent<PlayerAttack>().health.ToString();
+        HP_Enemy.text= Enemy.GetComponent<Enemy>().health.ToString();
+        
+        if(Player.GetComponent<PlayerAttack>().health <= 0)
+            Player.GetComponent<PlayerAttack>().health = 0;
+        if (Enemy.GetComponent<Enemy>().health <= 0)
+            Enemy.GetComponent<Enemy>().health = 0;
+        
+        if (Player.GetComponent<PlayerAttack>().health <= 0 && FinalDialog.activeSelf == false)
         {
             LoseDialog.SetActive(true);
-            BetterVersionofMort.GetComponent<BetterVersionOfMortControllerScript>().IsPaused = true;
+            Player.GetComponent<PlayerAttack>().health = 0;
+            Enemy.GetComponent<global::Enemy>().IsPaused=true;
+            Enemy.GetComponent<BetterVersionOfMortControllerScript>().IsPaused = true;
         }
-
-        if (Enemy.GetComponent<BetterVersionOfMprtScript>().HealthPoints <= 0)
+        else
         {
-            levelphase++;
+            if (Enemy.GetComponent<Enemy>().health <= 0 && LoseDialog.activeSelf == false)
+            {
+                levelphase++;
+                Enemy.GetComponent<Enemy>().health = 0;
+                Enemy.GetComponent<global::Enemy>().IsPaused = true;
+            }
         }
 
         if (levelphase >= 1)

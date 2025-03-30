@@ -195,6 +195,18 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 44fa5ae22e3c86245b3b57f74867d407, type: 2}
+    - target: {fileID: 8074552336254947194, guid: 7512677b04da3144b99998cc7bf35d63, type: 3}
+      propertyPath: m_Volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8074552336254947194, guid: 7512677b04da3144b99998cc7bf35d63, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: 51a83b93757f7b84eb1330594fb08102, type: 3}
+    - target: {fileID: 8074552336254947194, guid: 7512677b04da3144b99998cc7bf35d63, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 51a83b93757f7b84eb1330594fb08102, type: 3}
     - target: {fileID: 9212260763027397825, guid: 7512677b04da3144b99998cc7bf35d63, type: 3}
       propertyPath: joystick
       value: 
@@ -755,7 +767,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 385578356748651640, guid: aecbfb1e2e8452d4a9aedf5e673887c5, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -29.179993
+      value: -35.424
       objectReference: {fileID: 0}
     - target: {fileID: 385578356748651640, guid: aecbfb1e2e8452d4a9aedf5e673887c5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -818,7 +830,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 7.9, y: 54.4}
+  m_AnchoredPosition: {x: -0, y: 50}
   m_SizeDelta: {x: 356.6615, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &398243168
@@ -2187,7 +2199,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0.5
+  m_MatchWidthOrHeight: 0.3
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -5348,10 +5360,10 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: baba531ca76859b41b820eae93ba6a72, type: 3}
-  m_Resource: {fileID: 8300000, guid: baba531ca76859b41b820eae93ba6a72, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 6cf9f05a8b75cea408e165900b6603cd, type: 3}
+  m_Resource: {fileID: 8300000, guid: 6cf9f05a8b75cea408e165900b6603cd, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.031
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -6194,7 +6206,7 @@ RectTransform:
   m_GameObject: {fileID: 1962548427}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.87622, y: 0.87622, z: 0.87622}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1125004385}
@@ -6205,8 +6217,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0.0008544922, y: 0.09020996}
+  m_SizeDelta: {x: 113.01, y: 84.554}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2029044120
 GameObject:

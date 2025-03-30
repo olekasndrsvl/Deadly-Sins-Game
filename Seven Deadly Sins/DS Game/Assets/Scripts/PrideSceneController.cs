@@ -7,7 +7,11 @@ public class PrideSceneController : MonoBehaviour
 {
     public GameObject LoadingScreen;
     public GameObject SplashImage;
-    public HitBox PlayerHitbox;
+    public GameObject HP_text;
+    public GameObject Enemy_HP_text;
+    public GameObject player;
+    public PlayerAttack PlayerHitbox;
+    public Enemy enemy;
     public GameObject Enemy;
     public GameObject tips;
     public GameObject Dialog1;
@@ -17,40 +21,32 @@ public class PrideSceneController : MonoBehaviour
     public GameObject _LosingDialog;
     public GameObject _Died_Dialog;
     int dialognumber = 1;
-    int dialog1;
-    int dialog2;
-    int dialog3;
+    bool isLosingDialogActive = false;
+    int dialog1Result;
+    int dialog2Result;
+    int dialog3Result;
     
-    void PauseIt()
+    void Resume()
     {
-        PlayerHitbox.gameObject.transform.parent.GetComponent<PlayerControllerForJoyStick>().IsPaused = false;
-        Enemy.GetComponent<EnemyScript>().IsPaused = false;
+        enemy.IsPaused = false;
     }
 
+    void Pause()
+    {
+        enemy.IsPaused = true;
+    }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        //PlayerPrefs.DeleteAll();
         TipConrtrollerScript.TipsTextMessage = "Это будет тяжелая борьба с самим собой Морт!";
         TipConrtrollerScript.IsNewTextAdded = true;
-        if (PlayerPrefs.HasKey("DialogNumber"))
-        {
-            dialognumber = PlayerPrefs.GetInt("DialogNumber");
-        }
-        else
-        {
-            PlayerPrefs.SetInt("DialogNumber", 1);
-        }
-
-        if (PlayerPrefs.HasKey("EnemyDamage"))
-        {
-            Enemy.GetComponent<EnemyScript>().DamageAmount = PlayerPrefs.GetInt("EnemyDamage");
-        }
-        else
-        {
-            PlayerPrefs.SetInt("EnemyDamage", Enemy.GetComponent<EnemyScript>().DamageAmount);
-        }
-
+        
+        
+        dialognumber = PlayerPrefs.GetInt("DialogNumber",1);
+        enemy.damageAmount = PlayerPrefs.GetInt("EnemyDamage",enemy.damageAmount);
+        enemy.startTimeBetweenAttacks = PlayerPrefs.GetFloat("EnemyDelay", enemy.startTimeBetweenAttacks);
+        PlayerHitbox.startTimeBetweenAttacks = PlayerPrefs.GetFloat("PlayerStartTime", PlayerHitbox.startTimeBetweenAttacks);
+        
         if (dialognumber > 1)
         {
             SplashImage.SetActive(false);
@@ -58,86 +54,15 @@ public class PrideSceneController : MonoBehaviour
 
 
     }
-    public void FirstFight()
-    {
-        Dialog1.SetActive(false);
-        if(dialog1 > 0)
-        {
-            Enemy.GetComponent<EnemyScript>().DamageAmount += 20;
-            Enemy.GetComponent<EnemyScript>().HealthPoints =100;
-            PlayerHitbox.HealthPoints =100;
-            PlayerPrefs.SetInt("EnemyDamage", Enemy.GetComponent<EnemyScript>().DamageAmount);
-            PlayerHitbox.gameObject.transform.parent.position = Vector3.zero;
-            dialognumber++;
-            PlayerPrefs.SetInt("DialogNumber", dialognumber);
-
-            PauseIt();
-        }
-        else
-        {
-            
-            LosingDialog(Dialog1);
-        }
-
-    }
-    public void SecondFight()
-    {
-        Dialog2.SetActive(false);
-        if (dialog2 > 0)
-        {
-            Enemy.GetComponent<EnemyScript>().DamageAmount += 20;
-            PlayerPrefs.SetInt("EnemyDamage", Enemy.GetComponent<EnemyScript>().DamageAmount);
-            Enemy.GetComponent<EnemyScript>().HealthPoints = 100;
-            PlayerHitbox.HealthPoints = 100;
-            PlayerHitbox.gameObject.transform.parent.position = Vector3.zero;
-            dialognumber++;
-            PlayerPrefs.SetInt("DialogNumber", dialognumber);
-            PauseIt();
-        }
-        else
-        {
-          
-            LosingDialog(Dialog2);
-        }
-
-    }
-    public void ThirdFight()
-    {
-        Dialog3.SetActive(false);
-
-        if (dialog3 > 0)
-        {
-            
-            TipConrtrollerScript.TipsTextMessage= "Ты выбрал неверный путь, мой друг! Твое ненасытное желание побеждать всех и каждого сыграло с тобой злую шутку...";
-            TipConrtrollerScript.IsNewTextAdded = true;
-            Enemy.GetComponent<EnemyScript>().DamageAmount = 100;
-            //PlayerPrefs.SetInt("EnemyDamage", Enemy.GetComponent<EnemyScript>().DamageAmount);
-            Enemy.GetComponent<EnemyScript>().HealthPoints = 100;
-            PlayerHitbox.HealthPoints = 100;
-            PlayerHitbox.gameObject.transform.parent.position = Vector3.zero;
-            dialognumber++;
-            
-            PauseIt();
-
-        }
-        else
-        {
-            
-            _WinningDialog.SetActive(true);
-            
-
-        }
-
-    }
+   
     public void LosingDialog(GameObject dial)
     {
-        
         dial.SetActive(false);
         _LosingDialog.SetActive(true);
        
     }
 
-    public void FinallDialog()
+    public void FinalDialog()
     {
         LoadingScreen.SetActive(true);
         PlayerPrefs.SetInt("LevelsCompleted", PlayerPrefs.GetInt("LevelsCompleted",0) + 1);
@@ -156,54 +81,150 @@ public class PrideSceneController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (PlayerHitbox.HealthPoints < 0)
+        // Health points refresh
+        HP_text.GetComponent<TMP_Text>().text = "Здоровье: "+PlayerHitbox.health.ToString();
+        Enemy_HP_text.GetComponent<TMP_Text>().text = enemy.health.ToString();
+        
+        //Dialog result refesh
+        dialog1Result = Dialog1.GetComponent<Dialog>().DialogResult;
+        dialog2Result = Dialog2.GetComponent<Dialog>().DialogResult;
+        dialog3Result = Dialog3.GetComponent<Dialog>().DialogResult;
+        
+        
+        //Player died
+        if (PlayerHitbox.health <= 0)
         {
-            PauseIt();
-            PlayerHitbox.HealthPoints = 1;
+            Pause();
+            PlayerHitbox.health = 0;
             _Died_Dialog.SetActive(true);
-            if (tips.GetComponent<TipConrtrollerScript>().IsTipShowed)
-                TipConrtrollerScript.IsNewTextAdded = true;
         }
-
-
-        if (Enemy.GetComponent<EnemyScript>().HealthPoints <= 0)
+        else
         {
-            if (tips.GetComponent<TipConrtrollerScript>().IsTipShowed)
-                TipConrtrollerScript.IsNewTextAdded = true;
-            
-            switch(dialognumber)
+            // Enemy died
+            if (enemy.health <= 0 && !isLosingDialogActive)
             {
-                case 1:
-                    Enemy.GetComponent<EnemyScript>().HealthPoints = 1;
-                    Dialog1.SetActive(true);
-                    PlayerHitbox.HealthPoints = 100;
-                    Enemy.GetComponent<EnemyScript>().IsPaused = true;
-                    PlayerHitbox.gameObject.transform.parent.GetComponent<PlayerControllerForJoyStick>().IsPaused = true;
-                    break;
-                case 2:
-                    Enemy.GetComponent<EnemyScript>().HealthPoints = 1;
-                    Dialog2.SetActive(true);
-                    PlayerHitbox.HealthPoints = 100;
-                    Enemy.GetComponent<EnemyScript>().IsPaused = true;
-                    PlayerHitbox.gameObject.transform.parent.GetComponent<PlayerControllerForJoyStick>().IsPaused = true;
-                    break;
-                case 3:
-                    Enemy.GetComponent<EnemyScript>().HealthPoints = 1;
-                    Dialog3.SetActive(true);
-                    PlayerHitbox.HealthPoints = 100;
-                    Enemy.GetComponent<EnemyScript>().IsPaused = true;
-                    PlayerHitbox.gameObject.transform.parent.GetComponent<PlayerControllerForJoyStick>().IsPaused = true;
-                    break;
-                case 4:
-                    break;
-
-
+                enemy.health = 0;
+                switch (dialognumber)
+                {
+                    case 1:
+                        enemy.health = 0;
+                        Dialog1.SetActive(true);
+                        Pause();
+                        break;
+                    case 2:
+                        enemy.health = 0;
+                        Dialog2.SetActive(true);
+                        Pause();
+                        break;
+                    case 3:
+                        enemy.health = 0;
+                        Dialog3.SetActive(true);
+                        Pause();
+                        break;
+                }
             }
         }
+    }
+    
+    
+    //Кнопки закрытия диалогов
+     public void FirstFight()
+    {
+        TipConrtrollerScript.TipsTextMessage= "Ты на верном пути, Морт!";
+        TipConrtrollerScript.IsNewTextAdded = true;
+        
+        Dialog1.SetActive(false);
+        if(dialog1Result== 2 || dialog1Result==-1)
+        {
+            
+            enemy.damageAmount = 20;
+            enemy.startTimeBetweenAttacks = 2f;
+            enemy.health = 100;
+            PlayerPrefs.SetInt("EnemyDamage", enemy.damageAmount);
+            PlayerPrefs.SetFloat("EnemyDelay", enemy.startTimeBetweenAttacks);
+            
+            player.transform.position = new Vector3(2, -1 , player.transform.position.z);
+            PlayerHitbox.health =100;
+            PlayerHitbox.startTimeBetweenAttacks = 1.5f;
+            PlayerPrefs.SetFloat("PlayerStartTime", PlayerHitbox.startTimeBetweenAttacks);
+            
+            dialognumber++;
+            PlayerPrefs.SetInt("DialogNumber", dialognumber);
+            
+            Resume();
+            Replay();
+        }
+        else
+        {
+            isLosingDialogActive=true;
+            LosingDialog(Dialog1);
+        }
 
-        dialog1 = Dialog1.GetComponent<Dialog>().DialogResult;
-        dialog2 = Dialog2.GetComponent<Dialog>().DialogResult;
-        dialog3 = Dialog3.GetComponent<Dialog>().DialogResult;
-       
+    }
+    public void SecondFight()
+    {
+        TipConrtrollerScript.TipsTextMessage= "Ты на верном пути, Морт!";
+        TipConrtrollerScript.IsNewTextAdded = true;
+        
+        
+        Dialog2.SetActive(false);
+        if (dialog2Result== 2 || dialog2Result==-1)
+        {
+           
+         
+            enemy.damageAmount = 25;
+            enemy.startTimeBetweenAttacks = 1.8f;
+            enemy.health = 100;
+            PlayerPrefs.SetInt("EnemyDamage", enemy.damageAmount);
+            PlayerPrefs.SetFloat("EnemyDelay", enemy.startTimeBetweenAttacks);
+            
+            PlayerHitbox.health = 100;
+            player.transform.position = new Vector3(2, -1, player.transform.position.z);
+            PlayerHitbox.startTimeBetweenAttacks = 0.2f;
+            PlayerPrefs.SetFloat("PlayerStartTime", PlayerHitbox.startTimeBetweenAttacks);
+            
+            dialognumber++;
+            PlayerPrefs.SetInt("DialogNumber", dialognumber);
+            Resume();
+            Replay();
+        }
+        else
+        {
+            isLosingDialogActive=true;
+            LosingDialog(Dialog2);
+        }
+
+    }
+    public void ThirdFight()
+    {
+        Dialog3.SetActive(false);
+
+        if (Dialog3.GetComponent<Dialog>().DialogResult != 0)
+        {
+            
+            TipConrtrollerScript.TipsTextMessage= "Ты выбрал неверный путь, мой друг! Твое ненасытное желание побеждать всех и каждого сыграло с тобой злую шутку...";
+            TipConrtrollerScript.IsNewTextAdded = true;
+            
+            enemy.damageAmount = 100;
+            enemy.startTimeBetweenAttacks = 0.4f;
+            enemy.health = 100;
+            
+            PlayerHitbox.health = 100;
+            PlayerHitbox.startTimeBetweenAttacks = 3f;
+            player.transform.position = new Vector3(2, -1, player.transform.position.z);
+            
+            dialognumber++;
+            
+            Resume();
+
+        }
+        else
+        {
+            dialognumber++;
+            _WinningDialog.SetActive(true);
+            
+
+        }
+
     }
 }

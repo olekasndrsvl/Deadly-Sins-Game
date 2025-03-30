@@ -1,0 +1,1455 @@
+fileFormatVersion: 2
+guid: 1a7d137baca45d946b226eb7c54b01a7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1999160973009223984
+    second: blood_particle_0
+  - first:
+      213: 7435971716995143180
+    second: blood_particle_1
+  - first:
+      213: 884283831256868009
+    second: blood_particle_2
+  - first:
+      213: 3445071932962624012
+    second: blood_particle_3
+  - first:
+      213: -1874647065934109303
+    second: blood_particle_4
+  - first:
+      213: -8040280545736363526
+    second: blood_particle_5
+  - first:
+      213: -7329931609292129483
+    second: blood_particle_6
+  - first:
+      213: -7903367876609878378
+    second: blood_particle_7
+  - first:
+      213: 2565467081692941856
+    second: blood_particle_8
+  - first:
+      213: 3554613191617221348
+    second: blood_particle_9
+  - first:
+      213: -3064194268265591221
+    second: blood_particle_10
+  - first:
+      213: 7293901340422430129
+    second: blood_particle_11
+  - first:
+      213: -7401106848337405351
+    second: blood_particle_12
+  - first:
+      213: 951719662456087593
+    second: blood_particle_13
+  - first:
+      213: 2814190636571487127
+    second: blood_particle_14
+  - first:
+      213: 5185504471947149702
+    second: blood_particle_15
+  - first:
+      213: 4282977034373820578
+    second: blood_particle_16
+  - first:
+      213: -1443025685163665877
+    second: blood_particle_17
+  - first:
+      213: -6469421438418834571
+    second: blood_particle_18
+  - first:
+      213: 1121993605491133201
+    second: blood_particle_19
+  - first:
+      213: 1544219815782865789
+    second: blood_particle_20
+  - first:
+      213: -5548429538311839500
+    second: blood_particle_21
+  - first:
+      213: 7142757505909352591
+    second: blood_particle_22
+  - first:
+      213: -1828684923115641588
+    second: blood_particle_23
+  - first:
+      213: 3200508179650270999
+    second: blood_particle_24
+  - first:
+      213: -5796596068399187411
+    second: blood_particle_25
+  - first:
+      213: -582380612003535194
+    second: blood_particle_26
+  - first:
+      213: 4693568146649316874
+    second: blood_particle_27
+  - first:
+      213: -3896806893120744192
+    second: blood_particle_28
+  - first:
+      213: 7164385471088800293
+    second: blood_particle_29
+  - first:
+      213: -5485777302279089196
+    second: blood_particle_30
+  - first:
+      213: 6692396895251758341
+    second: blood_particle_31
+  - first:
+      213: -4139960766706959977
+    second: blood_particle_32
+  - first:
+      213: -5263942432940335405
+    second: blood_particle_33
+  - first:
+      213: -129480342082133265
+    second: blood_particle_34
+  - first:
+      213: -8671775915533812362
+    second: blood_particle_35
+  - first:
+      213: -7340442136713766347
+    second: blood_particle_36
+  - first:
+      213: 2416551839630491192
+    second: blood_particle_37
+  - first:
+      213: -7975610462826829895
+    second: blood_particle_38
+  - first:
+      213: 1979669943977785801
+    second: blood_particle_39
+  - first:
+      213: 8570812393279634992
+    second: blood_particle_40
+  - first:
+      213: 6566982315497628733
+    second: blood_particle_41
+  - first:
+      213: 907060539112658128
+    second: blood_particle_42
+  - first:
+      213: 5451498342700670229
+    second: blood_particle_43
+  - first:
+      213: 4458351234984576498
+    second: blood_particle_44
+  - first:
+      213: -5322736506459624878
+    second: blood_particle_45
+  - first:
+      213: 2075673866450310399
+    second: blood_particle_46
+  - first:
+      213: -1212450373398810168
+    second: blood_particle_47
+  - first:
+      213: -6861339344862178917
+    second: blood_particle_48
+  - first:
+      213: 5094460259437751033
+    second: blood_particle_49
+  - first:
+      213: -896449103754629313
+    second: blood_particle_50
+  - first:
+      213: -3157668100668152881
+    second: blood_particle_51
+  - first:
+      213: 5360349170206148974
+    second: blood_particle_52
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: blood_particle_0
+      rect:
+        serializedVersion: 2
+        x: 1206
+        y: 362
+        width: 104
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0def5f2efad8144e0800000000000000
+      internalID: -1999160973009223984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood_particle_1
+      rect:
+        serializedVersion: 2
+        x: 1718
+        y: 374
+        width: 105
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c06d85f01e0e13760800000000000000
+      internalID: 7435971716995143180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood_particle_2
+      rect:
+        serializedVersion: 2
+        x: 1865
+        y: 403
+        width: 46
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a4efaa957b954c00800000000000000
+      internalID: 884283831256868009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood_particle_3
+      rect:
+        serializedVersion: 2
+        x: 2232
+        y: 388
+        width: 106
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c02d7e59baa5fcf20800000000000000
+      internalID: 3445071932962624012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood_particle_4
+      rect:
+        serializedVersion: 2
+        x: 2386
+        y: 417
+        width: 31
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 985e4c30d6aebf5e0800000000000000
+      internalID: -1874647065934109303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood_particle_5
+      rect:
+        serializedVersion: 2
+        x: 2751
+        y: 400
+        width: 97
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af176e0617f2b6090800000000000000
+      internalID: -8040280545736363526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood_particle_6
+      rect:
+        serializedVersion: 2
+        x: 2907
+        y: 424
+        width: 18
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53b3c38790ad64a90800000000000000
+      internalID: -7329931609292129483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood_particle_7
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 199
+        width: 210
+        height: 184
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6965f614ac8915290800000000000000
+      internalID: -7903367876609878378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood_particle_8
+      rect:
+        serializedVersion: 2
+        x: 702
+        y: 242
+        width: 178
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02e0447e7be5a9320800000000000000
+      internalID: 2565467081692941856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood_particle_9
+      rect:
+        serializedVersion: 2
+        x: 1291
+        y: 348
+        width: 53
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e213485dd5845130800000000000000
+      internalID: 3554613191617221348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood_particle_10
+      rect:
+        serializedVersion: 2
+        x: 1353
+        y: 332
+        width: 62
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4ecd3d3c8bc975d0800000000000000
+      internalID: -3064194268265591221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood_particle_11
+      rect:
+        serializedVersion: 2
+        x: 1817
+        y: 363
+        width: 36
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bddf96df94293560800000000000000
+      internalID: 7293901340422430129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood_particle_12
+      rect:
+        serializedVersion: 2
+        x: 1884
+        y: 332
+        width: 46
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95a5320c88cf94990800000000000000
+      internalID: -7401106848337405351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood_particle_13
+      rect:
+        serializedVersion: 2
+        x: 2335
+        y: 366
+        width: 24
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92423769dff253d00800000000000000
+      internalID: 951719662456087593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood_particle_14
+      rect:
+        serializedVersion: 2
+        x: 2852
+        y: 371
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79be21749730e0720800000000000000
+      internalID: 2814190636571487127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood_particle_15
+      rect:
+        serializedVersion: 2
+        x: 1180
+        y: 309
+        width: 44
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6810c9fd7dc96f740800000000000000
+      internalID: 5185504471947149702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood_particle_16
+      rect:
+        serializedVersion: 2
+        x: 1696
+        y: 323
+        width: 33
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a0f10babe0307b30800000000000000
+      internalID: 4282977034373820578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood_particle_17
+      rect:
+        serializedVersion: 2
+        x: 2209
+        y: 331
+        width: 23
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b261e0ae8c759fbe0800000000000000
+      internalID: -1443025685163665877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood_particle_18
+      rect:
+        serializedVersion: 2
+        x: 2405
+        y: 342
+        width: 35
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57bafbc6a7ff736a0800000000000000
+      internalID: -6469421438418834571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood_particle_19
+      rect:
+        serializedVersion: 2
+        x: 2724
+        y: 336
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11b0f875d3f129f00800000000000000
+      internalID: 1121993605491133201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood_particle_20
+      rect:
+        serializedVersion: 2
+        x: 2922
+        y: 345
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7b5bd6adbb2e6510800000000000000
+      internalID: 1544219815782865789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood_particle_21
+      rect:
+        serializedVersion: 2
+        x: 673
+        y: 288
+        width: 49
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f063a35bb40003b0800000000000000
+      internalID: -5548429538311839500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood_particle_22
+      rect:
+        serializedVersion: 2
+        x: 1245
+        y: 289
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f886b709b1c202360800000000000000
+      internalID: 7142757505909352591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood_particle_23
+      rect:
+        serializedVersion: 2
+        x: 1659
+        y: 286
+        width: 33
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c05649f40c43f96e0800000000000000
+      internalID: -1828684923115641588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood_particle_24
+      rect:
+        serializedVersion: 2
+        x: 1759
+        y: 307
+        width: 41
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71759cc7b3d7a6c20800000000000000
+      internalID: 3200508179650270999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood_particle_25
+      rect:
+        serializedVersion: 2
+        x: 2275
+        y: 308
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2af3a4669a5e8fa0800000000000000
+      internalID: -5796596068399187411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood_particle_26
+      rect:
+        serializedVersion: 2
+        x: 2791
+        y: 311
+        width: 19
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a664714be7fae7f0800000000000000
+      internalID: -582380612003535194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood_particle_27
+      rect:
+        serializedVersion: 2
+        x: 1151
+        y: 271
+        width: 43
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0efe1e9c57e22140800000000000000
+      internalID: 4693568146649316874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood_particle_28
+      rect:
+        serializedVersion: 2
+        x: 1289
+        y: 258
+        width: 41
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0059e31e6c2cbe9c0800000000000000
+      internalID: -3896806893120744192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood_particle_29
+      rect:
+        serializedVersion: 2
+        x: 1819
+        y: 277
+        width: 32
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 522b73e90a20d6360800000000000000
+      internalID: 7164385471088800293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood_particle_30
+      rect:
+        serializedVersion: 2
+        x: 2172
+        y: 290
+        width: 21
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d311c4cb9a9ed3b0800000000000000
+      internalID: -5485777302279089196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood_particle_31
+      rect:
+        serializedVersion: 2
+        x: 2344
+        y: 285
+        width: 20
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50d7865b48b20ec50800000000000000
+      internalID: 6692396895251758341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood_particle_32
+      rect:
+        serializedVersion: 2
+        x: 2683
+        y: 296
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 799b06cfd97eb86c0800000000000000
+      internalID: -4139960766706959977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood_particle_33
+      rect:
+        serializedVersion: 2
+        x: 2867
+        y: 295
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3de5c7e2f38b2f6b0800000000000000
+      internalID: -5263942432940335405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood_particle_34
+      rect:
+        serializedVersion: 2
+        x: 654
+        y: 249
+        width: 57
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe26ccc905ef33ef0800000000000000
+      internalID: -129480342082133265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood_particle_35
+      rect:
+        serializedVersion: 2
+        x: 1235
+        y: 274
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67db1d6ffb9a7a780800000000000000
+      internalID: -8671775915533812362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood_particle_36
+      rect:
+        serializedVersion: 2
+        x: 1387
+        y: 245
+        width: 46
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53addda94c2812a90800000000000000
+      internalID: -7340442136713766347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood_particle_37
+      rect:
+        serializedVersion: 2
+        x: 1733
+        y: 273
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83efd7e3811598120800000000000000
+      internalID: 2416551839630491192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood_particle_38
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 258
+        width: 35
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b761586a80f05190800000000000000
+      internalID: -7975610462826829895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood_particle_39
+      rect:
+        serializedVersion: 2
+        x: 2445
+        y: 269
+        width: 26
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c930574353397b10800000000000000
+      internalID: 1979669943977785801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood_particle_40
+      rect:
+        serializedVersion: 2
+        x: 2972
+        y: 278
+        width: 19
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03eb2f92674a1f670800000000000000
+      internalID: 8570812393279634992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood_particle_41
+      rect:
+        serializedVersion: 2
+        x: 823
+        y: 228
+        width: 78
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3422816f9b922b50800000000000000
+      internalID: 6566982315497628733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood_particle_42
+      rect:
+        serializedVersion: 2
+        x: 1335
+        y: 234
+        width: 42
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d4959721c6869c00800000000000000
+      internalID: 907060539112658128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood_particle_43
+      rect:
+        serializedVersion: 2
+        x: 2236
+        y: 252
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51ddd420cdc97ab40800000000000000
+      internalID: 5451498342700670229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood_particle_44
+      rect:
+        serializedVersion: 2
+        x: 714
+        y: 204
+        width: 38
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f50e2da3de3fdd30800000000000000
+      internalID: 4458351234984576498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood_particle_45
+      rect:
+        serializedVersion: 2
+        x: 1216
+        y: 204
+        width: 27
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25a68733957d126b0800000000000000
+      internalID: -5322736506459624878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood_particle_46
+      rect:
+        serializedVersion: 2
+        x: 1866
+        y: 218
+        width: 27
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff4155752664ecc10800000000000000
+      internalID: 2075673866450310399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood_particle_47
+      rect:
+        serializedVersion: 2
+        x: 2736
+        y: 219
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c136c92fc28c2fe0800000000000000
+      internalID: -1212450373398810168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood_particle_48
+      rect:
+        serializedVersion: 2
+        x: 1719
+        y: 193
+        width: 22
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9114120830a7c0a0800000000000000
+      internalID: -6861339344862178917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood_particle_49
+      rect:
+        serializedVersion: 2
+        x: 2390
+        y: 201
+        width: 22
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9faa1264d9823b640800000000000000
+      internalID: 5094460259437751033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood_particle_50
+      rect:
+        serializedVersion: 2
+        x: 2224
+        y: 177
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3fec7b2a4c2f83f0800000000000000
+      internalID: -896449103754629313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood_particle_51
+      rect:
+        serializedVersion: 2
+        x: 2909
+        y: 186
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc3a71da795bd24d0800000000000000
+      internalID: -3157668100668152881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood_particle_52
+      rect:
+        serializedVersion: 2
+        x: 2731
+        y: 159
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6982328b29c36a40800000000000000
+      internalID: 5360349170206148974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
