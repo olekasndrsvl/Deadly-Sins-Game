@@ -3575,7 +3575,11 @@ MonoBehaviour:
   EnemyBody: {fileID: 0}
   IsPaused: 0
   isNeedAutoMove: 0
-  HitSounds: []
+  HitSounds:
+  - {fileID: 8300000, guid: 91e553f72b7ef9b4693bf700667fc375, type: 3}
+  - {fileID: 8300000, guid: 692a714623273de498e12439f09c63e5, type: 3}
+  - {fileID: 8300000, guid: f501f1ad264f91648ada4fb5f0bd6286, type: 3}
+  - {fileID: 8300000, guid: 7f210c6f2f4ac38499c39f89fee99c15, type: 3}
 --- !u!61 &1747276529
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3610,7 +3614,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.48742485, y: -0.1706605}
+  m_Offset: {x: 2.832811, y: -0.1706605}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -3620,7 +3624,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 11.127323, y: 13.764043}
+  m_Size: {x: 6.4365506, y: 13.764043}
   m_EdgeRadius: 1
 --- !u!4 &1756512424 stripped
 Transform:

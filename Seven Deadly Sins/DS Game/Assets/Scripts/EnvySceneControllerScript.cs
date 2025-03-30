@@ -35,19 +35,21 @@ public class EnvySceneControllerScript : MonoBehaviour
         HP_Player.text = "Çהמנמגüו: "+Player.GetComponent<PlayerAttack>().health.ToString();
         HP_Enemy.text= Enemy.GetComponent<Enemy>().health.ToString();
         
-        if (Player.GetComponent<PlayerAttack>().health <= 0 && FinalDialog.activeSelf == false)
+        if (Player.GetComponent<PlayerAttack>().health <= 0)
         {
             LoseDialog.SetActive(true);
             Player.GetComponent<PlayerAttack>().health = 0;
             Enemy.GetComponent<global::Enemy>().IsPaused=true;
             Enemy.GetComponent<BetterVersionOfMortControllerScript>().IsPaused = true;
         }
-
-        if (Enemy.GetComponent<Enemy>().health <= 0)
+        else
         {
-            levelphase++;
-            Enemy.GetComponent<Enemy>().health = 0;
-            Enemy.GetComponent<global::Enemy>().IsPaused=true;
+            if (Enemy.GetComponent<Enemy>().health <= 0)
+            {
+                levelphase++;
+                Enemy.GetComponent<Enemy>().health = 0;
+                Enemy.GetComponent<global::Enemy>().IsPaused = true;
+            }
         }
 
         if (levelphase >= 1)
