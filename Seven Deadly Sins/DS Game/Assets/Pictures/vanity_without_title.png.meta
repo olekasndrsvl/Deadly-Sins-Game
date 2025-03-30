@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      vanity_without_title_0: 6371738007357907289
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

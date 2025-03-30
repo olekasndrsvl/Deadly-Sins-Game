@@ -12,6 +12,7 @@ public class PlayerAttack : MonoBehaviour
     public LayerMask enemy;
     public float attackrange;
     public Animator PlayerAnimator;
+    public GameObject attackbutton;
     public int damageAmount;
     public GameObject deathEffect;
     bool isAttacking=false;
@@ -30,22 +31,18 @@ public class PlayerAttack : MonoBehaviour
 
     public void OnAttackButtonClicked()
     {
-        if(!isAttacking)
-        {
-            PlayerAnimator.SetBool("IsFighting",false);
-            PlayerAnimator.SetBool("IsFighting", true);
-            isAttacking = true;
-        }
-        
+        attackbutton.GetComponent<Image>().color=Color.gray;
+        PlayerAnimator.SetTrigger("Fight");
     }
 
     public void AttackEnded()
     {
         enemies = Physics2D.OverlapCircleAll(attackpos.position, attackrange,enemy);
-        PlayerAnimator.SetBool("IsFighting",false);
+        
         if(enemies.Length>0)
             enemies.First().GetComponent<Enemy>().TakeDamage(damageAmount);
-        isAttacking = false;
+        
+        attackbutton.GetComponent<Image>().color=Color.white;
         timeBetweenAttacks = startTimeBetweenAttacks;
     }
 }

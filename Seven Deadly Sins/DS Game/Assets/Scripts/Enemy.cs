@@ -25,7 +25,8 @@ public class Enemy : MonoBehaviour
     public bool isAttacking =false;
     public Transform EnemyBody;
     public  bool IsPaused;
-    
+
+    public bool isNeedAutoMove = true;
     public AudioClip[] HitSounds;
     private AudioSource audioSource;
     private int lastSoundIndex = -1;
@@ -64,32 +65,35 @@ public class Enemy : MonoBehaviour
             enemyAnimator.SetBool("IsDied",false);
         }
         
-        if (!(IsPaused || isAttacking))
+        if(isNeedAutoMove)
         {
-           
-            // Двигаем NPC
-            if (stopTime <= 0)
+            if (!(IsPaused || isAttacking))
             {
-                EnemyBody.transform.position += Vector3.right * (direction * speed * Time.deltaTime);
 
-                // Проверяем границы и меняем направление
-                if (EnemyBody.transform.position.x >= rightLimit)
+                // Двигаем NPC
+                if (stopTime <= 0)
                 {
-                    //yield return new WaitForSeconds(1f);
-                    direction = -1; // Меняем направление на влево
-                }
-                else if (EnemyBody.transform.position.x <= leftLimit)
-                {
-                    direction = 1; // Меняем направление на вправо
-                    //yield return new WaitForSeconds(1f);
-                }
-            }
-            else
-            {
-              
-                stopTime -= Time.deltaTime;
-            }
+                    EnemyBody.transform.position += Vector3.right * (direction * speed * Time.deltaTime);
 
+                    // Проверяем границы и меняем направление
+                    if (EnemyBody.transform.position.x >= rightLimit)
+                    {
+                        //yield return new WaitForSeconds(1f);
+                        direction = -1; // Меняем направление на влево
+                    }
+                    else if (EnemyBody.transform.position.x <= leftLimit)
+                    {
+                        direction = 1; // Меняем направление на вправо
+                        //yield return new WaitForSeconds(1f);
+                    }
+                }
+                else
+                {
+
+                    stopTime -= Time.deltaTime;
+                }
+
+            }
         }
     }
 
@@ -117,10 +121,10 @@ public class Enemy : MonoBehaviour
       
         if (collision.CompareTag("Player")&& !IsPaused)
         {
-           // Debug.Log(collision.gameObject.name);
+            Debug.Log(collision.gameObject.name);
             if (timeBetweenAttacks <= 0)
             {
-                enemyAnimator.SetBool("IsFighting",true);
+                enemyAnimator.SetTrigger("Fighting");
                 isAttacking = true;
                 PlayRandomHitSound();
                 Instantiate(deathEffect, transform.position, Quaternion.identity);
@@ -144,7 +148,7 @@ public class Enemy : MonoBehaviour
     public void OnEnemyAttack()
     {
         Instantiate(deathEffect, transform.position, Quaternion.identity);
-        enemyAnimator.SetBool("IsFighting",false);
+        
         Player.health-=damageAmount;
         timeBetweenAttacks = startTimeBetweenAttacks;
         isAttacking=false;

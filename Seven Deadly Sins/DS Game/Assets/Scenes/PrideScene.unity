@@ -5715,6 +5715,10 @@ PrefabInstance:
       propertyPath: m_FlipY
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2823357268354962543, guid: 7512677b04da3144b99998cc7bf35d63, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 93b5a41b992e9c44e9fa0fd515e6c37e, type: 2}
     - target: {fileID: 9212260763027397825, guid: 7512677b04da3144b99998cc7bf35d63, type: 3}
       propertyPath: joystick
       value: 
@@ -5757,8 +5761,9 @@ MonoBehaviour:
   enemy:
     serializedVersion: 2
     m_Bits: 128
-  attackrange: 3
+  attackrange: 2.5
   PlayerAnimator: {fileID: 0}
+  attackbutton: {fileID: 1681405597}
   damageAmount: 15
   deathEffect: {fileID: 2657567081865393307, guid: afe2863aa6c5dfe42a1f0405c701b54e, type: 3}
 --- !u!1 &2094550029 stripped

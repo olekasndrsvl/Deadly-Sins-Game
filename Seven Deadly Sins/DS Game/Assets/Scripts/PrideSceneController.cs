@@ -193,7 +193,7 @@ public class PrideSceneController : MonoBehaviour
     {
         Dialog3.SetActive(false);
 
-        if (dialog3Result > 0)
+        if (Dialog3.GetComponent<Dialog>().DialogResult < 0)
         {
             
             TipConrtrollerScript.TipsTextMessage= "“ы выбрал неверный путь, мой друг! “вое ненасытное желание побеждать всех и каждого сыграло с тобой злую шутку...";
