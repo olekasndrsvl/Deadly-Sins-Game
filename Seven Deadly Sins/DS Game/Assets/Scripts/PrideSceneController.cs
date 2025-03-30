@@ -205,7 +205,7 @@ public class PrideSceneController : MonoBehaviour
             TipConrtrollerScript.TipsTextMessage= "“ы выбрал неверный путь, мой друг! “вое ненасытное желание побеждать всех и каждого сыграло с тобой злую шутку...";
             TipConrtrollerScript.IsNewTextAdded = true;
             
-            enemy.damageAmount = 50;
+            enemy.damageAmount = 100;
             enemy.startTimeBetweenAttacks = 0.4f;
             enemy.health = 100;
             

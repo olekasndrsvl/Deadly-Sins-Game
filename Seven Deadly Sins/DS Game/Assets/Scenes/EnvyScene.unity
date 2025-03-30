@@ -1000,7 +1000,7 @@ MonoBehaviour:
   enemy:
     serializedVersion: 2
     m_Bits: 128
-  attackrange: 2
+  attackrange: 1.5
   PlayerAnimator: {fileID: 0}
   attackbutton: {fileID: 444507439}
   damageAmount: 10

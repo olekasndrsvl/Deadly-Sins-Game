@@ -35,7 +35,12 @@ public class EnvySceneControllerScript : MonoBehaviour
         HP_Player.text = "Çהמנמגüו: "+Player.GetComponent<PlayerAttack>().health.ToString();
         HP_Enemy.text= Enemy.GetComponent<Enemy>().health.ToString();
         
-        if (Player.GetComponent<PlayerAttack>().health <= 0)
+        if(Player.GetComponent<PlayerAttack>().health <= 0)
+            Player.GetComponent<PlayerAttack>().health = 0;
+        if (Enemy.GetComponent<Enemy>().health <= 0)
+            Enemy.GetComponent<Enemy>().health = 0;
+        
+        if (Player.GetComponent<PlayerAttack>().health <= 0 && FinalDialog.activeSelf == false)
         {
             LoseDialog.SetActive(true);
             Player.GetComponent<PlayerAttack>().health = 0;
@@ -44,7 +49,7 @@ public class EnvySceneControllerScript : MonoBehaviour
         }
         else
         {
-            if (Enemy.GetComponent<Enemy>().health <= 0)
+            if (Enemy.GetComponent<Enemy>().health <= 0 && LoseDialog.activeSelf == false)
             {
                 levelphase++;
                 Enemy.GetComponent<Enemy>().health = 0;
