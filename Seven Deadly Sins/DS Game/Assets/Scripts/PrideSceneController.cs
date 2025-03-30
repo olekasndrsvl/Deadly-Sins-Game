@@ -103,6 +103,7 @@ public class PrideSceneController : MonoBehaviour
             // Enemy died
             if (enemy.health <= 0 && !isLosingDialogActive)
             {
+                enemy.health = 0;
                 switch (dialognumber)
                 {
                     case 1:
@@ -133,7 +134,7 @@ public class PrideSceneController : MonoBehaviour
         TipConrtrollerScript.IsNewTextAdded = true;
         
         Dialog1.SetActive(false);
-        if(dialog1Result > 0)
+        if(dialog1Result== 2 || dialog1Result==-1)
         {
             
             enemy.damageAmount = 20;
@@ -149,8 +150,9 @@ public class PrideSceneController : MonoBehaviour
             
             dialognumber++;
             PlayerPrefs.SetInt("DialogNumber", dialognumber);
-
+            
             Resume();
+            Replay();
         }
         else
         {
@@ -166,7 +168,7 @@ public class PrideSceneController : MonoBehaviour
         
         
         Dialog2.SetActive(false);
-        if (dialog2Result > 0)
+        if (dialog2Result== 2 || dialog2Result==-1)
         {
            
          
@@ -184,6 +186,7 @@ public class PrideSceneController : MonoBehaviour
             dialognumber++;
             PlayerPrefs.SetInt("DialogNumber", dialognumber);
             Resume();
+            Replay();
         }
         else
         {
@@ -196,7 +199,7 @@ public class PrideSceneController : MonoBehaviour
     {
         Dialog3.SetActive(false);
 
-        if (Dialog3.GetComponent<Dialog>().DialogResult < 0)
+        if (Dialog3.GetComponent<Dialog>().DialogResult != 0)
         {
             
             TipConrtrollerScript.TipsTextMessage= "“ы выбрал неверный путь, мой друг! “вое ненасытное желание побеждать всех и каждого сыграло с тобой злую шутку...";
