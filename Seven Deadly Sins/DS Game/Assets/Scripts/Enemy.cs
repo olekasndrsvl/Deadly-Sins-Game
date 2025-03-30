@@ -65,6 +65,10 @@ public class Enemy : MonoBehaviour
             enemyAnimator.SetBool("IsDied",false);
         }
         
+        
+        
+        
+        
         if(isNeedAutoMove)
         {
             if (!(IsPaused || isAttacking))

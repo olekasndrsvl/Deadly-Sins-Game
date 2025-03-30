@@ -21,6 +21,7 @@ public class PrideSceneController : MonoBehaviour
     public GameObject _LosingDialog;
     public GameObject _Died_Dialog;
     int dialognumber = 1;
+    bool isLosingDialogActive = false;
     int dialog1Result;
     int dialog2Result;
     int dialog3Result;
@@ -97,27 +98,29 @@ public class PrideSceneController : MonoBehaviour
             PlayerHitbox.health = 0;
             _Died_Dialog.SetActive(true);
         }
-
-        // Enemy died
-        if (enemy.health <= 0)
+        else
         {
-            switch(dialognumber)
+            // Enemy died
+            if (enemy.health <= 0 && !isLosingDialogActive)
             {
-                case 1:
-                    enemy.health = 0;
-                    Dialog1.SetActive(true);
-                    Pause();
-                    break;
-                case 2:
-                    enemy.health = 0;
-                    Dialog2.SetActive(true);
-                    Pause();
-                    break;
-                case 3:
-                    enemy.health = 0;
-                    Dialog3.SetActive(true);
-                    Pause();
-                    break;
+                switch (dialognumber)
+                {
+                    case 1:
+                        enemy.health = 0;
+                        Dialog1.SetActive(true);
+                        Pause();
+                        break;
+                    case 2:
+                        enemy.health = 0;
+                        Dialog2.SetActive(true);
+                        Pause();
+                        break;
+                    case 3:
+                        enemy.health = 0;
+                        Dialog3.SetActive(true);
+                        Pause();
+                        break;
+                }
             }
         }
     }
@@ -151,7 +154,7 @@ public class PrideSceneController : MonoBehaviour
         }
         else
         {
-            
+            isLosingDialogActive=true;
             LosingDialog(Dialog1);
         }
 
@@ -184,7 +187,7 @@ public class PrideSceneController : MonoBehaviour
         }
         else
         {
-          
+            isLosingDialogActive=true;
             LosingDialog(Dialog2);
         }
 

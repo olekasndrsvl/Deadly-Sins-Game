@@ -2300,7 +2300,7 @@ PrefabInstance:
       objectReference: {fileID: 1522648707}
     - target: {fileID: 8551595334810311459, guid: 308ab9aab244fc945a2acb0bef5b9b56, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: FinallDialog
+      value: FinalDialog
       objectReference: {fileID: 0}
     - target: {fileID: 8551595334810311459, guid: 308ab9aab244fc945a2acb0bef5b9b56, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -4621,6 +4621,7 @@ MonoBehaviour:
   isAttacking: 0
   EnemyBody: {fileID: 0}
   IsPaused: 0
+  isNeedAutoMove: 1
   HitSounds:
   - {fileID: 8300000, guid: 91e553f72b7ef9b4693bf700667fc375, type: 3}
   - {fileID: 8300000, guid: 692a714623273de498e12439f09c63e5, type: 3}
