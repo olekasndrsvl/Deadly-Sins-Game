@@ -954,6 +954,10 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 1055591576505166792, guid: 7512677b04da3144b99998cc7bf35d63, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1055591576505166792, guid: 7512677b04da3144b99998cc7bf35d63, type: 3}
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
@@ -961,6 +965,18 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 93b5a41b992e9c44e9fa0fd515e6c37e, type: 2}
+    - target: {fileID: 5062403043855636907, guid: 7512677b04da3144b99998cc7bf35d63, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7298193449384034150, guid: 7512677b04da3144b99998cc7bf35d63, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7612165159147148630, guid: 7512677b04da3144b99998cc7bf35d63, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 9212260763027397825, guid: 7512677b04da3144b99998cc7bf35d63, type: 3}
       propertyPath: joystick
       value: 
@@ -994,7 +1010,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeBetweenAttacks: 1
-  startTimeBetweenAttacks: 1
+  startTimeBetweenAttacks: 0.5
   health: 100
   attackpos: {fileID: 703600121}
   enemy:
@@ -1252,6 +1268,37 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5357861a86e6f434aa5d002c58033d6c, type: 3}
+--- !u!1 &438642598
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 438642599}
+  m_Layer: 7
+  m_Name: attackpos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &438642599
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 438642598}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1747276523}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &444507439
 GameObject:
   m_ObjectHideFlags: 0
@@ -1664,7 +1711,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 703600121}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: attackpos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3495,6 +3542,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 726729179468534258, guid: 7512677b04da3144b99998cc7bf35d63, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1763984585}
+    - targetCorrespondingSourceObject: {fileID: 726729179468534258, guid: 7512677b04da3144b99998cc7bf35d63, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 438642599}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1055591576505166792, guid: 7512677b04da3144b99998cc7bf35d63, type: 3}
       insertIndex: -1
@@ -3560,9 +3610,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 097469b346e6656479d597acfab8bc02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBetweenAttacks: 1
+  PLayerMask:
+    serializedVersion: 2
+    m_Bits: 256
+  attackpos: {fileID: 438642599}
+  attackrange: 1.5
+  timeBetweenAttacks: 2
   startTimeBetweenAttacks: 2
-  damageAmount: 28
+  damageAmount: 12
   stopTime: 0
   startstopTime: 0
   deathEffect: {fileID: 2657567081865393307, guid: afe2863aa6c5dfe42a1f0405c701b54e, type: 3}

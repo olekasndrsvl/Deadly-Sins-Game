@@ -57,9 +57,8 @@ public class PrideSceneController : MonoBehaviour
    
     public void LosingDialog(GameObject dial)
     {
-        dial.SetActive(false);
-        _LosingDialog.SetActive(true);
-       
+         dial.SetActive(false);
+         _LosingDialog.SetActive(true);
     }
 
     public void FinalDialog()
@@ -138,14 +137,14 @@ public class PrideSceneController : MonoBehaviour
         {
             
             enemy.damageAmount = 20;
-            enemy.startTimeBetweenAttacks = 2f;
+            enemy.startTimeBetweenAttacks = 3f;
             enemy.health = 100;
             PlayerPrefs.SetInt("EnemyDamage", enemy.damageAmount);
             PlayerPrefs.SetFloat("EnemyDelay", enemy.startTimeBetweenAttacks);
             
             player.transform.position = new Vector3(2, -1 , player.transform.position.z);
             PlayerHitbox.health =100;
-            PlayerHitbox.startTimeBetweenAttacks = 1.5f;
+            PlayerHitbox.startTimeBetweenAttacks = 2f;
             PlayerPrefs.SetFloat("PlayerStartTime", PlayerHitbox.startTimeBetweenAttacks);
             
             dialognumber++;
@@ -172,15 +171,15 @@ public class PrideSceneController : MonoBehaviour
         {
            
          
-            enemy.damageAmount = 25;
-            enemy.startTimeBetweenAttacks = 1.8f;
+            enemy.damageAmount = 20;
+            enemy.startTimeBetweenAttacks = 1f;
             enemy.health = 100;
             PlayerPrefs.SetInt("EnemyDamage", enemy.damageAmount);
             PlayerPrefs.SetFloat("EnemyDelay", enemy.startTimeBetweenAttacks);
             
             PlayerHitbox.health = 100;
             player.transform.position = new Vector3(2, -1, player.transform.position.z);
-            PlayerHitbox.startTimeBetweenAttacks = 0.2f;
+            PlayerHitbox.startTimeBetweenAttacks = 0.5f;
             PlayerPrefs.SetFloat("PlayerStartTime", PlayerHitbox.startTimeBetweenAttacks);
             
             dialognumber++;
@@ -205,12 +204,12 @@ public class PrideSceneController : MonoBehaviour
             TipConrtrollerScript.TipsTextMessage= "“ы выбрал неверный путь, мой друг! “вое ненасытное желание побеждать всех и каждого сыграло с тобой злую шутку...";
             TipConrtrollerScript.IsNewTextAdded = true;
             
-            enemy.damageAmount = 100;
-            enemy.startTimeBetweenAttacks = 0.4f;
+            enemy.damageAmount = 30;
+            enemy.startTimeBetweenAttacks = 0.5f;
             enemy.health = 100;
             
             PlayerHitbox.health = 100;
-            PlayerHitbox.startTimeBetweenAttacks = 3f;
+            PlayerHitbox.startTimeBetweenAttacks = 5f;
             player.transform.position = new Vector3(2, -1, player.transform.position.z);
             
             dialognumber++;

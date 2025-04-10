@@ -1,12 +1,15 @@
 using System;
 using System.Collections;
+using System.Linq;
 using UnityEngine;
 using Random = System.Random;
 
 
 public class Enemy : MonoBehaviour
 {
-    
+    public LayerMask PLayerMask;
+    public Transform attackpos;
+    public float attackrange;
     public float timeBetweenAttacks;
     public float startTimeBetweenAttacks;
     public int damageAmount;
@@ -59,6 +62,7 @@ public class Enemy : MonoBehaviour
         {
             enemyAnimator.SetBool("IsDied",true);
             isAttacking = false;
+            health = 0;
         }
         else
         {
@@ -66,7 +70,24 @@ public class Enemy : MonoBehaviour
         }
         
         
-        
+        var players = Physics2D.OverlapCircleAll(attackpos.position, attackrange,PLayerMask);
+
+        if (players.Length > 0 && !IsPaused)
+        {
+           
+            if (timeBetweenAttacks <= 0)
+            {
+                enemyAnimator.SetTrigger("Fighting");
+                isAttacking = true;
+                PlayRandomHitSound();
+                Instantiate(deathEffect, transform.position, Quaternion.identity);
+            }
+            else
+            {
+                timeBetweenAttacks -= Time.deltaTime;
+            }
+
+        }
         
         
         if(isNeedAutoMove)
@@ -126,18 +147,7 @@ public class Enemy : MonoBehaviour
         if (collision.CompareTag("Player")&& !IsPaused)
         {
             Debug.Log(collision.gameObject.name);
-            if (timeBetweenAttacks <= 0)
-            {
-                enemyAnimator.SetTrigger("Fighting");
-                isAttacking = true;
-                PlayRandomHitSound();
-                Instantiate(deathEffect, transform.position, Quaternion.identity);
-            }
-            else
-            {
-                timeBetweenAttacks -= Time.deltaTime;
-            }
-          
+           
         }
      
     }
@@ -145,17 +155,21 @@ public class Enemy : MonoBehaviour
     {
         stopTime = startstopTime;
         direction *= -1;
-        health -= Player.damageAmount;
+        var r = new Random();
+        health -= Player.damageAmount+r.Next(-5,5);
         Instantiate(deathEffect, transform.position, Quaternion.identity);
     }
 
     public void OnEnemyAttack()
     {
-        Instantiate(deathEffect, transform.position, Quaternion.identity);
-        
-        Player.health-=damageAmount;
-        timeBetweenAttacks = startTimeBetweenAttacks;
-        isAttacking=false;
+        if(health>0)
+        {
+            Instantiate(deathEffect, transform.position, Quaternion.identity);
+
+            Player.health -= damageAmount;
+            timeBetweenAttacks = startTimeBetweenAttacks;
+            isAttacking = false;
+        }
         
     }
 }

@@ -17,11 +17,11 @@ TagManager:
   - Background
   - Water
   - UI
+  - Boiler
+  - Effect
   - Ground
   - Enemy
-  - 
-  - 
-  - 
+  - Player
   - 
   - 
   - 
@@ -49,6 +49,9 @@ TagManager:
     locked: 0
   - name: BackGround
     uniqueID: 811159273
+    locked: 0
+  - name: Boilers
+    uniqueID: 2093857947
     locked: 0
   - name: Level Objects
     uniqueID: 1741977287

@@ -1,7 +1,7 @@
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
-
+using Random = System.Random;
 public class PlayerAttack : MonoBehaviour
 {
     public float timeBetweenAttacks;
@@ -27,12 +27,25 @@ public class PlayerAttack : MonoBehaviour
     void Update()
     {
         timeBetweenAttacks -= Time.deltaTime;
+        if (timeBetweenAttacks <= 0)
+        {
+            attackbutton.GetComponent<Image>().color=Color.white;
+        }
     }
 
+    public void TakeDamage(int damage)
+    {
+        var rand = new Random();
+        health -= damage+ rand.Next(-5,5);
+    }
+    
     public void OnAttackButtonClicked()
     {
-        attackbutton.GetComponent<Image>().color=Color.gray;
-        PlayerAnimator.SetTrigger("Fight");
+        attackbutton.GetComponent<Image>().color = Color.gray;
+        if(timeBetweenAttacks<=0)
+        {
+            PlayerAnimator.SetTrigger("Fight");
+        }    
     }
 
     public void AttackEnded()
@@ -41,8 +54,6 @@ public class PlayerAttack : MonoBehaviour
         
         if(enemies.Length>0)
             enemies.First().GetComponent<Enemy>().TakeDamage(damageAmount);
-        
-        attackbutton.GetComponent<Image>().color=Color.white;
         timeBetweenAttacks = startTimeBetweenAttacks;
     }
 }

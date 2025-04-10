@@ -244,7 +244,7 @@ GameObject:
   - component: {fileID: 50406035}
   - component: {fileID: 50406034}
   - component: {fileID: 50406033}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: Boiler_collider (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -552,8 +552,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1716238727
-  m_SortingLayer: 3
+  m_SortingLayerID: 2093857947
+  m_SortingLayer: 2
   m_SortingOrder: -3
   m_Sprite: {fileID: 21300000, guid: 36d2ea028741d37439bf51fe35d74f29, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -575,7 +575,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 104811075}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: LevelObjects
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -768,7 +768,7 @@ GameObject:
   m_Component:
   - component: {fileID: 180248457}
   - component: {fileID: 180248456}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: hell_level_fire_left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1065,7 +1065,7 @@ GameObject:
   m_Component:
   - component: {fileID: 226386267}
   - component: {fileID: 226386266}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: hell_level_fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1241,7 +1241,7 @@ GameObject:
   - component: {fileID: 320273155}
   - component: {fileID: 320273154}
   - component: {fileID: 320273153}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: Boiler_collider (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1496,8 +1496,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1716238727
-  m_SortingLayer: 3
+  m_SortingLayerID: 2093857947
+  m_SortingLayer: 2
   m_SortingOrder: -3
   m_Sprite: {fileID: 21300000, guid: 87a8352055783f64a9a7d4d6a5ea4f75, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2686,7 +2686,7 @@ GameObject:
   - component: {fileID: 1056154891}
   - component: {fileID: 1056154890}
   - component: {fileID: 1056154889}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: Boiler_collider (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2975,8 +2975,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1716238727
-  m_SortingLayer: 3
+  m_SortingLayerID: 2093857947
+  m_SortingLayer: 2
   m_SortingOrder: -3
   m_Sprite: {fileID: -91020812662933255, guid: efb1be4498c2826428f6f26912d52e41, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -3422,7 +3422,7 @@ GameObject:
   - component: {fileID: 1217060773}
   - component: {fileID: 1217060772}
   - component: {fileID: 1217060771}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: Boiler_collider (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3485,8 +3485,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1716238727
-  m_SortingLayer: 3
+  m_SortingLayerID: 2093857947
+  m_SortingLayer: 2
   m_SortingOrder: -2
   m_Sprite: {fileID: 311137205275262280, guid: 1dc9ae0d22551854da9c1e964241ea93, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -3953,6 +3953,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4fe2d5584e38d540a11be688d95fd81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boilers:
+  - {fileID: 320273151}
+  - {fileID: 1056154887}
+  - {fileID: 1975306210}
+  - {fileID: 50406031}
+  - {fileID: 2025096146}
+  - {fileID: 1217060767}
+  boilereffect: {fileID: 777090658651167672, guid: e83fb6962d9bfed44b2a58d8e42fdfe9, type: 3}
 --- !u!4 &1506246605
 Transform:
   m_ObjectHideFlags: 0
@@ -5173,7 +5181,7 @@ GameObject:
   - component: {fileID: 1975306214}
   - component: {fileID: 1975306213}
   - component: {fileID: 1975306212}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: Boiler_collider (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5485,8 +5493,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1716238727
-  m_SortingLayer: 3
+  m_SortingLayerID: 2093857947
+  m_SortingLayer: 2
   m_SortingOrder: -3
   m_Sprite: {fileID: 21300000, guid: 027aa61433347284eaf2d0fecaa8a624, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -5573,7 +5581,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1716238727
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 80efe379602ff3b42ad9d74390d4eb99, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -5599,7 +5607,7 @@ GameObject:
   - component: {fileID: 2025096150}
   - component: {fileID: 2025096149}
   - component: {fileID: 2025096148}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: Boiler_collider (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5876,8 +5884,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1716238727
-  m_SortingLayer: 3
+  m_SortingLayerID: 2093857947
+  m_SortingLayer: 2
   m_SortingOrder: -3
   m_Sprite: {fileID: 5252732111485270001, guid: 7918e40d92a8092449a32057a3abb7d1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -6101,7 +6109,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 16572470134752249aaf040569f7217e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

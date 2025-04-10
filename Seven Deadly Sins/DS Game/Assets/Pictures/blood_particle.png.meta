@@ -1447,7 +1447,60 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      blood_particle_0: -1999160973009223984
+      blood_particle_1: 7435971716995143180
+      blood_particle_10: -3064194268265591221
+      blood_particle_11: 7293901340422430129
+      blood_particle_12: -7401106848337405351
+      blood_particle_13: 951719662456087593
+      blood_particle_14: 2814190636571487127
+      blood_particle_15: 5185504471947149702
+      blood_particle_16: 4282977034373820578
+      blood_particle_17: -1443025685163665877
+      blood_particle_18: -6469421438418834571
+      blood_particle_19: 1121993605491133201
+      blood_particle_2: 884283831256868009
+      blood_particle_20: 1544219815782865789
+      blood_particle_21: -5548429538311839500
+      blood_particle_22: 7142757505909352591
+      blood_particle_23: -1828684923115641588
+      blood_particle_24: 3200508179650270999
+      blood_particle_25: -5796596068399187411
+      blood_particle_26: -582380612003535194
+      blood_particle_27: 4693568146649316874
+      blood_particle_28: -3896806893120744192
+      blood_particle_29: 7164385471088800293
+      blood_particle_3: 3445071932962624012
+      blood_particle_30: -5485777302279089196
+      blood_particle_31: 6692396895251758341
+      blood_particle_32: -4139960766706959977
+      blood_particle_33: -5263942432940335405
+      blood_particle_34: -129480342082133265
+      blood_particle_35: -8671775915533812362
+      blood_particle_36: -7340442136713766347
+      blood_particle_37: 2416551839630491192
+      blood_particle_38: -7975610462826829895
+      blood_particle_39: 1979669943977785801
+      blood_particle_4: -1874647065934109303
+      blood_particle_40: 8570812393279634992
+      blood_particle_41: 6566982315497628733
+      blood_particle_42: 907060539112658128
+      blood_particle_43: 5451498342700670229
+      blood_particle_44: 4458351234984576498
+      blood_particle_45: -5322736506459624878
+      blood_particle_46: 2075673866450310399
+      blood_particle_47: -1212450373398810168
+      blood_particle_48: -6861339344862178917
+      blood_particle_49: 5094460259437751033
+      blood_particle_5: -8040280545736363526
+      blood_particle_50: -896449103754629313
+      blood_particle_51: -3157668100668152881
+      blood_particle_52: 5360349170206148974
+      blood_particle_6: -7329931609292129483
+      blood_particle_7: -7903367876609878378
+      blood_particle_8: 2565467081692941856
+      blood_particle_9: 3554613191617221348
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
