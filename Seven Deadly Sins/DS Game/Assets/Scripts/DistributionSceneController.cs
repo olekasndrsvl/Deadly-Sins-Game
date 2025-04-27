@@ -1,12 +1,15 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class DistributionSceneController : MonoBehaviour
 {
     public List<GameObject> boilers;
     public GameObject boilereffect;
-
+    public RuntimeAnimatorController animator;
+    public GameObject player;
     private Vector3 pos;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -110,7 +113,7 @@ public class DistributionSceneController : MonoBehaviour
                 TipConrtrollerScript.TipsTextMessage =
                     "Ты прошел путь очищения, сын мой! Проследуй к выходу из ада, он прямо за тобой!";
                 TipConrtrollerScript.IsNewTextAdded = true;
-                
+                player.GetComponent<Animator>().runtimeAnimatorController = animator;
                 break;
         }
       
@@ -119,7 +122,7 @@ public class DistributionSceneController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       // Debug.Log(PlayerPrefs.GetInt("KarmaState", 0));
-       //Debug.Log(PlayerPrefs.GetInt("LevelsCompleted", 0) );
+        // Debug.Log(PlayerPrefs.GetInt("KarmaState", 0));
+        //Debug.Log(PlayerPrefs.GetInt("LevelsCompleted", 0) );
     }
 }

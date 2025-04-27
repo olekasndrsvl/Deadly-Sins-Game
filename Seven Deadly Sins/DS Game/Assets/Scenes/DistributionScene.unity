@@ -244,7 +244,7 @@ GameObject:
   - component: {fileID: 50406035}
   - component: {fileID: 50406034}
   - component: {fileID: 50406033}
-  m_Layer: 3
+  m_Layer: 10
   m_Name: Boiler_collider (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1241,7 +1241,7 @@ GameObject:
   - component: {fileID: 320273155}
   - component: {fileID: 320273154}
   - component: {fileID: 320273153}
-  m_Layer: 3
+  m_Layer: 10
   m_Name: Boiler_collider (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2342,6 +2342,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1055591576505166792, guid: 7512677b04da3144b99998cc7bf35d63, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1473303727850135028, guid: 7512677b04da3144b99998cc7bf35d63, type: 3}
       propertyPath: m_LocalPosition.x
       value: -21.71061
@@ -2359,8 +2363,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2417506536554166512, guid: 7512677b04da3144b99998cc7bf35d63, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417506536554166512, guid: 7512677b04da3144b99998cc7bf35d63, type: 3}
       propertyPath: m_SortingOrder
       value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417506536554166512, guid: 7512677b04da3144b99998cc7bf35d63, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 2093857947
       objectReference: {fileID: 0}
     - target: {fileID: 2870360017563589107, guid: 7512677b04da3144b99998cc7bf35d63, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2370,9 +2382,21 @@ PrefabInstance:
       propertyPath: orthographic size
       value: 8.680412
       objectReference: {fileID: 0}
+    - target: {fileID: 5062403043855636907, guid: 7512677b04da3144b99998cc7bf35d63, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6137700293351988019, guid: 7512677b04da3144b99998cc7bf35d63, type: 3}
       propertyPath: m_GravityScale
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7298193449384034150, guid: 7512677b04da3144b99998cc7bf35d63, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7612165159147148630, guid: 7512677b04da3144b99998cc7bf35d63, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 9212260763027397825, guid: 7512677b04da3144b99998cc7bf35d63, type: 3}
       propertyPath: m_Enabled
@@ -2686,7 +2710,7 @@ GameObject:
   - component: {fileID: 1056154891}
   - component: {fileID: 1056154890}
   - component: {fileID: 1056154889}
-  m_Layer: 3
+  m_Layer: 10
   m_Name: Boiler_collider (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3422,7 +3446,7 @@ GameObject:
   - component: {fileID: 1217060773}
   - component: {fileID: 1217060772}
   - component: {fileID: 1217060771}
-  m_Layer: 3
+  m_Layer: 10
   m_Name: Boiler_collider (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3961,6 +3985,8 @@ MonoBehaviour:
   - {fileID: 2025096146}
   - {fileID: 1217060767}
   boilereffect: {fileID: 777090658651167672, guid: e83fb6962d9bfed44b2a58d8e42fdfe9, type: 3}
+  animator: {fileID: 9100000, guid: 44fa5ae22e3c86245b3b57f74867d407, type: 2}
+  player: {fileID: 1731753600}
 --- !u!4 &1506246605
 Transform:
   m_ObjectHideFlags: 0
@@ -5181,7 +5207,7 @@ GameObject:
   - component: {fileID: 1975306214}
   - component: {fileID: 1975306213}
   - component: {fileID: 1975306212}
-  m_Layer: 3
+  m_Layer: 10
   m_Name: Boiler_collider (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5607,7 +5633,7 @@ GameObject:
   - component: {fileID: 2025096150}
   - component: {fileID: 2025096149}
   - component: {fileID: 2025096148}
-  m_Layer: 3
+  m_Layer: 10
   m_Name: Boiler_collider (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

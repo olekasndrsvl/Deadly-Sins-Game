@@ -19,7 +19,7 @@ public class SpritesSorter : MonoBehaviour
 
     private void UpdateSortingOrder()
     {
-        spriteRenderer.sortingOrder = originalSortingOrder + (trigger ? originalSortingOrder/System.Math.Abs(originalSortingOrder)*originalSortingOrder : 0);
+        spriteRenderer.sortingOrder = originalSortingOrder + (trigger ? (originalSortingOrder/System.Math.Abs(originalSortingOrder))*originalSortingOrder : 0);
     }
 
     void OnTriggerEnter2D(Collider2D other)
