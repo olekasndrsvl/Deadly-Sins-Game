@@ -3987,6 +3987,7 @@ MonoBehaviour:
   boilereffect: {fileID: 777090658651167672, guid: e83fb6962d9bfed44b2a58d8e42fdfe9, type: 3}
   animator: {fileID: 9100000, guid: 44fa5ae22e3c86245b3b57f74867d407, type: 2}
   player: {fileID: 1731753600}
+  moveAudioClip: {fileID: 8300000, guid: e41491a349afc8449acca5a2f42130f3, type: 3}
 --- !u!4 &1506246605
 Transform:
   m_ObjectHideFlags: 0

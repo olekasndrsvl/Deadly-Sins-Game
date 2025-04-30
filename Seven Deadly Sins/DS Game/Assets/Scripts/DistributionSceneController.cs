@@ -8,6 +8,7 @@ public class DistributionSceneController : MonoBehaviour
     public GameObject boilereffect;
     public RuntimeAnimatorController animator;
     public GameObject player;
+    public AudioClip moveAudioClip;
     private Vector3 pos;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -114,6 +115,7 @@ public class DistributionSceneController : MonoBehaviour
                     "Ты прошел путь очищения, сын мой! Проследуй к выходу из ада, он прямо за тобой!";
                 TipConrtrollerScript.IsNewTextAdded = true;
                 player.GetComponent<Animator>().runtimeAnimatorController = animator;
+                GameObject.Find("MoveAudio").GetComponent<AudioSource>().clip = moveAudioClip;
                 break;
         }
       
