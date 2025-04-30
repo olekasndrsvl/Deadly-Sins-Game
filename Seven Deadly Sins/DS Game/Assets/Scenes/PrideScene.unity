@@ -2014,15 +2014,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3959782307428771854, guid: ff538f87662a70a4ea3184674317c07d, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3959782307428771854, guid: ff538f87662a70a4ea3184674317c07d, type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3959782307428771854, guid: ff538f87662a70a4ea3184674317c07d, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 364.9501
+      objectReference: {fileID: 0}
+    - target: {fileID: 3959782307428771854, guid: ff538f87662a70a4ea3184674317c07d, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -0.5499878
+      objectReference: {fileID: 0}
+    - target: {fileID: 3959782307428771854, guid: ff538f87662a70a4ea3184674317c07d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.000015259
+      objectReference: {fileID: 0}
+    - target: {fileID: 3959782307428771854, guid: ff538f87662a70a4ea3184674317c07d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 141.448
+      value: -0.27000427
       objectReference: {fileID: 0}
     - target: {fileID: 4801957233265225644, guid: ff538f87662a70a4ea3184674317c07d, type: 3}
       propertyPath: m_Pivot.x
@@ -2106,20 +2118,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5621946643169830284, guid: ff538f87662a70a4ea3184674317c07d, type: 3}
       propertyPath: m_Color.b
-      value: 0.08677464
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5621946643169830284, guid: ff538f87662a70a4ea3184674317c07d, type: 3}
       propertyPath: m_Color.g
-      value: 0.08677464
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5621946643169830284, guid: ff538f87662a70a4ea3184674317c07d, type: 3}
       propertyPath: m_Color.r
-      value: 0.09433961
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8538173578633380408, guid: ff538f87662a70a4ea3184674317c07d, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 1673499386653965243, guid: a424f98f813d2284d9c3b6b532f65b01, type: 3}
+      objectReference: {fileID: 8690174791108478929, guid: 0fd0e6a86be807146b240ff5be275d4f, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
