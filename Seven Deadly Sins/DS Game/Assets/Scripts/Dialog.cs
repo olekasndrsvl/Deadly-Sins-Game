@@ -1,4 +1,4 @@
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -11,8 +11,8 @@ using UnityEngine;
 
 public class Dialog : MonoBehaviour
 {
-   
-    public string NameNPC = "";
+
+
     private bool IsPrintingPhrase = false;
     public int DialogResult;
     // needs link to text gameobject
@@ -24,12 +24,10 @@ public class Dialog : MonoBehaviour
     GameObject DialogAnswer1;
     GameObject DialogAnswer2;
     public GameObject CloseButton;
-    //                                            
+    //���������� ��� ������������ �������� �������
     public TypeDialogData CurrentDialog;
 
     public AudioSource clickAudio;
-    public AudioClip[] speachSounds;
-    public AudioSource speachAudio;
 
     IEnumerator RunningCoroutine;
 
@@ -42,7 +40,7 @@ public class Dialog : MonoBehaviour
 
         DialogQuestion.GetComponent<TMP_Text>().text = "";
 
-        //                            
+        //��������� ���������� �������
         //CurrentDialog = p1;
         RunningCoroutine = SpellPhrase(CurrentDialog.Question);
         StartCoroutine(RunningCoroutine);
@@ -65,31 +63,19 @@ public class Dialog : MonoBehaviour
 
     }
 
-    //          -        
+    // ������ ��-��������
     IEnumerator SpellPhrase(string s)
     {
         Cleaner();
         IsPrintingPhrase = true;
         DialogAnswerButton1.SetActive((false));
         DialogAnswerButton2.SetActive((false));
-
         var sb = new StringBuilder(DialogQuestion.GetComponent<TMP_Text>().text);
-
-        Queue<char> speakerBuffer = new Queue<char>();
-        int lastSpeaker = 0;
-
         foreach (var x in s + '\n')
         {
-
             sb.Append(x);
             DialogQuestion.GetComponent<TMP_Text>().text = sb.ToString();
-
-            Debug.Log(speachSounds);
-
-            if (speachSounds.Length > 0 && NameNPC != "")
-                speachAudio.PlayOneShot(speachSounds[WhoSpeaker(x)]);
-
-            yield return new WaitForSeconds(.03f);
+            yield return new WaitForSeconds(.01f);
         }
         IsPrintingPhrase = false;
         if (!CloseButton.activeSelf)
@@ -98,33 +84,6 @@ public class Dialog : MonoBehaviour
             DialogAnswerButton2.SetActive((true));
         }
 
-        int WhoSpeaker(char c)
-        {
-            if (NameNPC == "") { return 0; }
-            if (c == '-')
-            {
-                speakerBuffer.Clear();
-                lastSpeaker = 0;
-                return lastSpeaker;
-            }
-
-            if (speakerBuffer.Count == NameNPC.Length)
-            {
-                speakerBuffer.Dequeue();
-            }
-            speakerBuffer.Enqueue(c);
-
-            if (speakerBuffer.Count == NameNPC.Length)
-            {
-                string currentWindow = new string(speakerBuffer.ToArray());
-                if (currentWindow == NameNPC)
-                {
-                    lastSpeaker = 1;
-                    return lastSpeaker;
-                }
-            }
-            return lastSpeaker;
-        }
 
     }
 
