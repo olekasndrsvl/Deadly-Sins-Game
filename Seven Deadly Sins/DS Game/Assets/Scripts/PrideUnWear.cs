@@ -10,7 +10,7 @@ public class PrideUnWear : MonoBehaviour
 
     public void Close()
     {
-        gameObject.SetActive(false);
+        gameObject.transform.parent.gameObject.SetActive(false);
     }
     // Update is called once per frame
     void Update()
