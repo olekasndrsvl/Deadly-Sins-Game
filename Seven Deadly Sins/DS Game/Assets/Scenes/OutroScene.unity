@@ -216,6 +216,7 @@ RectTransform:
   - {fileID: 525020447}
   - {fileID: 553520827}
   - {fileID: 310218180}
+  - {fileID: 2091224782}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -558,8 +559,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.00036991, y: -217}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: -0.00037003, y: -376}
+  m_SizeDelta: {x: 281.8118, y: 390.9615}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1307131668
 MonoBehaviour:
@@ -581,8 +582,28 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u041A\u043E\u043C\u0430\u043D\u0434\u0430 Seven Deadly Sins\n\u041C\u0435\u0445\u043C\u0430\u0442
-    \u042E\u0424\u0423 2024"
+  m_text: "TeamLead - \u041B\u0443\u0436\u043D\u044F\u043A \u0410\u043B\u0435\u043A\u0441\u0430\u043D\u0434\u0440\n\u0425\u0443\u0434\u043E\u0436\u043D\u0438\u043A
+    - \u0421\u0430\u0442\u0443\u043B\u0438\u043D\u0430 \u0410\u043D\u043D\u0430\n\u0421\u0446\u0435\u043D\u0430\u0440\u0438\u0439
+    -  \u0418\u0449\u0435\u043D\u043A\u043E \u041C\u0438\u0445\u0430\u0438\u043B
+    \nSoundDesign - \u0413\u043E\u0440\u0431\u0430\u0442\u043E\u0432 \u041D\u0438\u043A\u0438\u0442\u0430\n\n\u0420\u0430\u0437\u0440\u0430\u0431\u043E\u0442\u043A\u0430
+    \t\t\t\t\n\u0421\u043A\u0440\u0438\u043F\u0442\u044B - \u0413\u0440\u0435\u043A 
+    \u0410\u043D\u0434\u0440\u0435\u0439\n\t         \u0422\u0440\u0443\u0442\u043D\u0435\u0432
+    \u041C\u0430\u043A\u0441\u0438\u043C \n\t         \u041E\u043B\u0438\u0444\u0438\u0440\u043E\u0432
+    \u0410\u0440\u0441\u0435\u043D\u0438\u0439\n\n\u041D\u0430\u0441\u0442\u0440\u043E\u0439\u043A\u0430
+    \u0430\u043D\u0438\u043C\u0430\u0446\u0438\u0439 - \u041B\u0443\u0436\u043D\u044F\u043A
+    \u0410\u043B\u0435\u043A\u0441\u0430\u043D\u0434\u0440\n\n\u041E\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0435\u043D\u043D\u044B\u0435
+    \u0437\u0430 \u0443\u0440\u043E\u0432\u043D\u0438:\n\t\"\u0423\u043D\u044B\u043D\u0438\u0435\"
+    - \u0422\u0440\u0443\u0442\u043D\u0435\u0432 \u041C\u0430\u043A\u0441\u0438\u043C\n\t\"\u0413\u043E\u0440\u0434\u044B\u043D\u044F\"
+    - \u041B\u0443\u0436\u043D\u044F\u043A \u0410\u043B\u0435\u043A\u0441\u0430\u043D\u0434\u0440\n\t\"\u0416\u0430\u0434\u043D\u043E\u0441\u0442\u044C\"
+    - \u0418\u0449\u0435\u043D\u043A\u043E \u041C\u0438\u0445\u0430\u0438\u043B\n\t\"\u0417\u0430\u0432\u0438\u0441\u0442\u044C\"
+    - \u041B\u0443\u0436\u043D\u044F\u043A \u0410\u043B\u0435\u043A\u0441\u0430\u043D\u0434\u0440\n\t\"\u0422\u0449\u0435\u0441\u043B\u0430\u0432\u0438\u0435\"
+    - \u041E\u043B\u0438\u0444\u0438\u0440\u043E\u0432 \u0410\u0440\u0441\u0435\u043D\u0438\u0439\n\t\"\u0425\u0432\u0430\u0441\u0442\u0430\u0432\u0441\u0442\u0432\u043E\"
+    - \u041B\u0443\u0436\u043D\u044F\u043A \u0410\u043B\u0435\u043A\u0441\u0430\u043D\u0434\u0440,
+    \u0418\u0449\u0435\u043D\u043A\u043E \u041C\u0438\u0445\u0430\u0438\u043B\n\t\"\u0413\u043D\u0435\u0432\"
+    - \u0413\u0440\u0435\u043A \u0410\u043D\u0434\u0440\u0435\u0439\n\n\u041C\u0443\u0437\u044B\u043A\u0430
+    \u0438 \u0437\u0432\u0443\u043A\u0438\n\t- \u0413\u043E\u0440\u0431\u0430\u0442\u043E\u0432
+    \u041D\u0438\u043A\u0438\u0442\u0430\n\t- \u041B\u0443\u0436\u043D\u044F\u043A
+    \u0410\u043B\u0435\u043A\u0441\u0430\u043D\u0434\u0440\n\t- Unity Asset Store\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7c53c56b36704764587ef37a66d842a7, type: 2}
   m_sharedMaterial: {fileID: 4258100957238970407, guid: 7c53c56b36704764587ef37a66d842a7, type: 2}
@@ -616,7 +637,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -957,6 +978,139 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1906789601}
   m_CullTransparentMesh: 1
+--- !u!1 &2091224781
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2091224782}
+  - component: {fileID: 2091224783}
+  m_Layer: 5
+  m_Name: BackgroundAudio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2091224782
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2091224781}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 45846649}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!82 &2091224783
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2091224781}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: e642d539fb97a8a478b66dd1e3c93fff, type: 3}
+  m_Resource: {fileID: 8300000, guid: e642d539fb97a8a478b66dd1e3c93fff, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
