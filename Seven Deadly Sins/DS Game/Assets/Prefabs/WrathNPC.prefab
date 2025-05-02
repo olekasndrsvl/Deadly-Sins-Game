@@ -76,7 +76,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1716238727
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -7991911509976941646, guid: 3d564f53a6639544280f97cf41cbf1f2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -99,7 +99,7 @@ Animator:
   m_GameObject: {fileID: 4848957538715716888}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 508c04ca5bc55aa409144c2fe642ee61, type: 2}
+  m_Controller: {fileID: 9100000, guid: 8a209951cb9dce846924ffcfa5177fb9, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -271,6 +271,7 @@ GameObject:
   - component: {fileID: 2645186604277447096}
   - component: {fileID: 2614915759118155637}
   - component: {fileID: 8650690017262350871}
+  - component: {fileID: 5674051169714970673}
   m_Layer: 0
   m_Name: WrathNPC
   m_TagString: NPC
@@ -392,3 +393,25 @@ MonoBehaviour:
   interactButton: {fileID: 0}
   controller: {fileID: 0}
   collider: {fileID: 2614915759118155637}
+--- !u!95 &5674051169714970673
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5028808043886919149}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8a209951cb9dce846924ffcfa5177fb9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

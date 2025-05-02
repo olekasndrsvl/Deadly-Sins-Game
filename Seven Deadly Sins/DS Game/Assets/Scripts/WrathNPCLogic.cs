@@ -45,6 +45,7 @@ public class WrathNPCLogic : MonoBehaviour
             controller.Lose();
             collider.enabled = false;
             interactButton.SetActive(false);
+            GetComponent<Animator>().SetBool("IsHitted", true);
         }
     }
 
