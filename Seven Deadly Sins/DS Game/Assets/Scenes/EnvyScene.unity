@@ -1846,7 +1846,7 @@ PrefabInstance:
     - target: {fileID: 8538173578633380408, guid: ff538f87662a70a4ea3184674317c07d, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 52c96180a8e3ecf43b3e1387bd892801, type: 3}
+      objectReference: {fileID: 1689194030623682045, guid: 13ba03594bf9ef4498fbdf2396968d6b, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3870,7 +3870,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1716238727
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1001 &1803387340
